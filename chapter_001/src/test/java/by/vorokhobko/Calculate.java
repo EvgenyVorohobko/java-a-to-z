@@ -1,4 +1,4 @@
-package by/vorokhobko/Calculate.java;
+package by.vorokhobko;
 
 import org.junit.Test;
 import java.io.ByteArrayOutputStream;
