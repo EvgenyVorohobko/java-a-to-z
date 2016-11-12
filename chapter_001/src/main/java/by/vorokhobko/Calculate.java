@@ -1,7 +1,7 @@
 package by.vorokhobko;
 
 /**
- * Calculate. 
+ * Calculate.
  *
  * Class Calculate the solution of the problem part 001, lesson 1.
  * @author vorokhobko.
@@ -10,8 +10,8 @@ package by.vorokhobko;
 
 public class Calculate {
 	/**
-	 * Main
-	 * @param args - args
+	 * Main.
+	 * @param args - args.
 	 */
 	public static void main(String[] args) {
 		System.out.println("Hello world!");
