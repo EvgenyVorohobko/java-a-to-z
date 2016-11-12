@@ -13,7 +13,7 @@ import static org.junit.Assert.assertThat;
  * @version 1.
  * @since 11.11.2016.
  */
- 
+
 public class CalculateTest {
     /**
      * Test add.
