@@ -1,4 +1,4 @@
-/*
+/**
  * //TODO add comments.
  *
  * @author Evgeny Vorokhobko (vorokhobko2011@yandex.ru).
