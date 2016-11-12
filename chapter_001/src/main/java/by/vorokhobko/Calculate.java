@@ -1,10 +1,12 @@
 package by.vorokhobko;
 
 /**
-* Класс Calculate решение задачи части 001, урок 1.
-* @author vorokhobko.
-* @since 11.11.2016.
-*/
+ * Calculate. 
+ *
+ * Class Calculate the solution of the problem part 001, lesson 1.
+ * @author vorokhobko.
+ * @since 11.11.2016.
+ */
 
 public class Calculate {
 	/**
