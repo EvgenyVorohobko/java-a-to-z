@@ -1,4 +1,4 @@
-package by.vorokhobko;
+package by/vorokhobko/Calculate.java;
 
 /**
  * Calculate.
