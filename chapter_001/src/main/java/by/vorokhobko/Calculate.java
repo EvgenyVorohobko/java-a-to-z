@@ -7,7 +7,6 @@ package by.vorokhobko;
  * @author vorokhobko.
  * @since 11.11.2016.
  */
-package by.vorokhobko;
 
 public class Calculate {
 	/**
