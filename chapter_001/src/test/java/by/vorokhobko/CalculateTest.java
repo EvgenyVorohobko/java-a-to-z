@@ -16,7 +16,7 @@ import static org.junit.Assert.assertThat;
 
 public class CalculateTest {
     /**
-     * Test add.
+     * @Test.
      */
     @Test
     public void whenRunHWThenPrintToOut() {
