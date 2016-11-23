@@ -19,6 +19,7 @@ import static org.hamcrest.number.IsCloseTo.closeTo;
 	  */
 	private final double numberExeption = 0.1;
 	 /**
+	  * @Test.
 	  * Add test.
 	  */
 	public void testWhenPassArgToAddItShouldReturn() {
@@ -31,6 +32,7 @@ import static org.hamcrest.number.IsCloseTo.closeTo;
 		assertThat(result, is(closeTo(resultingNumber, numberExeption)));
 	  }
 	 /**
+	  * @Test.
 	  * Take test.
 	  */
 	public void testWhenPassArgToTakeItShouldReturn() {
@@ -43,6 +45,7 @@ import static org.hamcrest.number.IsCloseTo.closeTo;
 		assertThat(result, is(closeTo(resultingNumber, numberExeption)));
 	  }
 	/**
+	 * @Test.
 	 * Multiple test.
 	 */
 	public void testWhenPassArgToMultItShouldReturn() {
@@ -55,6 +58,7 @@ import static org.hamcrest.number.IsCloseTo.closeTo;
 		assertThat(result, is(closeTo(resultingNumber, numberExeption)));
 	  }
 	/**
+	 * @Test.
 	 * Sharing test.
 	 */
 	public void testWhenPassArgToSharItShouldReturn() {
