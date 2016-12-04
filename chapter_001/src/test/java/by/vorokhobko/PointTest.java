@@ -22,10 +22,11 @@ public class PointTest {
 	public static void main(String[] args) {
 		final double x = 2;
 		final double y = 4;
-		final double totalNumber = 6.3;
+		final double totalNumber = 4.472;
 		final double numberExeption = 0.01;
-		Point point = new Point(x, y);
-		double resulte = point.distanceTo(x, y);
-		assertThat(result, is(closeTo(totalNumber, numberExeption)));
+		Point pointBegun = new Point(x, y);
+		Point pointEnd = new Point(x + x, y + y);
+		double resultBE = pointBegun.distanceTo(pointEnd);
+		assertThat(resultBE, is(closeTo(totalNumber, numberExeption)));
 		}
 	}
