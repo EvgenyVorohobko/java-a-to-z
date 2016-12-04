@@ -8,29 +8,36 @@ package by.vorokhobko;
  * @since 04.12.2016.
  * @version 1.
  */
- 
+
 public class Point {
  /**
  * The class field.
+ * double x.
  */
-	public double x;
-	public double y;
+	private double x;
+/**
+ * double y.
+ */
+	private double y;
 
-	public Point(double x, double y) {
  /**
- * The the constructor of the Point with parameters.
+ * The constructor of the Point with parameters.
  * @param x - x.
  * @param y - y.
  */
+
+	public Point(double x, double y) {
 		this.x = x;
 		this.y = y;
 	}
 
-	public double distanceTo(Point point) {
  /**
  * Сalculate the distance.
+ * @param point - point.
+ * @return tag.
  */
-		double result = Math.sqrt( Math.pow(point.x - x,2) + Math.pow(point.y - y,2) );
+	public double distanceTo(Point point) {
+		double result = Math.sqrt(Math.pow(point.x - x, 2) + Math.pow(point.y - y, 2));
 		return result;
 	}
 }
