@@ -19,7 +19,7 @@ public class PointTest {
 	  * Point test.
 	  * @param args - args.
 	  */
-	public static void main(String[] args) {
+	public static void testDeterminingTheDistanceBetweenTwoPoints(String[] args) {
 		final double x = 2;
 		final double y = 4;
 		final double totalNumber = 4.472;
