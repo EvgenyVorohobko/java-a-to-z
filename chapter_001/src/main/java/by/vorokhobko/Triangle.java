@@ -30,9 +30,6 @@ public class Triangle {
  * @return tag.
  */
 	public double area() {
-		Point a = new Point(double x, double y);
-		Point b = new Point(x + y, y + y);
-		Point c = new Point(x * y, y * y);
 		double lineAB = a.distanceTo(b);
 		double lineAC = a.distanceTo(c);
 		double lineBC = b.distanceTo(c);
