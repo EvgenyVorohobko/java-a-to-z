@@ -36,7 +36,6 @@ public class Triangle {
 		if((lineAB < (lineAC + lineBC)) && (lineAC < (lineAB + lineBC)) && (lineBC < (lineAB + lineAC))) {
 			double pperimeter = lineAB + lineAC + lineBC;
 			return Math.sqrt(pperimeter * (pperimeter - lineAB) * (pperimeter - lineAC) * (pperimeter - lineBC));
-		} else {
+		} else
 			throw new ArithmeticException("The triangle cannot be constructed");
 		}
-}
