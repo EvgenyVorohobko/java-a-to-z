@@ -163,15 +163,18 @@ import static org.hamcrest.number.IsCloseTo.closeTo;
 	  }
 	 /**
 	 * @Test.
-	 * Sharing test with first positive number and second negative number.
+	 * Sharing test with first number and second zero.
 	 */
-	public void testWhenPassArgToSharItShouldReturn() {
+	public void testWhenPassArgToSharToZeroItShouldReturn() {
 		Calculator calc = new Calculator();
 		final double first = 10;
-		final double second = (-2);
-		final double resultingNumber = (-5);
-		calc.shar(first, second);
-		double result = calc.getResult();
-		assertThat(result, is(closeTo(resultingNumber, numberExeption)));
+		final double second = 0;
+		try {
+			calc.shar(first, second);
+			double result = calc.getResult();
+			Toast.makeText(this, "Нет этого сообщения!", Toast.LENGTH_LONG).show();
+		} catch (ArithmeticException e) {
+			Toast.makeText(this, "Cound not take by 0", Toast.LENGHT_LONG).show();
+		}
 	  }
  }
