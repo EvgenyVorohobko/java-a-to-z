@@ -1,19 +1,26 @@
 package by.vorokhobko;
-
+/**
+ * Triangle.
+ *
+ * Class Triangle calculate the area of the triangle part 001, lesson 3.
+ * @author Evgeny Vorokhobko (vorokhobko2011@yandex.ru).
+ * @since 05.12.2016.
+ * @version 4.
+ */
 public class Triangle {
  /**
  * The class field.
  * Сreating point of a triangle a.
  */
-	public Point a;
+	private Point a;
  /**
  * Сreating point of a triangle b.
  */
-	public Point b;
+	private Point b;
  /**
  * Сreating point of a triangle c.
  */
-	public Point c;
+	private Point c;
  /**
  * The constructor of the Triangle with the designation points.
  * @param a - a.
@@ -33,7 +40,7 @@ public class Triangle {
 		double lineAB = a.distanceTo(b);
 		double lineAC = a.distanceTo(c);
 		double lineBC = b.distanceTo(c);
-		if((lineAB < (lineAC + lineBC)) && (lineAC < (lineAB + lineBC)) && (lineBC < (lineAB + lineAC))) {
+		if ((lineAB < (lineAC + lineBC)) && (lineAC < (lineAB + lineBC)) && (lineBC < (lineAB + lineAC))) {
 			double pperimeter = lineAB + lineAC + lineBC;
 			return Math.sqrt(pperimeter * (pperimeter - lineAB) * (pperimeter - lineAC) * (pperimeter - lineBC));
 		} else {
