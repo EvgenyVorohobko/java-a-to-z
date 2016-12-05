@@ -19,7 +19,7 @@ public class TriangleTest {
 	  * Point test.
 	  * @param args - args.
 	  */
-	public static void determineTheAreaOfTheTriangle(String[] args) {
+	public void determineTheAreaOfTheTriangle() {
 		final double x = 2;
 		final double y = 5;
 		final double totalArea = 34.971;
