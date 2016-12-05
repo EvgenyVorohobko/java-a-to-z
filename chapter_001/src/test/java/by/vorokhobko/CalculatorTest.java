@@ -172,9 +172,8 @@ import static org.hamcrest.number.IsCloseTo.closeTo;
 		try {
 			calc.shar(first, second);
 			double result = calc.getResult();
-			Toast.makeText(this, "Нет этого сообщения!", Toast.LENGTH_LONG).show();
 		} catch (ArithmeticException e) {
-			Toast.makeText(this, "Cound not take by 0", Toast.LENGHT_LONG).show();
+			System.out.println("Cound not take by 0");
 		}
 	  }
  }
