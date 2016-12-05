@@ -17,7 +17,7 @@ import org.junit.Test;
 public class TriangleTest {
 	  /**
 	  * @Test.
-	  * Point test.
+	  * Triangle test.
 	  */
 	  @Test
 	public void determineTheAreaOfTheTriangle() {
@@ -32,6 +32,10 @@ public class TriangleTest {
 		double resultArea = triangleABC.area();
 		assertThat(resultArea, is(closeTo(totalArea, numberExeption)));
 		}
+	  /**
+	  * @Test.
+	  * Triangle exeption test.
+	  */
 		@Test
 	public void determineTheAreaOfTheTriangleExeption() {
 		final double x = 2;
