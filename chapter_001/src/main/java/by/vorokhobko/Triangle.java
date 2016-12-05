@@ -39,4 +39,4 @@ public class Triangle {
 		} else {
 			throw new ArithmeticException("The triangle cannot be constructed");
 		}
-	}
+}
