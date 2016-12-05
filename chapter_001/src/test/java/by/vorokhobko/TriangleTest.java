@@ -3,6 +3,7 @@ package by.vorokhobko;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.number.IsCloseTo.closeTo;
+import org.junit.Test;
 
 /**
  * TriangleTest.
@@ -18,6 +19,7 @@ public class TriangleTest {
 	  * @Test.
 	  * Point test.
 	  */
+	  @Test
 	public void determineTheAreaOfTheTriangle() {
 		final double x = 2;
 		final double y = 5;

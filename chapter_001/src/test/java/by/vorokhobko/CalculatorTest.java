@@ -3,6 +3,7 @@ package by.vorokhobko;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.number.IsCloseTo.closeTo;
+import org.junit.Test;
 
 /**
  * CalculatorTest.
@@ -22,6 +23,7 @@ import static org.hamcrest.number.IsCloseTo.closeTo;
 	  * @Test.
 	  * Add test with positive numbers.
 	  */
+	  @Test
 	public void testWhenPassArgToAddPositiveNumbersItShouldReturn() {
 		Calculator calc = new Calculator();
 		final double first = 2;
@@ -35,6 +37,7 @@ import static org.hamcrest.number.IsCloseTo.closeTo;
 	  * @Test.
 	  * Add test with negative numbers.
 	  */
+	  @Test
 	public void testWhenPassArgToAddNegativNumbersItShouldReturn() {
 		Calculator calc = new Calculator();
 		final double first = (-2);
@@ -48,6 +51,7 @@ import static org.hamcrest.number.IsCloseTo.closeTo;
 	  * @Test.
 	  * Add test with second negative number and first positive number.
 	  */
+	  @Test
 	public void testWhenPassArgToAddItShouldReturn() {
 		Calculator calc = new Calculator();
 		final double first = 4;
@@ -61,6 +65,7 @@ import static org.hamcrest.number.IsCloseTo.closeTo;
 	  * @Test.
 	  * Take test with positive numbers.
 	  */
+	  @Test
 	public void testWhenPassArgToTakePositiveNumbersItShouldReturn() {
 		Calculator calc = new Calculator();
 		final double first = 4;
@@ -74,6 +79,7 @@ import static org.hamcrest.number.IsCloseTo.closeTo;
 	  * @Test.
 	  * Take test with negative numbers.
 	  */
+	  @Test
 	public void testWhenPassArgToTakeNegativeNumbersItShouldReturn() {
 		Calculator calc = new Calculator();
 		final double first = (-4);
@@ -87,6 +93,7 @@ import static org.hamcrest.number.IsCloseTo.closeTo;
 	  * @Test.
 	  * Take test with second negative number and first positive number.
 	  */
+	  @Test
 	public void testWhenPassArgToTakeItShouldReturn() {
 		Calculator calc = new Calculator();
 		final double first = 4;
@@ -100,6 +107,7 @@ import static org.hamcrest.number.IsCloseTo.closeTo;
 	 * @Test.
 	 * Multiple test with positive numbers.
 	 */
+	 @Test
 	public void testWhenPassArgToMultPositiveNumbersItShouldReturn() {
 		Calculator calc = new Calculator();
 		final double first = 3;
@@ -113,6 +121,7 @@ import static org.hamcrest.number.IsCloseTo.closeTo;
 	 * @Test.
 	 * Multiple test with negative numbers.
 	 */
+	 @Test
 	public void testWhenPassArgToMultNegativeNumbersItShouldReturn() {
 		Calculator calc = new Calculator();
 		final double first = (-3);
@@ -126,6 +135,7 @@ import static org.hamcrest.number.IsCloseTo.closeTo;
 	 * @Test.
 	 * Multiple test with first positive number and second negative number.
 	 */
+	 @Test
 	public void testWhenPassArgToMultItShouldReturn() {
 		Calculator calc = new Calculator();
 		final double first = 3;
@@ -139,6 +149,7 @@ import static org.hamcrest.number.IsCloseTo.closeTo;
 	 * @Test.
 	 * Sharing test with positive numbers.
 	 */
+	 @Test
 	public void testWhenPassArgToSharPositiveNumbersItShouldReturn() {
 		Calculator calc = new Calculator();
 		final double first = 10;
@@ -152,6 +163,7 @@ import static org.hamcrest.number.IsCloseTo.closeTo;
 	 * @Test.
 	 * Sharing test with negative numbers.
 	 */
+	 @Test
 	public void testWhenPassArgToSharNegativeNumbersItShouldReturn() {
 		Calculator calc = new Calculator();
 		final double first = (-10);
@@ -165,6 +177,7 @@ import static org.hamcrest.number.IsCloseTo.closeTo;
 	 * @Test.
 	 * Sharing test with first number and second zero.
 	 */
+	 @Test
 	public void testWhenPassArgToSharToZeroItShouldReturn() {
 		Calculator calc = new Calculator();
 		final double first = 10;
