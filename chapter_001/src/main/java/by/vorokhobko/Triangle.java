@@ -38,7 +38,7 @@ public class Triangle {
 		double lineBC = b.distanceTo(c);
 		if((lineAB < (lineAC + lineBC)) && (lineAC < (lineAB + lineBC)) && (lineBC < (lineAB + lineAC))) {
 			double pperimeter = lineAB + lineAC + lineBC; 
-			return Math.sqrt(ppirimeter * (pperimeter - lineAB) * (pperimeter - lineAC) * (pperimeter - lineBC));
+			return Math.sqrt(pperimeter * (pperimeter - lineAB) * (pperimeter - lineAC) * (pperimeter - lineBC));
 		} else {
 			throw new ArithmeticException("The triangle cannot be constructed");
 		}
