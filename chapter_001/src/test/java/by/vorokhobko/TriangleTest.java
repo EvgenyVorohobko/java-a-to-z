@@ -28,7 +28,7 @@ public class TriangleTest {
 		final Point pointB = new Point(x + y, y + y);
 		final Point pointC = new Point(x * y, y * y);
 		final Triangle triangleABC = new Triangle(pointA, pointB, pointC);
-		double resultArea = triangleABC.area(); 
+		double resultArea = triangleABC.area();
 		assertThat(resultArea, is(closeTo(totalArea, numberExeption)));
 		}
 	}
