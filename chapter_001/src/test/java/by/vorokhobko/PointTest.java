@@ -17,7 +17,6 @@ public class PointTest {
 	  /**
 	  * @Test.
 	  * Point test.
-	  * @param args - args.
 	  */
 	public void testDeterminingTheDistanceBetweenTwoPoints() {
 		final double x = 2;

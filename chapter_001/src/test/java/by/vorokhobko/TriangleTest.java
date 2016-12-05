@@ -17,7 +17,6 @@ public class TriangleTest {
 	  /**
 	  * @Test.
 	  * Point test.
-	  * @param args - args.
 	  */
 	public void determineTheAreaOfTheTriangle() {
 		final double x = 2;
