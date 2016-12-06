@@ -4,7 +4,7 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.number.IsCloseTo.closeTo;
 import org.junit.Test;
-
+import java.lang.Exception;
 /**
  * TriangleTest.
  *
