@@ -17,16 +17,33 @@ import org.junit.Test;
 public class TriangleTest {
 	  /**
 	  * @Test.
-	  * Triangle test.
+	  * Triangle test positive numbers.
 	  */
 	  @Test
-	public void determineTheAreaOfTheTriangle() {
+	public void determineTheAreaOfTheTrianglePositiveNumbers() {
 		final double x = 2;
 		final double y = 5;
 		final double totalArea = 34.971;
 		final double numberExeption = 0.01;
 		final Point pointA = new Point(x, y);
 		final Point pointB = new Point(x + y, y + y);
+		final Point pointC = new Point(x * y, y * y);
+		final Triangle triangleABC = new Triangle(pointA, pointB, pointC);
+		double resultArea = triangleABC.area();
+		assertThat(resultArea, is(closeTo(totalArea, numberExeption)));
+		}
+	  /**
+	  * @Test.
+	  * Triangle test negative numbers.
+	  */
+	  @Test
+	public void determineTheAreaOfTheTriangleNegativeNumbers() {
+		final double x = 2;
+		final double y = 5;
+		final double totalArea = 34.971;
+		final double numberExeption = 0.01;
+		final Point pointB = new Point(x, y);
+		final Point pointA = new Point(x + y, y + y);
 		final Point pointC = new Point(x * y, y * y);
 		final Triangle triangleABC = new Triangle(pointA, pointB, pointC);
 		double resultArea = triangleABC.area();
