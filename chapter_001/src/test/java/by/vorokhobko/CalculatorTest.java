@@ -177,16 +177,10 @@ import org.junit.Test;
 	 * @Test.
 	 * Sharing test with first number and second zero.
 	 */
-	 @Test
+	 @Test(expected = ArithmeticException.class)
 	public void testWhenPassArgToSharToZeroItShouldReturn() {
 		Calculator calc = new Calculator();
 		final double first = 10;
 		final double second = 0;
-		try {
-			calc.shar(first, second);
-			double result = calc.getResult();
-		} catch (ArithmeticException e) {
-			System.out.println("Cound not take by 0");
-		}
 	  }
  }
