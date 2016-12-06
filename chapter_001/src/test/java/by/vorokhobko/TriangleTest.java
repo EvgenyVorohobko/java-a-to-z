@@ -17,13 +17,13 @@ import org.junit.Test;
 public class TriangleTest {
 	  /**
 	  * @Test.
-	  * Triangle test positive numbers.
+	  * Triangle test.
 	  */
 	  @Test
-	public void determineTheAreaOfTheTrianglePositiveNumbers() {
+	public void determineTheAreaOfTheTriangle() {
 		final double x = 2;
 		final double y = 5;
-		final double totalArea = 30.000;
+		final double totalArea = 30.0;
 		final double numberExeption = 0.01;
 		final Point pointA = new Point(x, y);
 		final Point pointB = new Point(x + y, y + y);
