@@ -4,6 +4,7 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.number.IsCloseTo.closeTo;
 import org.junit.Test;
+
 /**
  * CalculatorTest.
  *
@@ -181,5 +182,7 @@ import org.junit.Test;
 		Calculator calc = new Calculator();
 		final double first = 10;
 		final double second = 0;
+		calc.shar(first, second);
+		double result = calc.getResult();
 	  }
  }
