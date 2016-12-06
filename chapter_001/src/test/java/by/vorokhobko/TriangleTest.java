@@ -23,7 +23,7 @@ public class TriangleTest {
 	public void determineTheAreaOfTheTrianglePositiveNumbers() {
 		final double x = 2;
 		final double y = 5;
-		final double totalArea = 30.0;
+		final double totalArea = 30.00;
 		final double numberExeption = 0.01;
 		final Point pointA = new Point(x, y);
 		final Point pointB = new Point(x + y, y + y);
@@ -40,7 +40,7 @@ public class TriangleTest {
 	public void determineTheAreaOfTheTriangleNegativeNumbers() {
 		final double x = (-2);
 		final double y = (-5);
-		final double totalArea = 30.0;
+		final double totalArea = 45.00;
 		final double numberExeption = 0.01;
 		final Point pointA = new Point(x, y);
 		final Point pointB = new Point(x + y, y + y);
