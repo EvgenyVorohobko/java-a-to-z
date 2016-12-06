@@ -55,12 +55,12 @@ public class TriangleTest {
 	  */
 		@Test(expected = Exception.class)
 	public void determineTheAreaOfTheTriangleExeption() {
-		final double x = 2;
-		final double y = 3;
-		final double z = 5;
+		final double x = 0.5;
+		final double y = 1;
+		final double z = 10;
 		final Point pointA = new Point(x, y);
-		final Point pointB = new Point(y - x, y - x);
-		final Point pointC = new Point(z * x, z * y);
+		final Point pointB = new Point(y, y);
+		final Point pointC = new Point(z, y);
 		Triangle triangleABC = new Triangle(pointA, pointB, pointC);
 		double resultArea = triangleABC.area();
 		}
