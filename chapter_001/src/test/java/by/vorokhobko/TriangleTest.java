@@ -53,7 +53,7 @@ public class TriangleTest {
 	  * @Test.
 	  * Triangle exeption test.
 	  */
-		@Test((expected = Exception.class))
+		@Test(expected = Exception.class)
 	public void determineTheAreaOfTheTriangleExeption() {
 		final double x = 2;
 		final double y = 3;
