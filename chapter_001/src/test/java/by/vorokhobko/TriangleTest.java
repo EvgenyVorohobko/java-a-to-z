@@ -28,7 +28,7 @@ public class TriangleTest {
 		final Point pointA = new Point(x, y);
 		final Point pointB = new Point(x + y, y + y);
 		final Point pointC = new Point(x * y, y * y);
-		final Triangle triangleABC = new Triangle(pointA, pointB, pointC);
+		Triangle triangleABC = new Triangle(pointA, pointB, pointC);
 		double resultArea = triangleABC.area();
 		assertThat(resultArea, is(closeTo(totalArea, numberExeption)));
 		}
@@ -45,7 +45,7 @@ public class TriangleTest {
 		final Point pointB = new Point(y - x, y - x);
 		final Point pointC = new Point(z * x, z * y);
 		try {
-			final Triangle triangleABC = new Triangle(pointA, pointB, pointC);
+			Triangle triangleABC = new Triangle(pointA, pointB, pointC);
 			double resultArea = triangleABC.area();
 		} catch (ArithmeticException e) {
 			System.out.println("Cound not take by 0");
