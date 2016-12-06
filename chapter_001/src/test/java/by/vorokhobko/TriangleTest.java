@@ -61,8 +61,8 @@ public class TriangleTest {
 		final Point pointA = new Point(x, y);
 		final Point pointB = new Point(y - x, y - x);
 		final Point pointC = new Point(z * x, z * y);
+		Triangle triangleABC = new Triangle(pointA, pointB, pointC);
 		try {
-			Triangle triangleABC = new Triangle(pointA, pointB, pointC);
 			double resultArea = triangleABC.area();
 		} catch (ArithmeticException e) {
 			System.out.println("Cound not take by 0");
