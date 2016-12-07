@@ -23,6 +23,6 @@ public class CalculateTest {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
         Calculate.main(null);
-        assertThat(out.toString(), is("Hello World\n"));
+        assertThat(out.toString(), is("Hello World\r\n"));
     }
 }
