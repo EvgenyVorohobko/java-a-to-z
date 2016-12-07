@@ -9,7 +9,7 @@ import static org.junit.Assert.assertThat;
  *
  * Class MaxTest for testing class Max part 001, lesson 3.
  * @author Evgeny Vorokhobko (vorokhobko2011@yandex.ru).
- * @since 06.12.2016.
+ * @since 07.12.2016.
  * @version 1.
  */
 public class MaxThreeTest {
