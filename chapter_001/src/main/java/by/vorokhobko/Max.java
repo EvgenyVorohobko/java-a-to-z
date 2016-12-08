@@ -10,17 +10,13 @@ package by.vorokhobko;
 public class Max {
 	/**
 	* The class field.
-	* Сreating max number.
-	*/
-	private int largeNum;
-	/**
 	* The method determines the max number.
 	* @param first - first.
 	* @param second - second.
 	* @return tag.
 	*/
 	public int max(int first, int second) {
-	largeNum = first < second ? second : first;
+	int largeNum = first < second ? second : first;
 	return largeNum;
 	}
 }
