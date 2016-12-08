@@ -24,7 +24,7 @@ public class MaxThreeTest {
 			final int second = 2;
 			final int third = 3;
 			final int resultingNumber = 3;
-			int result = max.max(first, second, third);
+			int result = max.maxThree(first, second, third);
 			assertThat(result, is(resultingNumber));
 	  }
 	  /**
@@ -38,7 +38,7 @@ public class MaxThreeTest {
 			final int second = (-2);
 			final int third = (-3);
 			final int resultingNumber = (-1);
-			int result = max.max(first, second, third);
+			int result = max.maxThree(first, second, third);
 			assertThat(result, is(resultingNumber));
 	  }
 	  /**
@@ -52,7 +52,7 @@ public class MaxThreeTest {
 			final int second = 2;
 			final int third = (-3);
 			final int resultingNumber = 2;
-			int result = max.max(first, second, third);
+			int result = max.maxThree(first, second, third);
 			assertThat(result, is(resultingNumber));
 	  }
 }

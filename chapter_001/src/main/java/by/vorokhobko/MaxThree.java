@@ -10,19 +10,16 @@ package by.vorokhobko;
 public class MaxThree {
 	/**
 	* The class field.
-	* Сreating max number.
-	*/
-	private int largeNum;
-	/**
 	* The method determines the max number.
 	* @param first - first.
 	* @param second - second.
 	* @param third - third.
 	* @return tag.
 	*/
-	public int max(int first, int second, int third) {
-	int firstMax = first < second ? second : first;
-	largeNum = firstMax < third ? third : firstMax;
-	return largeNum;
+	public int maxThree(int first, int second, int third) {
+		Max max = new Max();
+		int firstMax = max.max(first, second);
+		int largeNum = firstMax < third ? third : firstMax;
+		return largeNum;
 	}
 }
