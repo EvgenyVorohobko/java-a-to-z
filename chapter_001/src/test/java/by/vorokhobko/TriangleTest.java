@@ -38,8 +38,8 @@ public class TriangleTest {
 	  */
 	  @Test
 	public void determineTheAreaOfTheTriangleNegativeNumbers() {
-		final double x = (-2);
-		final double y = (-5);
+		final double x = -2;
+		final double y = -5;
 		final double totalArea = 45.00;
 		final double numberExeption = 0.01;
 		final Point pointA = new Point(x, y);

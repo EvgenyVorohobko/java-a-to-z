@@ -40,9 +40,9 @@ import org.junit.Test;
 	  @Test
 	public void testWhenPassArgToAddNegativNumbersItShouldReturn() {
 		Calculator calc = new Calculator();
-		final double first = (-2);
-		final double second = (-2);
-		final double resultingNumber = (-4);
+		final double first = -2;
+		final double second = -2;
+		final double resultingNumber = -4;
 		calc.add(first, second);
 		double result = calc.getResult();
 		assertThat(result, is(closeTo(resultingNumber, numberExeption)));
@@ -55,7 +55,7 @@ import org.junit.Test;
 	public void testWhenPassArgToAddItShouldReturn() {
 		Calculator calc = new Calculator();
 		final double first = 4;
-		final double second = (-2);
+		final double second = -2;
 		final double resultingNumber = 2;
 		calc.add(first, second);
 		double result = calc.getResult();
@@ -82,9 +82,9 @@ import org.junit.Test;
 	  @Test
 	public void testWhenPassArgToTakeNegativeNumbersItShouldReturn() {
 		Calculator calc = new Calculator();
-		final double first = (-4);
-		final double second = (-2);
-		final double resultingNumber = (-2);
+		final double first = -4;
+		final double second = -2;
+		final double resultingNumber = -2;
 		calc.take(first, second);
 		double result = calc.getResult();
 		assertThat(result, is(closeTo(resultingNumber, numberExeption)));
@@ -97,7 +97,7 @@ import org.junit.Test;
 	public void testWhenPassArgToTakeItShouldReturn() {
 		Calculator calc = new Calculator();
 		final double first = 4;
-		final double second = (-2);
+		final double second = -2;
 		final double resultingNumber = 6;
 		calc.take(first, second);
 		double result = calc.getResult();
@@ -124,8 +124,8 @@ import org.junit.Test;
 	 @Test
 	public void testWhenPassArgToMultNegativeNumbersItShouldReturn() {
 		Calculator calc = new Calculator();
-		final double first = (-3);
-		final double second = (-2);
+		final double first = -3;
+		final double second = -2;
 		final double resultingNumber = 6;
 		calc.mult(first, second);
 		double result = calc.getResult();
@@ -139,8 +139,8 @@ import org.junit.Test;
 	public void testWhenPassArgToMultItShouldReturn() {
 		Calculator calc = new Calculator();
 		final double first = 3;
-		final double second = (-2);
-		final double resultingNumber = (-6);
+		final double second = -2;
+		final double resultingNumber = -6;
 		calc.mult(first, second);
 		double result = calc.getResult();
 		assertThat(result, is(closeTo(resultingNumber, numberExeption)));
@@ -166,8 +166,8 @@ import org.junit.Test;
 	 @Test
 	public void testWhenPassArgToSharNegativeNumbersItShouldReturn() {
 		Calculator calc = new Calculator();
-		final double first = (-10);
-		final double second = (-2);
+		final double first = -10;
+		final double second = -2;
 		final double resultingNumber = 5;
 		calc.shar(first, second);
 		double result = calc.getResult();

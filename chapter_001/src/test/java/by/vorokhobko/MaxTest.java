@@ -33,9 +33,9 @@ public class MaxTest {
 	  @Test
 	  public void methodDeterminesTheMaxInNegativeNumbers() {
 			Max max = new Max();
-			final int first = (-1);
-			final int second = (-2);
-			final int resultingNumber = (-1);
+			final int first = -1;
+			final int second = -2;
+			final int resultingNumber = -1;
 			int result = max.max(first, second);
 			assertThat(result, is(resultingNumber));
 	  }
@@ -47,7 +47,7 @@ public class MaxTest {
 	  public void methodDeterminesTheMaxNumber() {
 			Max max = new Max();
 			final int first = 1;
-			final int second = (-2);
+			final int second = -2;
 			final int resultingNumber = 1;
 			int result = max.max(first, second);
 			assertThat(result, is(resultingNumber));
