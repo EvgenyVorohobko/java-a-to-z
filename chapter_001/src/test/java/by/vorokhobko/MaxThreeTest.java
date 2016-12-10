@@ -34,10 +34,10 @@ public class MaxThreeTest {
 	  @Test
 	  public void methodDeterminesTheMaxInNegativeNumbers() {
 			MaxThree max = new MaxThree();
-			final int first = (-1);
-			final int second = (-2);
-			final int third = (-3);
-			final int resultingNumber = (-1);
+			final int first = -1;
+			final int second = -2;
+			final int third = -3;
+			final int resultingNumber = -1;
 			int result = max.maxThree(first, second, third);
 			assertThat(result, is(resultingNumber));
 	  }
@@ -48,9 +48,9 @@ public class MaxThreeTest {
 	  @Test
 	  public void methodDeterminesTheMaxNumber() {
 			MaxThree max = new MaxThree();
-			final int first = (-1);
+			final int first = -1;
 			final int second = 2;
-			final int third = (-3);
+			final int third = -3;
 			final int resultingNumber = 2;
 			int result = max.maxThree(first, second, third);
 			assertThat(result, is(resultingNumber));
