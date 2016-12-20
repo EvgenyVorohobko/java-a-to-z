@@ -11,10 +11,10 @@ package by.vorokhobko;
 public class Calculate {
 	/**
 	 * Main.
-	 * @param args - args.
+	 * @return tag.
 	 */
-	public static void main(String[] args) {
-		String sep = System.getProperty("line.separator");
-		System.out.printf("Hello,%sworld!", sep);
+	public String helloWorld() {
+		String sb = "Hello World!" + System.getProperty("line.separator");
+		return sb.toString();
 	}
 }

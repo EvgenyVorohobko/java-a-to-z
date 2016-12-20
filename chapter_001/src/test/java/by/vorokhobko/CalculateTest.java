@@ -1,8 +1,6 @@
 package by.vorokhobko;
 
 import org.junit.Test;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -20,9 +18,9 @@ public class CalculateTest {
      */
     @Test
     public void whenRunHWThenPrintToOut() {
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
-        Calculate.main(null);
-        assertThat(out.toString(), is("Hello,\r\nworld!"));
+		final Calculate calc = new Calculate();
+		String outPrint = "Hello World!" + System.getProperty("line.separator");
+		String result = calc.helloWorld();
+        assertThat(result, is(outPrint));
     }
 }
