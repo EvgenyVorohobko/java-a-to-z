@@ -32,7 +32,7 @@ public class Profession {
      * @param recommendations - recommendations;
      * @param aScore - aScore;
      */
-    private Profession(String name, int age, String university, String recommendations, int aScore) {
+    public Profession(String name, int age, String university, String recommendations, int aScore) {
         this.name = name;
         this.age = age;
         this.university = university;
