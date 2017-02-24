@@ -15,6 +15,14 @@ public class Engineer extends Profession {
      * Сreating experience.
      */
     private int experience;
+	/**
+	* Class Engineer.
+	* @param name - name.
+	* @param age - age.
+	* @param university - university.
+	* @param recommendations - recommendations.
+	* @param aScore - aScore.
+	*/
     public Engineer(String name, int age, String university, String recommendations, int aScore) {
         super(name, age, university, recommendations, aScore);
         this.experience = experience;

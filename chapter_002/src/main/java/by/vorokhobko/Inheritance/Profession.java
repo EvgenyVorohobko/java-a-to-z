@@ -20,9 +20,25 @@ public class Profession {
      * Сreating average score university.
      */
     private String name;
+	 /**
+     * The class field.
+	 * Сreating age.
+	 */
     private int age;
+	 /**
+     * The class field.
+	 * Сreating university.
+	 */
     private String university;
+	 /**
+     * The class field.
+	 * Сreating recommendations.
+	 */
     private String recommendations;
+	 /**
+     * The class field.
+	 * Сreating aScore.
+	 */
     private int aScore;
     /**
      * The constructor of the Profession with parameters.

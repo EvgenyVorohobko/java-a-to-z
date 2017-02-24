@@ -15,6 +15,14 @@ public class Teacher extends Profession {
      * Сreating refresher training.
      */
     private int refTrain;
+	 /**
+	 * Class Teacher.
+	 * @param name - name.
+	 * @param age - age.
+	 * @param university - university.
+	 * @param recommendations - recommendations.
+	 * @param aScore - aScore.
+	 */
     public Teacher(String name, int age, String university, String recommendations, int aScore) {
         super(name, age, university, recommendations, aScore);
         this.refTrain = refTrain;
