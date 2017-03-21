@@ -18,10 +18,7 @@ public class Task extends Item {
 	* @param create - create.
 	*/
 	public Task(String name, String desc, long create) {
-		Item task = new Item();
-		task.setName(name);
-		task.setDescription(desc);
-		task.setCreate(create);
+		super(name, desc, create);
 	}
 	/**
 	* Create the method to calculate the value.
