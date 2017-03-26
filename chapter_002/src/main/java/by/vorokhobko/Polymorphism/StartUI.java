@@ -1,18 +1,17 @@
 package by.vorokhobko.start;
 
 import by.vorokhobko.Encapsulation.start.Tracker;
-import by.vorokhobko.Encapsulation.models.Item;
 import by.vorokhobko.Encapsulation.models.Task;
 
 /**
  * StartUI.
  *
- * Class StartUI the entry point to the program part 002, lesson 3.
+ * Class StartUI the entry point to the program part 002, lesson 5.
  * @author Evgeny Vorokhobko (vorokhobko2011@yandex.ru).
  * @since 20.03.2017.
  * @version 1.
  */
- 
+
 public class StartUI {
 	/**
      * The class field.
@@ -21,7 +20,7 @@ public class StartUI {
 	private Input input;
 	/**
 	* Сreate the class constructor StartUI.
-	* @param tracker - tracker.
+	* @param input - input.
 	*/
 	public StartUI(Input input) {
 		this.input = input;
@@ -40,7 +39,7 @@ public class StartUI {
 	* The method searches all cells.
 	* @param tracker - tracker.
 	*/
-	public void FindAllItem(Tracker tracker) {
+	public void findAllItem(Tracker tracker) {
 		String name1 = input.ask("please, enter the task's name: ");
 		String desc1 = input.ask("please, enter the task's description: ");
 		String create1 = input.ask("please, enter the task's time: ");
@@ -55,7 +54,7 @@ public class StartUI {
 	* The method needs to replace the cell in the array.
 	* @param tracker - tracker.
 	*/
-	public void EditItem(Tracker tracker) {
+	public void editItem(Tracker tracker) {
 		String name = input.ask("please, enter the task's name: ");
 		String desc = input.ask("please, enter the task's description: ");
 		String create = input.ask("please, enter the task's time: ");
@@ -67,7 +66,7 @@ public class StartUI {
 	* The method should delete the cells in the array.
 	* @param tracker - tracker.
 	*/
-	public void DeleteItem(Tracker tracker) {
+	public void deleteItem(Tracker tracker) {
 		String name = input.ask("please, enter the task's name: ");
 		String desc = input.ask("please, enter the task's description: ");
 		String create = input.ask("please, enter the task's time: ");
@@ -79,7 +78,7 @@ public class StartUI {
 	* The method finds similar cells in the Id.
 	* @param tracker - tracker.
 	*/
-	public void FindItemById(Tracker tracker) {
+	public void findItemById(Tracker tracker) {
 		String name = input.ask("please, enter the task's name: ");
 		String desc = input.ask("please, enter the task's description: ");
 		String create = input.ask("please, enter the task's time: ");
@@ -98,23 +97,23 @@ public class StartUI {
 	* @param tracker - tracker.
 	*/
 	public void init(Tracker tracker) {
-		String result = input.ask("please select one of the items:\n 1 - Add new Item\n " +
-					"2 - Show all items\n 3 - Edit item\n 4 - Delete item\n 5 - Find item by Id\n" +
-					" 6 - Find items by name\n 7 - Exit Program\n");
+		String result = input.ask("please select one of the items:\n 1 - Add new Item\n "
+		+ "2 - Show all items\n 3 - Edit item\n 4 - Delete item\n 5 - Find item by Id\n"
+		+ " 6 - Find items by name\n 7 - Exit Program\n");
 		if (result.equals(1)) {
 			new StartUI(input).addItem(tracker);
 		}
 		if (result.equals(2)) {
-			new StartUI(input).FindAllItem(tracker);
+			new StartUI(input).findAllItem(tracker);
 		}
 		if (result.equals(3)) {
-			new StartUI(input).EditItem(tracker);
+			new StartUI(input).editItem(tracker);
 		}
 		if (result.equals(4)) {
-			new StartUI(input).DeleteItem(tracker);
+			new StartUI(input).deleteItem(tracker);
 		}
 		if (result.equals(5)) {
-			new StartUI(input).FindItemById(tracker);
+			new StartUI(input).findItemById(tracker);
 		}
 		if (result.equals(6)) {
 			init(tracker);
@@ -122,7 +121,7 @@ public class StartUI {
 	}
 	/**
 	* Method run the program.
-	* @param tracker - tracker.
+	* @param args - args.
 	*/
 	public static void main(String[] args) {
 		Tracker tracker = new Tracker();
