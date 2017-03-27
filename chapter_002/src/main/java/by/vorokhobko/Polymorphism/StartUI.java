@@ -134,9 +134,18 @@ public class StartUI {
 		if (result.equals(6)) {
 			new StartUI(input).findItemsByName(tracker);
 		}
-		if (!result.equals(7)) {
-			init(tracker);
-		}
+
+		int exitNumber = 7;
+		String answer = "n";
+		do {
+			if (exitNumber == 7) {
+				answer = input.ask("You are sure?\n y/n: ");
+				if (answer.equals("y")) {
+					break;
+				}
+			}
+		} while (answer.equals("n"));
+		init(tracker);
 	}
 	/**
 	* Method run the program.
