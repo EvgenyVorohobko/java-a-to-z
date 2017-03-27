@@ -1,4 +1,4 @@
-package by.vorokhobko.start;
+package by.vorokhobko.Polymorphism;
 
 import java.util.Scanner;
 
