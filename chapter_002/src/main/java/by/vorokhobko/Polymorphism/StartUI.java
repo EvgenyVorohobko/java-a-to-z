@@ -109,6 +109,26 @@ public class StartUI {
 		}
 	}
 	/**
+	 * The method exit this program.
+	 * @param tracker - tracker.
+	 */
+	public void exitProgram(Tracker tracker) {
+		int exitNumber = 7;
+		String answer = "n";
+		do {
+			if (exitNumber == 7) {
+				answer = input.ask("You are sure?\n y/n: ");
+				if (answer.equals("y")) {
+					break;
+				} else {
+					init(tracker);
+				}
+				break;
+			}
+		} while (answer.equals("n"));
+	}
+
+	/**
 	* The main method of the program, menu.
 	* @param tracker - tracker.
 	*/
@@ -134,18 +154,9 @@ public class StartUI {
 		if (result.equals(6)) {
 			new StartUI(input).findItemsByName(tracker);
 		}
-
-		int exitNumber = 7;
-		String answer = "n";
-		do {
-			if (exitNumber == 7) {
-				answer = input.ask("You are sure?\n y/n: ");
-				if (answer.equals("y")) {
-					break;
-				}
-			}
-		} while (answer.equals("n"));
-		init(tracker);
+		if (result.equals("7")) {
+			new StartUI(input).exitProgram(tracker);
+		}
 	}
 	/**
 	* Method run the program.
