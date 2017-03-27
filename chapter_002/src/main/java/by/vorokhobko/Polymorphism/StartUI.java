@@ -136,22 +136,22 @@ public class StartUI {
 		String result = input.ask("please select one of the items:\n 1 - Add new Item\n "
 		+ "2 - Show all items\n 3 - Edit item\n 4 - Delete item\n 5 - Find item by Id\n"
 		+ " 6 - Find items by name\n 7 - Exit Program\n");
-		if (result.equals(1)) {
+		if (result.equals("1")) {
 			new StartUI(input).addItem(tracker);
 		}
-		if (result.equals(2)) {
+		if (result.equals("2")) {
 			new StartUI(input).findAllItem(tracker);
 		}
-		if (result.equals(3)) {
+		if (result.equals("3")) {
 			new StartUI(input).editItem(tracker);
 		}
-		if (result.equals(4)) {
+		if (result.equals("4")) {
 			new StartUI(input).deleteItem(tracker);
 		}
-		if (result.equals(5)) {
+		if (result.equals("5")) {
 			new StartUI(input).findItemById(tracker);
 		}
-		if (result.equals(6)) {
+		if (result.equals("6")) {
 			new StartUI(input).findItemsByName(tracker);
 		}
 		if (result.equals("7")) {
