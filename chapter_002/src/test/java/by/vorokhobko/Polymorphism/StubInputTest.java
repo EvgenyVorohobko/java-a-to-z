@@ -27,7 +27,7 @@ public class StubInputTest {
         String desc = "testDesc";
         String time = "45";
 		String exit = "7";
-        Input input = new StubInput(new String[]{name, desc, time, exit});
+        Input input = new StubInput(new String[]{"1", name, desc, time, exit});
         new StartUI(input).init(tracker);
         assertThat(tracker.findAll()[0].getName(), is("testName"));
     }
