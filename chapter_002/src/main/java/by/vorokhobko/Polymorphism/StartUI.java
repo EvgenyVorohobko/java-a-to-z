@@ -1,8 +1,7 @@
-package by.vorokhobko.start;
+package by.vorokhobko.Polymorphism;
 
 import by.vorokhobko.Encapsulation.start.Tracker;
 import by.vorokhobko.Encapsulation.models.Task;
-
 /**
  * StartUI.
  *
@@ -93,6 +92,23 @@ public class StartUI {
 		}
 	}
 	/**
+	 * The method finds similar cells in the Name.
+	 * @param tracker - tracker.
+	 */
+	public void findItemsByName(Tracker tracker) {
+		String name = input.ask("please, enter the task's name: ");
+		String desc = input.ask("please, enter the task's description: ");
+		String create = input.ask("please, enter the task's time: ");
+		Task task = new Task(name, desc, Long.parseLong(create));
+		tracker.add(task);
+		tracker.findByName(name);
+		if (tracker.findByName(name) != null) {
+			System.out.print(tracker.findByName(name));
+		} else {
+			System.out.println("This Name does not exist");
+		}
+	}
+	/**
 	* The main method of the program, menu.
 	* @param tracker - tracker.
 	*/
@@ -116,6 +132,9 @@ public class StartUI {
 			new StartUI(input).findItemById(tracker);
 		}
 		if (result.equals(6)) {
+			new StartUI(input).findItemsByName(tracker);
+		}
+		if (!result.equals(7)) {
 			init(tracker);
 		}
 	}
