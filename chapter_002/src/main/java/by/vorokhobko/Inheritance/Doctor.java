@@ -30,7 +30,33 @@ public class Doctor extends Profession {
 	*/
     public Doctor(String name, int age, String university, String recommendations, int aScore) {
         super(name, age, university, recommendations, aScore);
+    }
+    /**
+     * Getter to specify the age.
+     * @return tag.
+     */
+    public int getInternship() {
+        return this.internship;
+    }
+    /**
+     * Setter to specify the internship.
+     * @param internship - internship.
+     */
+    public void setInternship(int internship) {
         this.internship = internship;
+    }
+    /**
+     * Setter to specify the residency.
+     * @param residency - residency.
+     */
+    public void setResidency(int residency) {
         this.residency = residency;
+    }
+    /**
+     * Getter to specify the age.
+     * @return tag.
+     */
+    public int getResidency() {
+        return this.residency;
     }
 }

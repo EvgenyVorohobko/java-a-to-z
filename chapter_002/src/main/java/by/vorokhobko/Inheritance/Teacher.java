@@ -25,6 +25,19 @@ public class Teacher extends Profession {
 	 */
     public Teacher(String name, int age, String university, String recommendations, int aScore) {
         super(name, age, university, recommendations, aScore);
+    }
+    /**
+     * Setter to specify the residency.
+     * @param refTrain - refTrain.
+     */
+    public void setRefTrain(int refTrain) {
         this.refTrain = refTrain;
+    }
+    /**
+     * Getter to specify the refTrain.
+     * @return tag.
+     */
+    public int getRefTrain() {
+        return this.refTrain;
     }
 }

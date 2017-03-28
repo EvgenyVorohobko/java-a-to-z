@@ -25,6 +25,19 @@ public class Engineer extends Profession {
 	*/
     public Engineer(String name, int age, String university, String recommendations, int aScore) {
         super(name, age, university, recommendations, aScore);
+    }
+    /**
+     * Setter to specify the experience.
+     * @param experience - experience.
+     */
+    public void setExperience(int experience) {
         this.experience = experience;
+    }
+    /**
+     * Getter to specify the experience.
+     * @return tag.
+     */
+    public int getExperience() {
+        return this.experience;
     }
 }
