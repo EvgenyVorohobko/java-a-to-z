@@ -63,11 +63,25 @@ public class Profession {
         return this.name;
     }
     /**
+     * Setter to specify the name.
+     * @param name - name.
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+    /**
      * Getter to specify the age.
      * @return tag.
      */
     public int getAge() {
         return this.age;
+    }
+    /**
+     * Setter to specify the age.
+     * @param age - age.
+     */
+    public void setAge(int age) {
+        this.age = age;
     }
     /**
      * Getter to specify the university.
@@ -77,6 +91,13 @@ public class Profession {
         return this.university;
     }
     /**
+     * Setter to specify the university.
+     * @param university - university.
+     */
+    public void setUniversity(String university) {
+        this.university = university;
+    }
+    /**
      * Getter to specify the recommendations.
      * @return tag.
      */
@@ -84,10 +105,24 @@ public class Profession {
         return this.recommendations;
     }
     /**
+     * Setter to specify the recommendations.
+     * @param recommendations - recommendations.
+     */
+    public void setRecommendations(String recommendations) {
+        this.recommendations = recommendations;
+    }
+    /**
      * Getter to specify the aScore.
      * @return tag.
      */
     public int getAScore() {
         return this.aScore;
+    }
+    /**
+     * Setter to specify the aScore.
+     * @param aScore - aScore.
+     */
+    public void setAScore(int aScore) {
+        this.aScore = aScore;
     }
 }
