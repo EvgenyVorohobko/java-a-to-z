@@ -1,8 +1,5 @@
-package by.vorokhobko.start;
+package by.vorokhobko.Polymorphism;
 
-import by.vorokhobko.Polymorphism.Input;
-import by.vorokhobko.Polymorphism.StubInput;
-import by.vorokhobko.Polymorphism.StartUI;
 import by.vorokhobko.Encapsulation.start.Tracker;
 import org.junit.Test;
 import static org.junit.Assert.assertThat;
@@ -18,7 +15,7 @@ import static org.hamcrest.core.Is.is;
 
 public class StubInputTest {
     /**
-     * @Test.
+     * Test.
      */
     @Test
     public void whenUserAddItem() {
