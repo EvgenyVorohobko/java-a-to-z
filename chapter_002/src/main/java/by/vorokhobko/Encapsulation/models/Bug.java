@@ -10,4 +10,14 @@ package by.vorokhobko.Encapsulation.models;
  */
 
 public class Bug extends Item {
+    /**
+     * Create constructor.
+     * Add Bug.
+     * @param name - name.
+     * @param desc - desc.
+     * @param create - create.
+     */
+    public Bug(String name, String desc, long create) {
+        super(name, desc, create);
+    }
 }
