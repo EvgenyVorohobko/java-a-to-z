@@ -18,6 +18,41 @@ public class StartUI {
 	 */
 	private Input input;
 	/**
+	 * The class field.
+	 * Сreating const add Item.
+	 */
+	public static final String ADD = "1";
+	/**
+	 * The class field.
+	 * Сreating const add Item.
+	 */
+	public static final String SHOW = "2";
+	/**
+	 * The class field.
+	 * Сreating const add Item.
+	 */
+	public static final String EDIT = "3";
+	/**
+	 * The class field.
+	 * Сreating const add Item.
+	 */
+	public static final String DELETE = "4";
+	/**
+	 * The class field.
+	 * Сreating const add Item.
+	 */
+	public static final String FIND_ID = "5";
+	/**
+	 * The class field.
+	 * Сreating const add Item.
+	 */
+	public static final String FIND_NAME = "6";
+	/**
+	 * The class field.
+	 * Сreating const add Item.
+	 */
+	public static final String EXIT = "7";
+	/**
 	* Сreate the class constructor StartUI.
 	* @param input - input.
 	*/
@@ -136,25 +171,25 @@ public class StartUI {
 		String result = input.ask("please select one of the items:\n 1 - Add new Item\n "
 		+ "2 - Show all items\n 3 - Edit item\n 4 - Delete item\n 5 - Find item by Id\n"
 		+ " 6 - Find items by name\n 7 - Exit Program\n");
-		if (result.equals("1")) {
+		if (result.equals(ADD)) {
 			new StartUI(input).addItem(tracker);
 		}
-		if (result.equals("2")) {
+		if (result.equals(SHOW)) {
 			new StartUI(input).findAllItem(tracker);
 		}
-		if (result.equals("3")) {
+		if (result.equals(EDIT)) {
 			new StartUI(input).editItem(tracker);
 		}
-		if (result.equals("4")) {
+		if (result.equals(DELETE)) {
 			new StartUI(input).deleteItem(tracker);
 		}
-		if (result.equals("5")) {
+		if (result.equals(FIND_ID)) {
 			new StartUI(input).findItemById(tracker);
 		}
-		if (result.equals("6")) {
+		if (result.equals(FIND_NAME)) {
 			new StartUI(input).findItemsByName(tracker);
 		}
-		if (result.equals("7")) {
+		if (result.equals(EXIT)) {
 			new StartUI(input).exitProgram(tracker);
 		}
 	}
