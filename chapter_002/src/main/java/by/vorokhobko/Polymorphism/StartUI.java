@@ -2,6 +2,7 @@ package by.vorokhobko.Polymorphism;
 
 import by.vorokhobko.Encapsulation.start.Tracker;
 import by.vorokhobko.Encapsulation.models.Task;
+import by.vorokhobko.Encapsulation.models.Item;
 /**
  * StartUI.
  *
@@ -78,10 +79,6 @@ public class StartUI {
 		String desc1 = input.ask("please, enter the task's description: ");
 		String create1 = input.ask("please, enter the task's time: ");
 		tracker.add(new Task(name1, desc1, Long.parseLong(create1)));
-		String name2 = input.ask("please, enter the task's name: ");
-		String desc2 = input.ask("please, enter the task's description: ");
-		String create2 = input.ask("please, enter the task's time: ");
-		tracker.add(new Task(name2, desc2, Long.parseLong(create2)));
 		tracker.findAll();
 	}
 	/**
@@ -89,41 +86,44 @@ public class StartUI {
 	* @param tracker - tracker.
 	*/
 	public void editItem(Tracker tracker) {
-		String name = input.ask("please, enter the task's name: ");
-		String desc = input.ask("please, enter the task's description: ");
-		String create = input.ask("please, enter the task's time: ");
-		Task task = new Task(name, desc, Long.parseLong(create));
-		tracker.add(task);
-		tracker.update(task);
+		String id = input.ask("please, enter the task's id: ");
+		if (tracker.findById(id) != null) {
+			String name = input.ask("please, enter the task's name: ");
+			String desc = input.ask("please, enter the task's description: ");
+			String create = input.ask("please, enter the task's time: ");
+			Task task = new Task(name, desc, Long.parseLong(create));
+			task.setId(id);
+			tracker.update(task);
+		} else {
+			System.out.println("This id does not exist");
+		}
 	}
 	/**
 	* The method should delete the cells in the array.
 	* @param tracker - tracker.
 	*/
 	public void deleteItem(Tracker tracker) {
-		String name = input.ask("please, enter the task's name: ");
-		String desc = input.ask("please, enter the task's description: ");
-		String create = input.ask("please, enter the task's time: ");
-		Task task = new Task(name, desc, Long.parseLong(create));
-		tracker.add(task);
-		tracker.delete(task);
+		String id = input.ask("please, enter the task's id: ");
+		if (tracker.findById(id) != null) {
+			Task task = new Task("", "", Long.parseLong("1"));
+			task.setId(id);
+			tracker.delete(task);
+		} else {
+			System.out.println("This id does not exist");
+		}
 	}
 	/**
 	* The method finds similar cells in the Id.
 	* @param tracker - tracker.
 	*/
 	public void findItemById(Tracker tracker) {
-		String name = input.ask("please, enter the task's name: ");
-		String desc = input.ask("please, enter the task's description: ");
-		String create = input.ask("please, enter the task's time: ");
-		Task task = new Task(name, desc, Long.parseLong(create));
-		tracker.add(task);
 		String id = input.ask("please, enter the task's id: ");
-		tracker.findById(id);
 		if (tracker.findById(id) != null) {
-			System.out.print(tracker.findById(id));
+			Task task = new Task("", "", Long.parseLong("1"));
+			task.setId(id);
+			tracker.findById(id);
 		} else {
-			System.out.println("This ID does not exist");
+			System.out.println("This id does not exist");
 		}
 	}
 	/**
@@ -131,16 +131,12 @@ public class StartUI {
 	 * @param tracker - tracker.
 	 */
 	public void findItemsByName(Tracker tracker) {
-		String name = input.ask("please, enter the task's name: ");
-		String desc = input.ask("please, enter the task's description: ");
-		String create = input.ask("please, enter the task's time: ");
-		Task task = new Task(name, desc, Long.parseLong(create));
-		tracker.add(task);
-		tracker.findByName(name);
-		if (tracker.findByName(name) != null) {
-			System.out.print(tracker.findByName(name));
+		String id = input.ask("please, enter the task's id: ");
+		if (tracker.findById(id) != null) {
+			Item item = new Item();
+			item.getName();
 		} else {
-			System.out.println("This Name does not exist");
+			System.out.println("This name does not exist");
 		}
 	}
 	/**
