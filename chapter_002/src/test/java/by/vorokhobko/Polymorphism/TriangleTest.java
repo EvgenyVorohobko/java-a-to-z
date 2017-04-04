@@ -22,7 +22,10 @@ public class TriangleTest {
     public void drawingOfTheTriangle() {
         final int h = 3;
         final Shape triangle = new Triangle(h);
-        String outPrint = "  ^ " + System.getProperty("line.separator") + "  ^ ^ " + System.getProperty("line.separator") + "  ^ ^ ^ " + System.getProperty("line.separator");
+        String outPrint = "  ^ "
+                + System.getProperty("line.separator") + "  ^ ^ "
+                + System.getProperty("line.separator") + "  ^ ^ ^ "
+                + System.getProperty("line.separator");
         String result = triangle.pic(triangle);
         assertThat(result, is(outPrint));
     }
