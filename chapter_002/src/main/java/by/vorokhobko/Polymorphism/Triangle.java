@@ -25,7 +25,7 @@ public class Triangle implements Shape {
      * @param shape - shape.
      * @return tag.
      */
-    public String pic (Shape shape) {
+    public String pic(Shape shape) {
         StringBuilder sb = new StringBuilder();
         for (int first = 0; first < sizeTriangle; first++) {
             for (int second = 0; second <= (sizeTriangle - second); second++) {
