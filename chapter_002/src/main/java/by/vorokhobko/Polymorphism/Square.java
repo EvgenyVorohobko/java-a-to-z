@@ -9,15 +9,27 @@ package by.vorokhobko.Polymorphism;
  */
 public class Square implements Shape {
     /**
+     * The class field.
+     * Сreating sizeSquare.
+     */
+    private int sizeSquare;
+    /**
+     * Сreate the class constructor Square.
+     * @param sizeSquare - sizeSquare.
+     */
+    public Square(int sizeSquare) {
+        this.sizeSquare = sizeSquare;
+    }
+    /**
      * The method creates a square in the drawing.
-     * @param h - h.
+     * @param shape - shape.
      * @return tag.
      */
-    public String pic (int h) {
+    public String pic (Shape shape) {
         StringBuilder sb = new StringBuilder();
-        for (int first = 0; first < h; first++) {
-            for (int second = 0; second < h; second++) {
-                if (first == 0 || first == h - 1 || second == h - 1 || second == 0) {
+        for (int first = 0; first < sizeSquare; first++) {
+            for (int second = 0; second < sizeSquare; second++) {
+                if (first == 0 || first == sizeSquare - 1 || second == sizeSquare - 1 || second == 0) {
                     sb.append("*");
                 } else {
                     sb.append(" ");

@@ -9,10 +9,22 @@ package by.vorokhobko.Polymorphism;
  */
 public class Paint {
     /**
+     * The class field.
+     * Сreating shape.
+     */
+    private Shape shape;
+    /**
+     * Сreate the class constructor Paint.
+     * @param shape - shape.
+     */
+    public Paint(Shape shape) {
+        this.shape = shape;
+    }
+    /**
      * The method draws figures.
      * @param shape - shape.
      */
-    public void draw (Shape shape) {
-
+    public void draw(Shape shape) {
+        System.out.print(shape.pic(shape));
     }
 }

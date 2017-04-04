@@ -9,14 +9,26 @@ package by.vorokhobko.Polymorphism;
  */
 public class Triangle implements Shape {
     /**
+     * The class field.
+     * Сreating sizeTriangle.
+     */
+    private int sizeTriangle;
+    /**
+     * Сreate the class constructor Triangle.
+     * @param sizeTriangle - sizeTriangle.
+     */
+    public Triangle(int sizeTriangle) {
+        this.sizeTriangle = sizeTriangle;
+    }
+    /**
      * The method creates a triangle in the drawing.
-     * @param h - h.
+     * @param shape - shape.
      * @return tag.
      */
-    public String pic (int h) {
+    public String pic (Shape shape) {
         StringBuilder sb = new StringBuilder();
-        for (int first = 0; first < h; first++) {
-            for (int second = 0; second <= (h - second); second++) {
+        for (int first = 0; first < sizeTriangle; first++) {
+            for (int second = 0; second <= (sizeTriangle - second); second++) {
                 sb.append(" ");
             }
             for (int three = 0; three <= first; three++) {

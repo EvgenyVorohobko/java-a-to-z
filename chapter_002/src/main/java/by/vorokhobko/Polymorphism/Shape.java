@@ -10,8 +10,8 @@ package by.vorokhobko.Polymorphism;
 public interface Shape {
     /**
      * Сreate the class pic.
-     * @param h - h.
+     * @param shape - shape.
      * @return tag.
      */
-    String pic(int h);
+    String pic(Shape shape);
 }
