@@ -19,7 +19,7 @@ public class SquareTest {
      * The method draws a square in pseudographics.
      */
     @Test
-    public void drawingOfTheTriangle() {
+    public void drawingOfTheSquare() {
         final int h = 5;
         final Shape square = new Square(h);
         String outPrint = "*****"
