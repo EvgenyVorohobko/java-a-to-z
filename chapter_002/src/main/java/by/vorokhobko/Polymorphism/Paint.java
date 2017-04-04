@@ -8,7 +8,10 @@ package by.vorokhobko.Polymorphism;
  * @version 1.
  */
 public class Paint {
-
+    /**
+     * The method draws figures.
+     * @param shape - shape.
+     */
     public void draw (Shape shape) {
 
     }
