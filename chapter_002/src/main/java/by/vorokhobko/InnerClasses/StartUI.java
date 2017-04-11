@@ -1,8 +1,6 @@
 package by.vorokhobko.InnerClasses;
 
 import by.vorokhobko.Encapsulation.start.Tracker;
-import by.vorokhobko.Encapsulation.models.Task;
-import by.vorokhobko.Encapsulation.models.Item;
 import by.vorokhobko.Polymorphism.ConsoleInput;
 import by.vorokhobko.Polymorphism.Input;
 
@@ -14,7 +12,7 @@ import by.vorokhobko.Polymorphism.Input;
  * @since 11.04.2017.
  * @version 1.
  */
- 
+
 public class StartUI {
 	/**
      * The class field.
@@ -22,7 +20,7 @@ public class StartUI {
 	 */
 	private Input input;
 	/**
-	* Сreate the class constructor StartUI.
+	* The class constructor StartUI.
 	* @param input - input.
 	*/
 	public StartUI(Input input) {
@@ -39,14 +37,13 @@ public class StartUI {
 			menu.show();
 			int key = Integer.valueOf(input.ask("Select: "));
 			menu.select(key);
-		} while(!"y".equals(this.input.ask("Exit? (y): ")));
+		} while (!"y".equals(this.input.ask("Exit? (y): ")));
 	}
 	/**
 	* Method run the program.
 	* @param args - args.
 	*/
-	public static void main (String[] args){
-		Tracker tracker = new Tracker();
+	public static void main(String[] args) {
 		Input input = new ConsoleInput();
 		new StartUI(input).init();
 	}
