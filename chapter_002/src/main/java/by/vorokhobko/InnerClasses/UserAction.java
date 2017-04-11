@@ -14,18 +14,18 @@ import by.vorokhobko.Encapsulation.start.Tracker;
 
 public interface UserAction {
     /**
-     * Сreate the class key.
+     * Сreate the method key.
      * @return tag.
      */
     int key();
     /**
-     * Сreate the class execute.
+     * Сreate the method execute.
      * @param input - input.
      * @param tracker - tracker.
      */
     void execute(Input input, Tracker tracker);
     /**
-     * Сreate the class info.
+     * Сreate the method info.
      * @return tag.
      */
     String info();
