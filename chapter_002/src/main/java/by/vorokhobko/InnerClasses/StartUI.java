@@ -29,8 +29,7 @@ public class StartUI {
 	/**
 	* The main method of the program, menu.
 	*/
-	public void init() {
-		Tracker tracker = new Tracker();
+	public void init(Tracker tracker) {
 		MenuTracker menu = new MenuTracker(this.input, tracker);
 		menu.fillActions();
 		do {
@@ -44,7 +43,8 @@ public class StartUI {
 	* @param args - args.
 	*/
 	public static void main(String[] args) {
+		Tracker tracker = new Tracker();
 		Input input = new ConsoleInput();
-		new StartUI(input).init();
+		new StartUI(input).init(tracker);
 	}
 }
