@@ -1,7 +1,5 @@
 package by.vorokhobko.InnerClasses;
 
-import by.vorokhobko.Polymorphism.Input;
-
 /**
  * StubInput.
  *
