@@ -1,6 +1,5 @@
 package by.vorokhobko.InnerClasses;
 
-import by.vorokhobko.Polymorphism.Input;
 import by.vorokhobko.Encapsulation.start.Tracker;
 import by.vorokhobko.Encapsulation.models.Task;
 import by.vorokhobko.Encapsulation.models.Item;
@@ -51,7 +50,7 @@ public class MenuTracker {
      * @param key - key.
      */
     public void select(int key) {
-        this.actions[key].execute(this.input, this.tracker);
+        this.actions[key].execute(input, tracker);
     }
 	/**
      * Сreate the method show actions.
@@ -171,11 +170,10 @@ public class MenuTracker {
          * @param tracker - tracker.
          */
         public void execute(Input input, Tracker tracker) {
-            String name = input.ask("Please, enter the task's name: ");
-            Item task = new Item();
-            task.setName(name);
-            if (tracker.findByName(name) != null) {
-                System.out.println(tracker.findByName(name));
+            String id = input.ask("Please, enter the task's id: ");
+            if (tracker.findById(id) != null) {
+                Item task = new Item();
+                task.getName();
             } else {
                 System.out.println("This Name does not exist");
             }
@@ -213,6 +211,11 @@ class EditItem implements UserAction {
         Task task = new Task(name, desc, Long.parseLong(create));
         task.setId(id);
         tracker.update(task);
+        if (tracker.findById(id) != null) {
+            System.out.print(tracker.findById(id));
+        } else {
+            System.out.println("This ID does not exist");
+        }
     }
 	/**
      * The method info, inherited from class UserAction.
