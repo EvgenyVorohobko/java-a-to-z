@@ -1,6 +1,5 @@
 package by.vorokhobko.InnerClasses;
 
-import by.vorokhobko.Polymorphism.Input;
 import by.vorokhobko.Encapsulation.start.Tracker;
 
 /**
