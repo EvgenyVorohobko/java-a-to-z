@@ -1,8 +1,6 @@
 package by.vorokhobko.InnerClasses;
 
 import by.vorokhobko.Encapsulation.start.Tracker;
-import by.vorokhobko.Polymorphism.ConsoleInput;
-import by.vorokhobko.Polymorphism.Input;
 
 /**
  * StartUI.
@@ -28,9 +26,10 @@ public class StartUI {
 	}
 	/**
 	* The main method of the program, menu.
+	* @param tracker - tracker.
 	*/
 	public void init(Tracker tracker) {
-		MenuTracker menu = new MenuTracker(this.input, tracker);
+		MenuTracker menu = new MenuTracker(input, tracker);
 		menu.fillActions();
 		do {
 			menu.show();
