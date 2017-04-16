@@ -160,8 +160,7 @@ public class MenuTrackerTest {
         String time = "45";
         Input inputAdd = new StubInput(new String[]{String.valueOf(key), name, desc, time, select});
         new StartUI(inputAdd).init(tracker);
-        String id = tracker.findAll()[0].getId();
-        Input inputName = new StubInput(new String[]{String.valueOf(keyMaster), id, select});
+        Input inputName = new StubInput(new String[]{String.valueOf(keyMaster), name, select});
         new StartUI(inputName).init(tracker);
         assertThat(tracker.findAll()[0].getName(), is("testName"));
     }
@@ -179,8 +178,8 @@ public class MenuTrackerTest {
         String time = "45";
         Input inputAdd = new StubInput(new String[]{String.valueOf(key), name, desc, time, select});
         new StartUI(inputAdd).init(tracker);
-        String id = null;
-        Input inputName = new StubInput(new String[]{String.valueOf(keyMaster), id, select});
+        String nameTest = "ee";
+        Input inputName = new StubInput(new String[]{String.valueOf(keyMaster), nameTest, select});
         new StartUI(inputName).init(tracker);
         assertThat(tracker.findAll()[0].getName(), is("testName"));
     }
