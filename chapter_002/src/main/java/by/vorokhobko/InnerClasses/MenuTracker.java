@@ -170,10 +170,11 @@ public class MenuTracker {
          * @param tracker - tracker.
          */
         public void execute(Input input, Tracker tracker) {
-            String id = input.ask("Please, enter the task's id: ");
-            if (tracker.findById(id) != null) {
-                Item task = new Item();
-                task.getName();
+            String name = input.ask("Please, enter the task's name: ");
+            Item task = new Item();
+            task.setName(name);
+            if (tracker.findByName(name) != null) {
+                System.out.println(name);
             } else {
                 System.out.println("This Name does not exist");
             }
