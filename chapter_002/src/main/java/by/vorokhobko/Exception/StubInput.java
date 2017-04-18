@@ -42,6 +42,6 @@ public class StubInput implements Input {
 	* @return tag.
 	*/
 	public int ask(String question, int[] range) {
-		return -1;
+		throw new UnsupportedOperationException("Unsupported operation");
 	}
 }
