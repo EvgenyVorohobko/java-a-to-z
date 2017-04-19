@@ -62,6 +62,17 @@ public class MenuTracker {
             }
         }
     }
+    /**
+     * Сreate the method getRanges menu system.
+     * @return tag.
+     */
+    public int[] getRanges() {
+        int[] ranges = new int[this.actions.length];
+        for (int key = 0; key < this.actions.length; key++) {
+            ranges[key] = key;
+        }
+        return ranges;
+    }
    /**
 	* Internal class which adds item with work the user.
 	*/
@@ -110,9 +121,13 @@ public class MenuTracker {
 		*/
         public void execute(Input input, Tracker tracker) {
             for (Item item : tracker.findAll()) {
-                System.out.println(
-                        String.format("%s. %s", item.getId(), item.getName())
-                );
+                if (item != null) {
+                    System.out.println(
+                            String.format("%s. %s", item.getId(), item.getName())
+                    );
+                } else {
+                    System.out.println("This ITEM does not exist");
+                }
             }
         }
 		/**
@@ -213,7 +228,9 @@ class EditItem implements UserAction {
         task.setId(id);
         tracker.update(task);
         if (tracker.findById(id) != null) {
-            System.out.print(tracker.findById(id));
+            System.out.println(name);
+            System.out.println(desc);
+            System.out.println(create);
         } else {
             System.out.println("This ID does not exist");
         }
