@@ -11,37 +11,51 @@ package by.vorokhobko.Exception;
 
 public class StubInput implements Input {
 	/**
-     * The class field.
+	 * The class field.
 	 * Сreating array's answer.
 	 */
 	private String[] answers;
 	/**
-     * The class field.
+	 * The class field.
 	 * Сreating position.
 	 */
 	private int position = 0;
+
 	/**
-	* Сreate the class constructor StubInput.
-	* @param answers - answers.
-	*/
+	 * Сreate the class constructor StubInput.
+	 *
+	 * @param answers - answers.
+	 */
 	public StubInput(String[] answers) {
 		this.answers = answers;
 	}
+
 	/**
-	* The implementation of polymorphism from class Input.
-	* @param question - question.
-	* @return tag.
-	*/
+	 * The implementation of polymorphism from class Input.
+	 *
+	 * @param question - question.
+	 * @return tag.
+	 */
 	public String ask(String question) {
 		return answers[position++];
 	}
+
 	/**
-	* The implementation of polymorphism from class Input.
-	* @param question - question.
-	* @param range - range.
-	* @return tag.
-	*/
+	 * The overloading from method ask.
+	 *
+	 * @param question - question.
+	 * @param range - range.
+	 * @return tag.
+	 */
 	public int ask(String question, int[] range) {
-		throw new UnsupportedOperationException("Unsupported operation");
+		for (int value = 0; value < range.length; value++) {
+			range[value] = value;
+			if (range[value] == value) {
+				return range[value];
+			} else {
+				throw new UnsupportedOperationException("Unsupported operation");
+			}
+		}
+		return range[position++];
 	}
 }
