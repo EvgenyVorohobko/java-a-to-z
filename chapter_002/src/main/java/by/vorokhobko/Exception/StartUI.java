@@ -18,11 +18,6 @@ public class StartUI {
 	 */
 	private Input input;
 	/**
-     * The class field.
-	 * Сreating range.
-	 */
-	private int[] range = new int[] {0, 1, 2, 3};
-	/**
 	* The class constructor StartUI.
 	* @param input - input.
 	*/
@@ -36,9 +31,10 @@ public class StartUI {
 	public void init(Tracker tracker) {
 		MenuTracker menu = new MenuTracker(input, tracker);
 		menu.fillActions();
+		int[] ranges = menu.getRanges();
 		do {
 			menu.show();
-			menu.select(input.ask("Select: ", range));
+			menu.select(input.ask("Select: ", ranges));
 		} while (!"y".equals(this.input.ask("Exit? (y): ")));
 	}
 	/**
