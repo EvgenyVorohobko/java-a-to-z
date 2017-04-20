@@ -30,8 +30,8 @@ public class StartUI {
 	*/
 	public void init(Tracker tracker) {
 		MenuTracker menu = new MenuTracker(input, tracker);
-		menu.fillActions();
 		int[] ranges = menu.getRanges();
+		menu.fillActions();
 		do {
 			menu.show();
 			menu.select(input.ask("Select: ", ranges));
