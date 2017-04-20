@@ -48,14 +48,6 @@ public class StubInput implements Input {
 	 * @return tag.
 	 */
 	public int ask(String question, int[] range) {
-		for (int value = 0; value < range.length; value++) {
-			range[value] = value;
-			if (range[value] == value) {
-				return range[value];
-			} else {
-				throw new UnsupportedOperationException("Unsupported operation");
-			}
-		}
-		return range[position++];
+		throw new UnsupportedOperationException("Unsupported operation");
 	}
 }
