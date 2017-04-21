@@ -183,4 +183,21 @@ public class MenuTrackerTest {
         new StartUI(inputName).init(tracker);
         assertThat(tracker.findAll()[0].getName(), is("testName"));
     }
+    /**
+     * Test Find by NAME null.
+     */
+    @Test
+    public void whenUserDoNotCloseMenuTracker() {
+        Tracker tracker = new Tracker();
+        int key = 0;
+        int keyMaster = 1;
+        String select = "n";
+        String exit = "y";
+        String name = "testName";
+        String desc = "testDesc";
+        String time = "45";
+        Input inputAdd = new StubInput(new String[]{String.valueOf(key), name, desc, time, select, String.valueOf(keyMaster), exit});
+        new StartUI(inputAdd).init(tracker);
+        Assert.assertNotNull(tracker.findAll()[0].getId());
+    }
 }
