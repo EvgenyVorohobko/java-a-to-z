@@ -16,7 +16,7 @@ import org.junit.Test;
 
 public class TrackerTest {
 	 /**
-     * @Test.
+     * Test.
      */
 	@Test
 	public void whenItIsNecessaryToAddOneRequest() {
@@ -26,7 +26,7 @@ public class TrackerTest {
 		assertThat(itemFirst, is(tracker.findAll()[0]));
 	}
 	 /**
-     * @Test.
+     * Test.
      */
 	 @Test
 	 public void whenYouNeedToUpdateTheQueryOne() {
@@ -39,7 +39,7 @@ public class TrackerTest {
 		 assertThat(itemUpdate, is(tracker.findAll()[0]));
 	 }
 	 /**
-     * @Test.
+     * Test.
      */
 	 @Test
 	 public void whenItIsNecessaryToRemoveOneStatement() {
@@ -50,7 +50,7 @@ public class TrackerTest {
 		 assertThat(null, is(tracker.findAll()[0]));
 	 }
 	 /**
-     * @Test.
+     * Test.
      */
 	 @Test
 	 public void whenLookingForAnApplicationOnId() {
@@ -65,7 +65,7 @@ public class TrackerTest {
 		 assertThat(tracker.findById(id), is(itemThree));
 	 }
 	 /**
-     * @Test.
+     * Test.
      */
 	 @Test
 	 public void whenLookingForAnApplicationOnName() {
@@ -80,7 +80,7 @@ public class TrackerTest {
 		 assertThat(tracker.findByName(name), is(itemThree));
 	 }
 	 /**
-     * @Test.
+     * Test.
      */
 	 @Test
 	 public void whenLookingForAnApplicationAll() {
