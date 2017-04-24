@@ -8,7 +8,6 @@ package by.vorokhobko.Exception;
  * @version 1.
  */
 public class MenuOutException extends RuntimeException {
-	/**
 	 /**
 	 * Create an overloaded constructor.
 	 * Add MenuOutException.
