@@ -214,4 +214,15 @@ import by.vorokhobko.Encapsulation.start.Tracker;
         new StartUI(inputAdd).init(tracker);
         Assert.assertNotNull(tracker.findAll()[0].getId());
     }
+    /**
+     * Test by Exception.
+     * @throws MenuOutException tag.
+     */
+    @Test(expected = MenuOutException.class)
+    public void testException() throws MenuOutException {
+        Tracker tracker = new Tracker();
+        int keyMaster = 8;
+        Input input = new StubInput(new String[]{String.valueOf(keyMaster)});
+        new StartUI(input).init(tracker);
+    }
  }
