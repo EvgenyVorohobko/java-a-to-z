@@ -215,7 +215,7 @@ import by.vorokhobko.Encapsulation.start.Tracker;
         Assert.assertNotNull(tracker.findAll()[0].getId());
     }
     /**
-     * Test by Exception.
+     * Test by Exception(StubInputTest).
      * @throws MenuOutException tag.
      */
     @Test(expected = MenuOutException.class)
