@@ -90,8 +90,9 @@ public class MenuTracker {
     private class AddItems extends BaseAction {
        /**
         * Сreate name in the method AddItems.
+        * @param name - name.
         */
-       public AddItems(String name) {
+       AddItems(String name) {
            super(name);
        }
        /**
@@ -120,7 +121,7 @@ public class MenuTracker {
         */
        @Override
        public String info() {
-           return name;
+           return getName();
        }
     }
    /**
@@ -129,8 +130,9 @@ public class MenuTracker {
     private static class ShowItems extends BaseAction {
        /**
         * Сreate name in the method ShowItems.
+        * @param name - name.
         */
-       public ShowItems(String name) {
+       ShowItems(String name) {
            super(name);
        }
        /**
@@ -164,7 +166,7 @@ public class MenuTracker {
         */
        @Override
        public String info() {
-           return name;
+           return getName();
        }
     }
     /**
@@ -173,8 +175,9 @@ public class MenuTracker {
     private class DeleteItem extends BaseAction {
         /**
          * Сreate name in the method DeleteItem.
+         * @param name - name.
          */
-        public DeleteItem(String name) {
+        DeleteItem(String name) {
             super(name);
         }
         /**
@@ -203,7 +206,7 @@ public class MenuTracker {
          */
         @Override
         public String info() {
-            return name;
+            return getName();
         }
     }
     /**
@@ -212,8 +215,9 @@ public class MenuTracker {
     private class FindByNameItem extends BaseAction {
         /**
          * Сreate name in the method FindByNameItem.
+         * @param name - name.
          */
-        public FindByNameItem(String name) {
+        FindByNameItem(String name) {
             super(name);
         }
         /**
@@ -247,7 +251,7 @@ public class MenuTracker {
          */
         @Override
         public String info() {
-            return name;
+            return getName();
         }
     }
 }
@@ -257,8 +261,9 @@ public class MenuTracker {
 class EditItem extends BaseAction {
     /**
      * Сreate name in the method EditItem.
+     * @param name - name.
      */
-    public EditItem(String name) {
+    EditItem(String name) {
         super(name);
     }
     /**
@@ -297,6 +302,6 @@ class EditItem extends BaseAction {
      */
     @Override
     public String info() {
-        return name;
+        return getName();
     }
 }
