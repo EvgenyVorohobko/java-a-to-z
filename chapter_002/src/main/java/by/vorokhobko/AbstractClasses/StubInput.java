@@ -20,29 +20,23 @@ public class StubInput implements Input {
 	 * Сreating position.
 	 */
 	private int position = 0;
-
 	/**
 	 * Сreate the class constructor StubInput.
-	 *
 	 * @param answers - answers.
 	 */
 	public StubInput(String[] answers) {
 		this.answers = answers;
 	}
-
 	/**
 	 * The implementation of polymorphism from class Input.
-	 *
 	 * @param question - question.
 	 * @return tag.
 	 */
 	public String ask(String question) {
 		return answers[position++];
 	}
-
 	/**
 	 * The overloading from method ask.
-	 *
 	 * @param question - question.
 	 * @param range - range.
 	 * @return tag.
