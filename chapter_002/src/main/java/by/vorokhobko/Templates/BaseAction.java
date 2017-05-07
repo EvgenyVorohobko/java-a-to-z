@@ -25,13 +25,6 @@ public abstract class BaseAction implements UserAction {
         return this.name;
     }
     /**
-     * Add setter Name.
-     * @param name - name.
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-    /**
      * Сreate the class constructor BaseAction.
      * @param name - name.
      */
