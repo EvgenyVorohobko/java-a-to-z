@@ -96,14 +96,6 @@ public class MenuTracker {
            super(name);
        }
        /**
-        * The method key, inherited from class UserAction.
-        * @return tag.
-        */
-       @Override
-       public int key() {
-           return getKey();
-       }
-       /**
         * The method execute, inherited from class UserAction.
         * @param input - input.
         * @param tracker - tracker.
@@ -114,14 +106,6 @@ public class MenuTracker {
            String desc = input.ask("Please, enter the task's desc: ");
            String create = input.ask("please, enter the task's time: ");
            tracker.add(new Task(name, desc, Long.parseLong(create)));
-       }
-       /**
-        * The method info, inherited from class UserAction.
-        * @return tag.
-        */
-       @Override
-       public String info() {
-           return getName();
        }
     }
    /**
@@ -134,14 +118,6 @@ public class MenuTracker {
         */
        ShowItems(String name) {
            super(name);
-       }
-       /**
-        * The method key, inherited from class UserAction.
-        * @return tag.
-        */
-       @Override
-       public int key() {
-            return getKey();
        }
        /**
         * The method execute, inherited from class UserAction.
@@ -160,14 +136,6 @@ public class MenuTracker {
                }
            }
        }
-       /**
-        * The method info, inherited from class UserAction.
-        * @return tag.
-        */
-       @Override
-       public String info() {
-           return getName();
-       }
     }
     /**
      * Internal class which delete item with work the user.
@@ -181,14 +149,6 @@ public class MenuTracker {
             super(name);
         }
         /**
-         * The method key, inherited from class UserAction.
-         * @return tag.
-         */
-        @Override
-        public int key() {
-            return getKey();
-        }
-        /**
          * The method execute, inherited from class UserAction.
          * @param input - input.
          * @param tracker - tracker.
@@ -199,14 +159,6 @@ public class MenuTracker {
             Item task = new Item();
             task.setId(id);
             tracker.delete(task);
-        }
-        /**
-         * The method info, inherited from class UserAction.
-         * @return tag.
-         */
-        @Override
-        public String info() {
-            return getName();
         }
     }
     /**
@@ -220,15 +172,6 @@ public class MenuTracker {
         FindByNameItem(String name) {
             super(name);
         }
-        /**
-         * The method key, inherited from class UserAction.
-         * @return tag.
-         */
-        @Override
-        public int key() {
-            return getKey();
-        }
-
         /**
          * The method execute, inherited from class UserAction.
          * @param input - input.
@@ -245,14 +188,6 @@ public class MenuTracker {
                 System.out.println("This Name does not exist");
             }
         }
-        /**
-         * The method info, inherited from class UserAction.
-         * @return tag.
-         */
-        @Override
-        public String info() {
-            return getName();
-        }
     }
 }
 /**
@@ -265,14 +200,6 @@ class EditItem extends BaseAction {
      */
     EditItem(String name) {
         super(name);
-    }
-    /**
-     * The method key, inherited from class UserAction.
-     * @return tag.
-     */
-    @Override
-    public int key() {
-        return getKey();
     }
     /**
      * The method execute, inherited from class UserAction.
@@ -295,13 +222,5 @@ class EditItem extends BaseAction {
         } else {
             System.out.println("This ID does not exist");
         }
-    }
-    /**
-     * The method info, inherited from class UserAction.
-     * @return tag.
-     */
-    @Override
-    public String info() {
-        return getName();
     }
 }
