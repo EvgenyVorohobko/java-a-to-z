@@ -101,7 +101,7 @@ public class MenuTracker {
         */
        @Override
        public int key() {
-           return 0;
+           return getKey();
        }
        /**
         * The method execute, inherited from class UserAction.
@@ -141,7 +141,7 @@ public class MenuTracker {
         */
        @Override
        public int key() {
-            return 1;
+            return getKey();
        }
        /**
         * The method execute, inherited from class UserAction.
@@ -186,7 +186,7 @@ public class MenuTracker {
          */
         @Override
         public int key() {
-            return 3;
+            return getKey();
         }
         /**
          * The method execute, inherited from class UserAction.
@@ -226,7 +226,7 @@ public class MenuTracker {
          */
         @Override
         public int key() {
-            return 4;
+            return getKey();
         }
 
         /**
@@ -272,7 +272,7 @@ class EditItem extends BaseAction {
      */
     @Override
     public int key() {
-        return 2;
+        return getKey();
     }
     /**
      * The method execute, inherited from class UserAction.

@@ -18,11 +18,22 @@ public abstract class BaseAction implements UserAction {
      */
     private String name;
     /**
+     * The class field.
+     */
+    private int key;
+    /**
      * Add getter Name.
      * @return tag.
      */
     public String getName() {
         return this.name;
+    }
+    /**
+     * Add getter key.
+     * @return tag.
+     */
+    public int getKey() {
+        return this.key;
     }
     /**
      * Сreate the class constructor BaseAction.
@@ -32,10 +43,12 @@ public abstract class BaseAction implements UserAction {
         this.name = name;
     }
     /**
-     * Abstract method determining the number action.
+     * Method determining the number action.
      * @return tag.
      */
-    public abstract int key();
+    public int key() {
+        return this.key;
+    }
     /**
      * Abstract method determining work MenuTracker.
      * @param input - input.
@@ -43,7 +56,7 @@ public abstract class BaseAction implements UserAction {
      */
     public abstract void execute(Input input, Tracker tracker);
     /**
-     * Abstract method determining communication with the user.
+     * Method determining communication with the user.
      * @return tag.
      */
     public String info() {
