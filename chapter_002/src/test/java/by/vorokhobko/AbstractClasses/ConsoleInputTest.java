@@ -2,6 +2,8 @@ package by.vorokhobko.AbstractClasses;
 
 import org.junit.Test;
 import java.io.ByteArrayInputStream;
+import static org.junit.Assert.assertThat;
+import static org.hamcrest.core.Is.is;
 
 /**
  * Test.
@@ -16,8 +18,11 @@ public class ConsoleInputTest {
      */
     @Test
     public void whenTheUserEstablishesContactWithTheProgram() {
-        System.setIn(new ByteArrayInputStream("1".getBytes()));
-        System.setIn(System.in);
-        String result = "1";
+        ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
+        System.setIn(in);
+        int result = 1;
+        int[] range = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int test = new ConsoleInput().ask("test", range);
+        assertThat(result, is(test));
     }
 }
