@@ -11,7 +11,6 @@ public class FigureNotFoundException extends Exception {
     /**
      * Create an overloaded constructor.
      * Add FigureNotFoundException.
-     *
      * @param fnfe - fnfe.
      */
     public FigureNotFoundException(String fnfe) {
