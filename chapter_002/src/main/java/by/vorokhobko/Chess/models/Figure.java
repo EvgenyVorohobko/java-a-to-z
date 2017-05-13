@@ -29,5 +29,10 @@ public abstract class Figure {
     public Cell getPosition() {
         return this.position;
     }
+    /**
+     * Abstract method determining work MenuTracker.
+     * @param dist - dist.
+     * @throws ImposibleMoveException tag.
+     */
     public abstract Cell[] way(Cell dist) throws ImposibleMoveException;
 }
