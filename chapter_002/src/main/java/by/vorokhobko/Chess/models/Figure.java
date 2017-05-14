@@ -33,6 +33,7 @@ public abstract class Figure {
      * Abstract method determining work MenuTracker.
      * @param dist - dist.
      * @throws ImposibleMoveException tag.
+     * @return tag.
      */
     public abstract Cell[] way(Cell dist) throws ImposibleMoveException;
     /**

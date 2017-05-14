@@ -9,5 +9,8 @@ package by.vorokhobko.Chess.models;
  * @version 1.
  */
 public enum Type {
+    /**
+     * Name all figure: BISHOP, KING, QUEEN, ROOK, PAWN, KNIGHT.
+     */
     BISHOP, KING, QUEEN, ROOK, PAWN, KNIGHT
 }
