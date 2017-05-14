@@ -35,4 +35,9 @@ public abstract class Figure {
      * @throws ImposibleMoveException tag.
      */
     public abstract Cell[] way(Cell dist) throws ImposibleMoveException;
+    /**
+     * Abstract method determining type figure.
+     * @return tag.
+     */
+    public abstract Type getType();
 }
