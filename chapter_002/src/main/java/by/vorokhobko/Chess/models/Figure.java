@@ -69,34 +69,24 @@ public abstract class Figure {
 
         if (((finishX - startX) > 0) & ((finishY - startY) > 0)) {
             pass = new Cell[lengthArray];
-            for (int i = 0; i < lengthArray; i++){
-                startX++;
-                startY++;
-                pass[i] = new Cell(startX, startY);
+            for (int i = 0; i < lengthArray; i++) {
+                pass[i] = new Cell(startX++, startY++);
             }
         } else if (((finishX - startX) < 0) & ((finishY - startY) < 0)) {
             pass = new Cell[lengthArray];
             for (int i = 0; i < lengthArray; i++) {
-                startX--;
-                startY--;
-                pass[i] = new Cell(startX, startY);
+                pass[i] = new Cell(startX--, startY--);
             }
         } else if (((finishX - startX) > 0) & ((finishY - startY) < 0)) {
             pass = new Cell[lengthArray];
             for (int i = 0; i < lengthArray; i++) {
-                startX++;
-                startY--;
-                pass[i] = new Cell(startX, startY);
+                pass[i] = new Cell(startX++, startY--);
             }
         } else if (((finishX - startX) < 0) & ((finishY - startY) > 0)) {
             pass = new Cell[lengthArray];
             for (int i = 0; i < lengthArray; i++) {
-                startX--;
-                startY++;
-                pass[i] = new Cell(startX, startY);
+                pass[i] = new Cell(startX--, startY++);
             }
-        } else {
-            throw new ImposibleMoveException("Figure do not move that.");
         }
         return pass;
     }
