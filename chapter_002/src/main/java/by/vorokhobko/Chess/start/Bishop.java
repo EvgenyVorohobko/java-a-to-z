@@ -19,10 +19,6 @@ public class Bishop extends Figure {
      */
     private Cell[] distance;
     /**
-     * The class field.
-     */
-    private Type type;
-    /**
      * Сreate name in the method Bishop.
      * @param position - position.
      */
@@ -36,9 +32,9 @@ public class Bishop extends Figure {
      * @throws ImposibleMoveException tag.
      */
     public Cell[] way(Cell dist) throws ImposibleMoveException {
-        int distX = dist.getX() - getPosition().getX();
-        int distY = dist.getY() - getPosition().getY();
-        if (Math.abs(distX) == Math.abs(distY)) {
+        int distX = Math.abs(dist.getX() - getPosition().getX());
+        int distY = Math.abs(dist.getY() - getPosition().getY());
+        if (distX == distY) {
             distance = moveFigure(dist);
         } else {
             throw new ImposibleMoveException("Bishop do not move that.");
@@ -51,5 +47,13 @@ public class Bishop extends Figure {
      */
     public Type getType() {
         return Type.BISHOP;
+    }
+    /**
+     * The method a listing of all figures.
+     * @param dist - dist.
+     * @return tag.
+     */
+    public Figure clone(Cell dist) {
+        return new Bishop(dist);
     }
 }
