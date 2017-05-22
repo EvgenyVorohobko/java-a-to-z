@@ -67,6 +67,12 @@ public abstract class Figure {
         int distanceX = Math.abs(this.finishX - startX);
         int distanceY = Math.abs(this.finishY - startY);
 
+        if (distanceX > distanceY) {
+            lengthArray = distanceX;
+        } else {
+            lengthArray = distanceY;
+        }
+
         if (((finishX - startX) > 0) & ((finishY - startY) > 0)) {
             pass = new Cell[lengthArray];
             for (int i = 0; i < lengthArray; i++) {
@@ -90,6 +96,12 @@ public abstract class Figure {
         }
         return pass;
     }
+    /**
+     * Method determining can figure clone position on Cell.
+     * @param point - point.
+     * @return tag.
+     */
+    public abstract Figure clone(Cell point);
     /**
      * Abstract method determining type figure.
      * @return tag.
