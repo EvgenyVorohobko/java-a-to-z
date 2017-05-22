@@ -22,6 +22,18 @@ public class Board {
      */
     private Figure[] figures = new Figure[NUMBER_OF_PIECES];
     /**
+     * Method determining add Figure on Board.
+     * @param figure - figure.
+     */
+    public void addFigure(Figure figure) {
+        for (int i = 0; i < figures.length; i++) {
+            if (figures[i] == null) {
+                figures[i] = figure;
+                break;
+            }
+        }
+    }
+    /**
      * Method determining can move figure or not.
      * @param source - source.
      * @param dist - dist.
