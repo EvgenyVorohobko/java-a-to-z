@@ -55,4 +55,13 @@ public class Cell {
         }
         return getY() == cell.getY();
     }
+    /**
+     * Method is overriding method hashCode.
+     * @return tag.
+     */
+    public int hashCode() {
+        int code = getX();
+        int result = 7 * code + getY();
+        return result;
+    }
 }
