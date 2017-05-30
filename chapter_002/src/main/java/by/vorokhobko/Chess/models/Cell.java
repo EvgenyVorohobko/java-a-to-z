@@ -42,18 +42,14 @@ public class Cell {
     }
     /**
      * Method is overriding method equals.
+     * @param cell - cell.
      * @return tag.
      */
-    public boolean equals(Object obj){
-        if (this == obj)
+    public boolean equals(Cell cell) {
+        if (this.getY() == cell.getY() & this.getX() == cell.getX()) {
             return true;
-        if (!(obj instanceof Cell))
-            return false;
-        Cell cell = (Cell)obj;
-        if (getX() == cell.getX()) {
-            return false;
         }
-        return getY() == cell.getY();
+        return false;
     }
     /**
      * Method is overriding method hashCode.
