@@ -32,8 +32,8 @@ public class Queen extends Figure {
      * @throws ImposibleMoveException tag.
      */
     public Cell[] way(Cell dist) throws ImposibleMoveException {
-        int sourceX = position.getX();
-        int sourceY = position.getY();
+        int sourceX = getPosition().getX();
+        int sourceY = getPosition().getY();
         int distX = dist.getX();
         int distY = dist.getY();
         if (Math.abs(distX - sourceX) == Math.abs(distY - sourceY) || distX == sourceX || distY == sourceY) {

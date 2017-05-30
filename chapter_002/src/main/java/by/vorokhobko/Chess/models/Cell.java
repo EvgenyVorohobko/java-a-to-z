@@ -46,11 +46,13 @@ public class Cell {
      * @return tag.
      */
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (!(obj instanceof Cell))
+        }
+        if (!(obj instanceof Cell)) {
             return false;
-        Cell cell = (Cell)obj;
+        }
+        Cell cell = (Cell) obj;
         return this.x == cell.x && this.y == cell.y;
     }
     /**

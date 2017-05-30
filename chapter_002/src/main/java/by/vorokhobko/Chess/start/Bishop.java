@@ -32,8 +32,8 @@ public class Bishop extends Figure {
      * @throws ImposibleMoveException tag.
      */
     public Cell[] way(Cell dist) throws ImposibleMoveException {
-        int distX = Math.abs(dist.getX() - position.getX());
-        int distY = Math.abs(dist.getY() - position.getY());
+        int distX = Math.abs(dist.getX() - getPosition().getX());
+        int distY = Math.abs(dist.getY() - getPosition().getY());
         if (distX == distY) {
             distance = moveFigure(dist);
         } else {

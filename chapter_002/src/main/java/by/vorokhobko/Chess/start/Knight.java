@@ -32,8 +32,8 @@ public class Knight extends Figure {
      * @throws ImposibleMoveException tag.
      */
     public Cell[] way(Cell dist) throws ImposibleMoveException {
-        int distX = Math.abs(dist.getX() - position.getX());
-        int distY = Math.abs(dist.getY() - position.getY());
+        int distX = Math.abs(dist.getX() - getPosition().getX());
+        int distY = Math.abs(dist.getY() - getPosition().getY());
         if ((distX == 1 & distY == 2) || (distX == 2 & distY == 1)) {
             distance = moveFigure(dist);
         } else {

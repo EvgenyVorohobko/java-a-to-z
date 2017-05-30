@@ -32,9 +32,9 @@ public class King extends Figure {
      * @throws ImposibleMoveException tag.
      */
     public Cell[] way(Cell dist) throws ImposibleMoveException {
-        int passX = Math.abs(dist.getX() - position.getX());
-        int passY = Math.abs(dist.getY() - position.getY());
-        if ((passX + passY == 1 || passX == passY) || (passX == position.getX() || passY == 1)) {
+        int passX = Math.abs(dist.getX() - getPosition().getX());
+        int passY = Math.abs(dist.getY() - getPosition().getY());
+        if ((passX + passY == 1 || passX == passY) || (passX == getPosition().getX() || passY == 1)) {
             distance = moveFigure(dist);
         } else {
             throw new ImposibleMoveException("King not move that.");

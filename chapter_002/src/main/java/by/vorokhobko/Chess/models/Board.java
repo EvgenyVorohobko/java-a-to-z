@@ -50,7 +50,7 @@ public class Board {
         boolean isNeedSave = false;
         Cell[] pass = null;
         for (Figure figure : figures) {
-            if (figure != null && figure.position.equals(source)) {
+            if (figure != null && figure.getPosition().equals(source)) {
                 pass = figure.way(dist);
                 isNeedSave = true;
                 break;
@@ -59,15 +59,23 @@ public class Board {
         if (!isNeedSave) {
             throw new FigureNotFoundException("Figure not found");
         }
+        isNeedSave = false;
         for (Figure figure : figures) {
             for (Cell cellPass : pass) {
-                if (figure != null && figure.position.equals(cellPass)) {
-                    throw new OccupiedWayException("Way occupied figure");
+                if (figure != null && figure.getPosition().equals(cellPass)) {
+                    isNeedSave = true;
+                    break;
                 }
             }
+            if (isNeedSave) {
+                break;
+            }
+        }
+        if (!isNeedSave) {
+            throw new OccupiedWayException("The way of the busy figure.");
         }
         for (int count = 0; count < figures.length; count++) {
-            if (figures[count] != null && figures[count].position.equals(source)) {
+            if (figures[count] != null && figures[count].getPosition().equals(source)) {
                 figures[count] = figures[count].clone(dist);
             }
         }
