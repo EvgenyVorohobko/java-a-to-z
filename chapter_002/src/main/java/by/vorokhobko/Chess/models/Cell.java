@@ -34,24 +34,10 @@ public class Cell {
         return this.x;
     }
     /**
-     * Add setter x.
-     * @param x - x.
-     */
-    public void setX(int x) {
-        this.x = x;
-    }
-    /**
      * Add getter y.
      * @return tag.
      */
     public int getY() {
         return this.y;
-    }
-    /**
-     * Add setter y.
-     * @param y - y.
-     */
-    public void setY(int y) {
-        this.y = y;
     }
 }
