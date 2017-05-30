@@ -42,22 +42,22 @@ public class Cell {
     }
     /**
      * Method is overriding method equals.
-     * @param cell - cell.
+     * @param obj - obj.
      * @return tag.
      */
-    public boolean equals(Cell cell) {
-        if (this.getY() == cell.getY() & this.getX() == cell.getX()) {
+    public boolean equals(Object obj) {
+        if (this == obj)
             return true;
-        }
-        return false;
+        if (!(obj instanceof Cell))
+            return false;
+        Cell cell = (Cell)obj;
+        return this.x == cell.x && this.y == cell.y;
     }
     /**
      * Method is overriding method hashCode.
      * @return tag.
      */
     public int hashCode() {
-        int code = getX();
-        int result = 7 * code + getY();
-        return result;
+        return super.hashCode();
     }
 }

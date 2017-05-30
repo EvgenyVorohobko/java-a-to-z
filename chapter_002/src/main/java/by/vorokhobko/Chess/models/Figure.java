@@ -30,20 +30,13 @@ public abstract class Figure {
     /**
      * The class field.
      */
-    private final Cell position;
+    protected final Cell position;
     /**
      * Сreate the class constructor Figure.
      * @param position - position.
      */
     public Figure(Cell position) {
         this.position = position;
-    }
-    /**
-     * Add getter position.
-     * @return tag.
-     */
-    public Cell getPosition() {
-        return this.position;
     }
     /**
      * Abstract method determining work MenuTracker.

@@ -32,8 +32,8 @@ public class Pawn extends Figure {
      * @throws ImposibleMoveException tag.
      */
     public Cell[] way(Cell dist) throws ImposibleMoveException {
-        int sourceX = getPosition().getX();
-        int sourceY = getPosition().getY();
+        int sourceX = position.getX();
+        int sourceY = position.getY();
         int distX = dist.getX();
         int distY = dist.getY();
         int pass = Math.abs(distY - sourceY);

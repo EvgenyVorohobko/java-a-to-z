@@ -32,8 +32,8 @@ public class Rook extends Figure {
      * @throws ImposibleMoveException tag.
      */
     public Cell[] way(Cell dist) throws ImposibleMoveException {
-        int startX = getPosition().getX();
-        int startY = getPosition().getY();
+        int startX = position.getX();
+        int startY = position.getY();
         int distX = dist.getX();
         int distY = dist.getY();
         if (distX == startX || distY == startY) {
