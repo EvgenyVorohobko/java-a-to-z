@@ -21,8 +21,10 @@ public class Board {
      * The class field.
      */
     private Figure[] figures = new Figure[NUMBER_OF_PIECES];
+
     /**
      * Method determining add Figure on Board.
+     *
      * @param figure - figure.
      */
     public void addFigure(Figure figure) {
@@ -33,14 +35,16 @@ public class Board {
             }
         }
     }
+
     /**
      * Method determining can move figure or not.
+     *
      * @param source - source.
-     * @param dist - dist.
-     * @throws ImposibleMoveException tag.
-     * @throws OccupiedWayException tag.
-     * @throws FigureNotFoundException tag.
+     * @param dist   - dist.
      * @return tag.
+     * @throws ImposibleMoveException  tag.
+     * @throws OccupiedWayException    tag.
+     * @throws FigureNotFoundException tag.
      */
     public boolean move(Cell source, Cell dist) throws ImposibleMoveException, OccupiedWayException, FigureNotFoundException {
         boolean isNeedSave = false;
@@ -55,20 +59,12 @@ public class Board {
         if (!isNeedSave) {
             throw new FigureNotFoundException("Figure not found");
         }
-        isNeedSave = false;
         for (Figure figure : figures) {
             for (Cell cellPass : pass) {
                 if (figure != null && figure.getPosition().equals(cellPass)) {
-                    isNeedSave = true;
-                    break;
+                    throw new OccupiedWayException("Way occupied figure");
                 }
             }
-            if (isNeedSave) {
-                break;
-            }
-        }
-        if (isNeedSave) {
-            throw new OccupiedWayException("Way occupied figure");
         }
         for (int count = 0; count < figures.length; count++) {
             if (figures[count] != null && figures[count].getPosition().equals(source)) {

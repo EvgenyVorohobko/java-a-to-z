@@ -40,4 +40,19 @@ public class Cell {
     public int getY() {
         return this.y;
     }
+    /**
+     * Method is overriding method equals.
+     * @return tag.
+     */
+    public boolean equals(Object obj){
+        if (this == obj)
+            return true;
+        if (!(obj instanceof Cell))
+            return false;
+        Cell cell = (Cell)obj;
+        if (getX() == cell.getX()) {
+            return false;
+        }
+        return getY() == cell.getY();
+    }
 }

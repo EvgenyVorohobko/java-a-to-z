@@ -88,10 +88,10 @@ public class BoardTest {
      */
     @Test(expected = OccupiedWayException.class)
     public void whenBishopNotWay() throws ImposibleMoveException, OccupiedWayException, FigureNotFoundException {
-        final int startX = 2;
-        final int startY = 0;
+        final int startX = 4;
+        final int startY = 4;
         final int finishX = 0;
-        final int finishY = 2;
+        final int finishY = 0;
         final int pointX = 1;
         final int pointY = 1;
         Cell start = new Cell(startX, startY);
@@ -99,8 +99,8 @@ public class BoardTest {
         Cell point = new Cell(pointX, pointY);
         Bishop bishop = new Bishop(start);
         Pawn pawn = new Pawn(point);
-        board.addFigure(bishop);
         board.addFigure(pawn);
+        board.addFigure(bishop);
         board.move(start, finish);
     }
     /**
@@ -112,11 +112,11 @@ public class BoardTest {
     @Test
     public void whenKingMoveTrue() throws ImposibleMoveException, OccupiedWayException, FigureNotFoundException {
         final int startKingX = 4;
-        final int startKingY = 0;
+        final int startKingY = 4;
         final int passKingX = 5;
-        final int passKingY = 1;
-        final int finishKingX = 5;
-        final int finishKingY = 2;
+        final int passKingY = 3;
+        final int finishKingX = 6;
+        final int finishKingY = 3;
         Cell startKing = new Cell(startKingX, startKingY);
         Cell passKing = new Cell(passKingX, passKingY);
         Cell finishKing = new Cell(finishKingX, finishKingY);
@@ -195,12 +195,12 @@ public class BoardTest {
      */
     @Test
     public void whenRookMoveTrue() throws ImposibleMoveException, OccupiedWayException, FigureNotFoundException {
-        final int startRookX = 0;
-        final int startRookY = 0;
+        final int startRookX = 7;
+        final int startRookY = 7;
         final int passRookX = 0;
         final int passRookY = 7;
-        final int finishRookX = 7;
-        final int finishRookY = 7;
+        final int finishRookX = 0;
+        final int finishRookY = 0;
         Cell startRook = new Cell(startRookX, startRookY);
         Cell passRook = new Cell(passRookX, passRookY);
         Cell finishRook = new Cell(finishRookX, finishRookY);
@@ -276,7 +276,7 @@ public class BoardTest {
     public void whenKnightMoveTrue() throws ImposibleMoveException, OccupiedWayException, FigureNotFoundException {
         final int startKnightX = 1;
         final int startKnightY = 0;
-        final int finishKnightX = 2;
+        final int finishKnightX = 0;
         final int finishKnightY = 2;
         Cell startKnight = new Cell(startKnightX, startKnightY);
         Cell finishKnight = new Cell(finishKnightX, finishKnightY);
