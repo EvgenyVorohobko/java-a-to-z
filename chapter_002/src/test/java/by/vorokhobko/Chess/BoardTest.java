@@ -26,30 +26,6 @@ public class BoardTest {
     /**
      * The class field.
      */
-    private static final int START_KNIGHT_X = 2;
-    /**
-     * The class field.
-     */
-    private static final int START_KNIGHT_Y = 1;
-    /**
-     * The class field.
-     */
-    private Knight knight = new Knight(new Cell(START_KNIGHT_X, START_KNIGHT_Y));
-    /**
-     * The class field.
-     */
-    private static final int START_PAWN_X = 4;
-    /**
-     * The class field.
-     */
-    private static final int START_PAWN_Y = 2;
-    /**
-     * The class field.
-     */
-    private Pawn pawn = new Pawn(new Cell(START_PAWN_X, START_PAWN_Y));
-    /**
-     * The class field.
-     */
     private Board board = new Board();
     /**
      * Test Bishop.
@@ -68,8 +44,7 @@ public class BoardTest {
         Bishop bishop = new Bishop(startBishop);
         board.addFigure(bishop);
         boolean pass = board.move(startBishop, finishBishop);
-        boolean answer = true;
-        assertThat(answer, is(pass));
+        assertThat(true, is(pass));
     }
     /**
      * Test Bishop.
@@ -78,7 +53,7 @@ public class BoardTest {
      * @throws ImposibleMoveException tag.
      */
     @Test(expected = ImposibleMoveException.class)
-    public void whenBishopMoveDoNotMoveThat() throws ImposibleMoveException, OccupiedWayException, FigureNotFoundException {
+    public void whenBishopDoNotMoveThat() throws ImposibleMoveException, OccupiedWayException, FigureNotFoundException {
         final int startBishopX = 2;
         final int startBishopY = 0;
         final int finishBishopX = 2;
@@ -87,7 +62,46 @@ public class BoardTest {
         Cell finishBishop = new Cell(finishBishopX, finishBishopY);
         Bishop bishop = new Bishop(startBishop);
         board.addFigure(bishop);
-        boolean pass = board.move(startBishop, finishBishop);
+        board.move(startBishop, finishBishop);
+    }
+    /**
+     * Test Bishop.
+     * @throws FigureNotFoundException tag.
+     * @throws OccupiedWayException tag.
+     * @throws ImposibleMoveException tag.
+     */
+    @Test(expected = FigureNotFoundException.class)
+    public void whenBishopNotFound() throws ImposibleMoveException, OccupiedWayException, FigureNotFoundException {
+        final int startBishopX = 2;
+        final int startBishopY = 0;
+        final int finishBishopX = 2;
+        final int finishBishopY = 3;
+        Cell startBishop = new Cell(startBishopX, startBishopY);
+        Cell finishBishop = new Cell(finishBishopX, finishBishopY);
+        board.move(startBishop, finishBishop);
+    }
+    /**
+     * Test Bishop.
+     * @throws FigureNotFoundException tag.
+     * @throws OccupiedWayException tag.
+     * @throws ImposibleMoveException tag.
+     */
+    @Test(expected = OccupiedWayException.class)
+    public void whenBishopNotWay() throws ImposibleMoveException, OccupiedWayException, FigureNotFoundException {
+        final int startX = 2;
+        final int startY = 0;
+        final int finishX = 0;
+        final int finishY = 2;
+        final int pointX = 1;
+        final int pointY = 1;
+        Cell start = new Cell(startX, startY);
+        Cell finish = new Cell(finishX, finishY);
+        Cell point = new Cell(pointX, pointY);
+        Bishop bishop = new Bishop(start);
+        Pawn pawn = new Pawn(point);
+        board.addFigure(bishop);
+        board.addFigure(pawn);
+        board.move(start, finish);
     }
     /**
      * Test King.
@@ -99,15 +113,19 @@ public class BoardTest {
     public void whenKingMoveTrue() throws ImposibleMoveException, OccupiedWayException, FigureNotFoundException {
         final int startKingX = 4;
         final int startKingY = 0;
+        final int passKingX = 5;
+        final int passKingY = 1;
         final int finishKingX = 5;
-        final int finishKingY = 1;
+        final int finishKingY = 2;
         Cell startKing = new Cell(startKingX, startKingY);
+        Cell passKing = new Cell(passKingX, passKingY);
         Cell finishKing = new Cell(finishKingX, finishKingY);
         King king = new King(startKing);
         board.addFigure(king);
-        boolean pass = board.move(startKing, finishKing);
-        boolean answer = true;
-        assertThat(answer, is(pass));
+        boolean pass = board.move(startKing, passKing);
+        boolean pass2 = board.move(passKing, finishKing);
+        assertThat(true, is(pass));
+        assertThat(true, is(pass2));
     }
     /**
      * Test King.
@@ -116,7 +134,7 @@ public class BoardTest {
      * @throws ImposibleMoveException tag.
      */
     @Test(expected = ImposibleMoveException.class)
-    public void whenKingMoveDoNotMoveThat() throws ImposibleMoveException, OccupiedWayException, FigureNotFoundException {
+    public void whenKingDoNotMoveThat() throws ImposibleMoveException, OccupiedWayException, FigureNotFoundException {
         final int startKingX = 4;
         final int startKingY = 0;
         final int finishKingX = 4;
@@ -125,7 +143,49 @@ public class BoardTest {
         Cell finishKing = new Cell(finishKingX, finishKingY);
         King king = new King(startKing);
         board.addFigure(king);
-        boolean pass = board.move(startKing, finishKing);
+        board.move(startKing, finishKing);
+    }
+    /**
+     * Test Queen.
+     * @throws FigureNotFoundException tag.
+     * @throws OccupiedWayException tag.
+     * @throws ImposibleMoveException tag.
+     */
+    @Test
+    public void whenQueenMoveTrue() throws ImposibleMoveException, OccupiedWayException, FigureNotFoundException {
+        final int startQueenX = 3;
+        final int startQueenY = 0;
+        final int passQueenX = 0;
+        final int passQueenY = 3;
+        final int finishQueenX = 0;
+        final int finishQueenY = 7;
+        Cell startQueen = new Cell(startQueenX, startQueenY);
+        Cell passQueen = new Cell(passQueenX, passQueenY);
+        Cell finishQueen = new Cell(finishQueenX, finishQueenY);
+        Queen queen = new Queen(startQueen);
+        board.addFigure(queen);
+        boolean pass = board.move(startQueen, passQueen);
+        boolean pass2 = board.move(passQueen, finishQueen);
+        assertThat(true, is(pass));
+        assertThat(true, is(pass2));
+    }
+    /**
+     * Test Queen.
+     * @throws FigureNotFoundException tag.
+     * @throws OccupiedWayException tag.
+     * @throws ImposibleMoveException tag.
+     */
+    @Test(expected = ImposibleMoveException.class)
+    public void whenQueenDoNotMoveThat() throws ImposibleMoveException, OccupiedWayException, FigureNotFoundException {
+        final int startQueenX = 3;
+        final int startQueenY = 0;
+        final int finishQueenX = 1;
+        final int finishQueenY = 5;
+        Cell startQueen = new Cell(startQueenX, startQueenY);
+        Cell finishQueen = new Cell(finishQueenX, finishQueenY);
+        Queen queen = new Queen(startQueen);
+        board.addFigure(queen);
+        board.move(startQueen, finishQueen);
     }
     /**
      * Test Rook.
@@ -134,37 +194,113 @@ public class BoardTest {
      * @throws ImposibleMoveException tag.
      */
     @Test
-    public void whenRookMoveDoNotMoveThat() throws ImposibleMoveException, OccupiedWayException, FigureNotFoundException {
+    public void whenRookMoveTrue() throws ImposibleMoveException, OccupiedWayException, FigureNotFoundException {
         final int startRookX = 0;
         final int startRookY = 0;
-        final int finishRookX = 0;
-        final int finishRookY = 6;
+        final int passRookX = 0;
+        final int passRookY = 7;
+        final int finishRookX = 7;
+        final int finishRookY = 7;
+        Cell startRook = new Cell(startRookX, startRookY);
+        Cell passRook = new Cell(passRookX, passRookY);
+        Cell finishRook = new Cell(finishRookX, finishRookY);
+        Rook rook = new Rook(startRook);
+        board.addFigure(rook);
+        boolean pass = board.move(startRook, passRook);
+        boolean pass2 = board.move(passRook, finishRook);
+        assertThat(true, is(pass));
+        assertThat(true, is(pass2));
+    }
+    /**
+     * Test Rook.
+     * @throws FigureNotFoundException tag.
+     * @throws OccupiedWayException tag.
+     * @throws ImposibleMoveException tag.
+     */
+    @Test(expected = ImposibleMoveException.class)
+    public void whenRookDoNotMoveThat() throws ImposibleMoveException, OccupiedWayException, FigureNotFoundException {
+        final int startRookX = 0;
+        final int startRookY = 0;
+        final int finishRookX = 1;
+        final int finishRookY = 5;
         Cell startRook = new Cell(startRookX, startRookY);
         Cell finishRook = new Cell(finishRookX, finishRookY);
         Rook rook = new Rook(startRook);
         board.addFigure(rook);
-        boolean pass = board.move(startRook, finishRook);
-        boolean answer = true;
-        assertThat(answer, is(pass));
+        board.move(startRook, finishRook);
     }
     /**
-     * Test Queen.
+     * Test Pawn.
      * @throws FigureNotFoundException tag.
      * @throws OccupiedWayException tag.
      * @throws ImposibleMoveException tag.
-     *
+     */
     @Test
-    public void whenQueenDoNotMoveThat() throws ImposibleMoveException, OccupiedWayException, FigureNotFoundException {
-        final int startQueenX = 3;
-        final int startQueenY = 0;
-        final int finishQueenX = 3;
-        final int finishQueenY = 7;
-        Cell startQueen = new Cell(startQueenX, startQueenY);
-        Cell finishQueen = new Cell(finishQueenX, finishQueenY);
-        Queen queen = new Queen(startQueen);
-        board.addFigure(queen);
-        boolean pass = board.move(startQueen, finishQueen);
-        boolean answer = true;
-        assertThat(answer, is(pass));
-    }*/
+    public void whenPawnMoveTrue() throws ImposibleMoveException, OccupiedWayException, FigureNotFoundException {
+        final int startPawnX = 1;
+        final int startPawnY = 1;
+        final int finishPawnX = 1;
+        final int finishPawnY = 2;
+        Cell startPawn = new Cell(startPawnX, startPawnY);
+        Cell finishPawn = new Cell(finishPawnX, finishPawnY);
+        Pawn pawn = new Pawn(startPawn);
+        board.addFigure(pawn);
+        boolean pass = board.move(startPawn, finishPawn);
+        assertThat(true, is(pass));
+    }
+    /**
+     * Test Pawn.
+     * @throws FigureNotFoundException tag.
+     * @throws OccupiedWayException tag.
+     * @throws ImposibleMoveException tag.
+     */
+    @Test(expected = ImposibleMoveException.class)
+    public void whenPawnDoNotMoveThat() throws ImposibleMoveException, OccupiedWayException, FigureNotFoundException {
+        final int startPawnX = 3;
+        final int startPawnY = 1;
+        final int finishPawnX = 1;
+        final int finishPawnY = 5;
+        Cell startPawn = new Cell(startPawnX, startPawnY);
+        Cell finishPawn = new Cell(finishPawnX, finishPawnY);
+        Pawn pawn = new Pawn(startPawn);
+        board.addFigure(pawn);
+        board.move(startPawn, finishPawn);
+    }
+    /**
+     * Test Knight.
+     * @throws FigureNotFoundException tag.
+     * @throws OccupiedWayException tag.
+     * @throws ImposibleMoveException tag.
+     */
+    @Test
+    public void whenKnightMoveTrue() throws ImposibleMoveException, OccupiedWayException, FigureNotFoundException {
+        final int startKnightX = 1;
+        final int startKnightY = 0;
+        final int finishKnightX = 2;
+        final int finishKnightY = 2;
+        Cell startKnight = new Cell(startKnightX, startKnightY);
+        Cell finishKnight = new Cell(finishKnightX, finishKnightY);
+        Knight knight = new Knight(startKnight);
+        board.addFigure(knight);
+        boolean pass = board.move(startKnight, finishKnight);
+        assertThat(true, is(pass));
+    }
+    /**
+     * Test Knight.
+     * @throws FigureNotFoundException tag.
+     * @throws OccupiedWayException tag.
+     * @throws ImposibleMoveException tag.
+     */
+    @Test(expected = ImposibleMoveException.class)
+    public void whenKnightDoNotMoveThat() throws ImposibleMoveException, OccupiedWayException, FigureNotFoundException {
+        final int startKnightX = 3;
+        final int startKnightY = 1;
+        final int finishKnightX = 1;
+        final int finishKnightY = 5;
+        Cell startKnight = new Cell(startKnightX, startKnightY);
+        Cell finishKnight = new Cell(finishKnightX, finishKnightY);
+        Knight knight = new Knight(startKnight);
+        board.addFigure(knight);
+        board.move(startKnight, finishKnight);
+    }
 }
