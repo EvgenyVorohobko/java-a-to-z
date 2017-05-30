@@ -60,7 +60,7 @@ public class Board {
         isNeedSave = false;
         for (Figure figure : figures) {
             for (Cell cellPass : pass) {
-                if (cellPass != null && figure.getPosition().equals(cellPass)) {
+                if (figure != null && figure.getPosition().equals(cellPass)) {
                     isNeedSave = true;
                     break;
                 }
@@ -69,7 +69,7 @@ public class Board {
                 break;
             }
         }
-        if (!isNeedSave) {
+        if (isNeedSave) {
             throw new OccupiedWayException("Figure occupied way");
         }
         for (int count = 0; count < figures.length; count++) {
@@ -77,6 +77,6 @@ public class Board {
                 figures[count] = figures[count].clone(dist);
             }
         }
-        return isNeedSave;
+        return true;
     }
 }
