@@ -68,7 +68,7 @@ public class Board {
             }
         }
         if (isNeedSave) {
-            throw new OccupiedWayException("Figure occupied way");
+            throw new OccupiedWayException("Way occupied figure");
         }
         for (int count = 0; count < figures.length; count++) {
             if (figures[count] != null && figures[count].getPosition().equals(source)) {
