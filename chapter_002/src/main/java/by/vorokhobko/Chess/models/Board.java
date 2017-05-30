@@ -50,8 +50,6 @@ public class Board {
                 pass = figure.way(dist);
                 isNeedSave = true;
                 break;
-            } else {
-                throw new ImposibleMoveException("Figure imposible move");
             }
         }
         if (!isNeedSave) {
