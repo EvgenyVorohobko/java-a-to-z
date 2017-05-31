@@ -66,13 +66,10 @@ public class Board {
                     isNeedSave = true;
                     break;
                 }
+                if (!isNeedSave) {
+                    throw new OccupiedWayException("The way of the busy figure.");
+                }
             }
-            if (isNeedSave) {
-                break;
-            }
-        }
-        if (!isNeedSave) {
-            throw new OccupiedWayException("The way of the busy figure.");
         }
         for (int count = 0; count < figures.length; count++) {
             if (figures[count] != null && figures[count].getPosition().equals(source)) {
