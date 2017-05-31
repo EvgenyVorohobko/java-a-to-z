@@ -101,4 +101,5 @@ public abstract class Figure {
      * @param point - point.
      * @return tag.
      */
-    public abstract Figure clone(Cell point);}
+    public abstract Figure clone(Cell point);
+}
