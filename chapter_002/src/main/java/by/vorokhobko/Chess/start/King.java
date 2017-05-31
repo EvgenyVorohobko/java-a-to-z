@@ -3,7 +3,6 @@ package by.vorokhobko.Chess.start;
 import by.vorokhobko.Chess.exceptions.ImposibleMoveException;
 import by.vorokhobko.Chess.models.Cell;
 import by.vorokhobko.Chess.models.Figure;
-import by.vorokhobko.Chess.models.Type;
 
 /**
  * King.
@@ -40,13 +39,6 @@ public class King extends Figure {
             throw new ImposibleMoveException("King not move that.");
         }
         return distance;
-    }
-    /**
-     * The method a listing of all figures.
-     * @return tag.
-     */
-    public Type getType() {
-        return Type.KING;
     }
     /**
      * The method a listing of all figures.

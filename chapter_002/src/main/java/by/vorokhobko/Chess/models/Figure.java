@@ -101,10 +101,4 @@ public abstract class Figure {
      * @param point - point.
      * @return tag.
      */
-    public abstract Figure clone(Cell point);
-    /**
-     * Abstract method determining type figure.
-     * @return tag.
-     */
-    public abstract Type getType();
-}
+    public abstract Figure clone(Cell point);}

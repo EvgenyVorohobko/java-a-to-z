@@ -3,7 +3,6 @@ package by.vorokhobko.Chess.start;
 import by.vorokhobko.Chess.exceptions.ImposibleMoveException;
 import by.vorokhobko.Chess.models.Cell;
 import by.vorokhobko.Chess.models.Figure;
-import by.vorokhobko.Chess.models.Type;
 
 /**
  * Rook.
@@ -42,13 +41,6 @@ public class Rook extends Figure {
             throw new ImposibleMoveException("Rook not move that.");
         }
         return distance;
-    }
-    /**
-     * The method a listing of all figures.
-     * @return tag.
-     */
-    public Type getType() {
-        return Type.ROOK;
     }
     /**
      * The method a listing of all figures.
