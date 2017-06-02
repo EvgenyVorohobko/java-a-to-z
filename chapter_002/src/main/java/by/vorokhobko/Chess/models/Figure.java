@@ -26,10 +26,6 @@ public abstract class Figure {
     /**
      * The class field.
      */
-    private Cell[] pass;
-    /**
-     * The class field.
-     */
     private final Cell position;
     /**
      * Сreate the class constructor Figure.
@@ -73,6 +69,7 @@ public abstract class Figure {
             lengthArray = distanceY;
         }
 
+        Cell[] pass = new Cell[lengthArray];
         if (((finishX - startX) >= 0) & ((finishY - startY) >= 0)) {
             pass = new Cell[lengthArray];
             for (int i = 0; i < lengthArray; i++) {
