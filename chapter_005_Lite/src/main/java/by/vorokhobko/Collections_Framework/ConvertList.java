@@ -33,15 +33,13 @@ public class ConvertList {
      * @return tag.
      */
     public int[][] toArray(List<Integer> list, int rows) {
-        int[][] array = new int[list.size() / 2][list.size() / 2];
-        for (int i = 0; i < list.size() / 2; i++) {
-            for (int j = 0; j < list.size() / 2; j++) {
-                if (rows == list.size()) {
-                    rows = 0;
-                    break;
+        int count = 0;
+        int[][] array = new int[rows][rows];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < rows; j++) {
+                if (count < list.size()) {
+                    array[i][j] = list.get(count++);
                 }
-                array[i][j] = list.get(rows);
-                rows++;
             }
         }
         return array;
