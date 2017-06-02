@@ -33,8 +33,8 @@ public class ConvertList {
      * @return tag.
      */
     public int[][] toArray(List<Integer> list, int rows) {
-        int count = 0;
         int[][] array = new int[rows][rows];
+        int count = 0;
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < rows; j++) {
                 if (count < list.size()) {

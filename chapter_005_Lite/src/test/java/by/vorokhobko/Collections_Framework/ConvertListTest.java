@@ -40,8 +40,7 @@ public class ConvertListTest {
                           {40, 50, 60},
                           {70, 0, 0}};
         List<Integer> listArray = new ArrayList<>(Arrays.asList(10, 20, 30, 40, 50, 60, 70));
-        int row = 3;
-        int[][] execute = list.toArray(listArray, row);
+        int[][] execute = list.toArray(listArray, 3);
         assertThat(execute, is(result));
     }
 }
