@@ -1,6 +1,7 @@
 package by.vorokhobko.Collections_Framework;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -35,10 +36,11 @@ public class ConvertList {
     public int[][] toArray(List<Integer> list, int rows) {
         int[][] array = new int[rows][rows];
         int count = 0;
+        Iterator<Integer> iter = list.iterator();
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < rows; j++) {
-                if (count < list.size()) {
-                    array[i][j] = list.get(count++);
+                if (iter.hasNext()) {
+                    array[i][j] = iter.next();
                 }
             }
         }
