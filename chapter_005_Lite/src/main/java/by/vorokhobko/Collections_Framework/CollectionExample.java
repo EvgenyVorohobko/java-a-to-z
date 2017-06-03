@@ -22,7 +22,7 @@ public class CollectionExample {
         String[] array = new String[amount];
         long start = System.currentTimeMillis();
         for (int i = 0; i < array.length; i++) {
-            array[i] = "qwerty";
+            array[i] = "qwerty" + i;
             collection.add(array[i]);
         }
         long timeWorkCode = System.currentTimeMillis() - start;
@@ -35,17 +35,11 @@ public class CollectionExample {
      * @return tag.
      */
     public long deleteCollection(Collection<String> collection, int amount) {
-        String[] array = new String[amount];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = "qwerty";
-            collection.add(array[i]);
-        }
         long start = System.currentTimeMillis();
-        for (Iterator<String> list = collection.iterator(); list.hasNext();) {
-            String text = list.next();
-            if (text.equals("qwerty")) {
-                list.remove();
-            }
+        Iterator<String> iter = collection.iterator();
+        while (iter.hasNext()) {
+            iter.next();
+            iter.remove();
         }
         long timeWorkCode = System.currentTimeMillis() - start;
         return timeWorkCode;

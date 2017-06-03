@@ -27,35 +27,32 @@ public class CollectionExampleTest {
      */
     @Test
     public void whenAddAndDeleteElementInLinkedList() {
-        List<String> arrayStart = new LinkedList<>();
+        List<String> array = new LinkedList<>();
         System.out.println("Добавление элементов в коллекцию LinkedList занимает "
-                + ex.addCollection(arrayStart, AMOUNT) + " миллисекунд(-ы).");
-        List<String> arrayFinish = new LinkedList<>();
+                + ex.addCollection(array, AMOUNT) + " миллисекунд(-ы).");
         System.out.println("Удаление элементов из коллекции LinkedList занимает "
-                + ex.deleteCollection(arrayFinish, AMOUNT) + " миллисекунд(-ы).");
+                + ex.deleteCollection(array, AMOUNT) + " миллисекунд(-ы).");
     }
     /**
      * Test.
      */
     @Test
     public void whenAddElementInTreeSet() {
-        TreeSet<String> arrayStart = new TreeSet<>();
+        TreeSet<String> array = new TreeSet<>();
         System.out.println("Добавление элементов в коллекцию TreeSet занимает "
-                + ex.addCollection(arrayStart, AMOUNT) + " миллисекунд(-ы).");
-        TreeSet<String> arrayFinish = new TreeSet<>();
+                + ex.addCollection(array, AMOUNT) + " миллисекунд(-ы).");
         System.out.println("Удаление элементов из коллекции TreeSet занимает "
-                + ex.deleteCollection(arrayFinish, AMOUNT) + " миллисекунд(-ы).");
+                + ex.deleteCollection(array, AMOUNT) + " миллисекунд(-ы).");
     }
     /**
      * Test.
      */
     @Test
     public void whenAddAndDeleteElementInArrayList() {
-        List<String> arrayStart = new ArrayList<>();
-        System.out.println("Добавление элементов в коллукцию ArrayList занимает "
-                + ex.addCollection(arrayStart, AMOUNT) + " миллисекунд(-ы).");
-        List<String> arrayFinish = new ArrayList<>();
+        List<String> array = new ArrayList<>();
+        System.out.println("Добавление элементов в коллекцию ArrayList занимает "
+                + ex.addCollection(array, AMOUNT) + " миллисекунд(-ы).");
         System.out.println("Удаление элементов из коллекции ArrayList занимает "
-                + ex.deleteCollection(arrayFinish, AMOUNT) + " миллисекунд(-ы).");
+                + ex.deleteCollection(array, AMOUNT) + " миллисекунд(-ы).");
     }
 }
