@@ -1,4 +1,4 @@
-package by.vorokhobko.Collections_Framework;
+package by.vorokhobko.Generalization;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -44,5 +44,20 @@ public class ConvertList {
             }
         }
         return array;
+    }
+    /**
+     * The method convert element in collections.
+     * @param list - list.
+     * @return tag.
+     */
+    public List<Integer> convert(List<int[]> list) {
+        List<Integer> convert = new ArrayList<>();
+        for (int i = 0; i < list.size(); i++) {
+            int[] count = list.get(i);
+            for (int j = 0; j < count.length; j++) {
+                convert.add(count[j]);
+            }
+        }
+        return convert;
     }
 }

@@ -1,0 +1,58 @@
+package by.vorokhobko.Generalization;
+
+import org.junit.Test;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
+
+/**
+ * Test.
+ *
+ * @author Evgeny Vorokhobko (vorokhobko2011@yandex.ru).
+ * @version 1.
+ * @since 02.06.2017.
+ */
+public class ConvertListTest {
+    /**
+     * The class field.
+     */
+    private ConvertList list = new ConvertList();
+    /**
+     * Test.
+     */
+    @Test
+    public void whenArrayConvertToList() {
+        List<Integer> result = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9));
+        int[][] array = {{1, 2, 3},
+                         {4, 5, 6},
+                         {7, 8, 9}};
+        List<Integer> execute = list.toList(array);
+        assertThat(execute, is(result));
+    }
+    /**
+     * Test.
+     */
+    @Test
+    public void whenListConvertToArray() {
+        int[][] result = {{10, 20, 30},
+                          {40, 50, 60},
+                          {70, 0, 0}};
+        List<Integer> listArray = new ArrayList<>(Arrays.asList(10, 20, 30, 40, 50, 60, 70));
+        int[][] execute = list.toArray(listArray, 3);
+        assertThat(execute, is(result));
+    }
+    /**
+     * Test.
+     */
+    @Test
+    public void whenArraysConvertToList() {
+        List<int[]> listing = new ArrayList<>();
+        listing.add(new int[]{1, 2});
+        listing.add(new int[]{3, 4, 5, 6});
+        List<Integer> execute = list.convert(listing);
+        List<Integer> result = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
+        assertThat(execute, is(result));
+    }
+}
