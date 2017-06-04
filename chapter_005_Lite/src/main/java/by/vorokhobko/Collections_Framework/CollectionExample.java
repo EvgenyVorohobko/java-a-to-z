@@ -22,8 +22,7 @@ public class CollectionExample {
         String[] array = new String[amount];
         long start = System.currentTimeMillis();
         for (int i = 0; i < array.length; i++) {
-            array[i] = "qwerty" + i;
-            collection.add(array[i]);
+            collection.add("qwerty" + i);
         }
         long timeWorkCode = System.currentTimeMillis() - start;
         return timeWorkCode;
