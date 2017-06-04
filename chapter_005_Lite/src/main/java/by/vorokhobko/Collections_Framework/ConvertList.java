@@ -34,7 +34,7 @@ public class ConvertList {
      * @return tag.
      */
     public int[][] toArray(List<Integer> list, int rows) {
-        float count = (float)list.size() / rows;
+        float count = (float) list.size() / rows;
         int columns = (int) count;
         if (count > columns) {
             columns++;
