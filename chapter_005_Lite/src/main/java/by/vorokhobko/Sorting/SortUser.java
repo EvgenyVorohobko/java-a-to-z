@@ -34,6 +34,9 @@ public class SortUser {
      */
     public List<User> sortNameLength(List<User> list) {
         List<User> result = new ArrayList<>();
+        for (User user : list) {
+            result.add(user);
+        }
         result.sort(new Comparator<User>() {
             @Override
             public int compare(User user1, User user2) {
@@ -50,11 +53,14 @@ public class SortUser {
      */
     public List<User> sortByAllFields(List<User> list) {
         List<User> result = new ArrayList<>();
+        for (User user : list) {
+            result.add(user);
+        }
         result.sort(new Comparator<User>() {
             @Override
             public int compare(User user1, User user2) {
-                int count = 0;
-                if (count == user1.getName().compareTo(user2.getName())) {
+                int count = user1.getName().compareTo(user2.getName());
+                if (count == 0) {
                     count = user1.getAge() > user2.getAge() ? 1 : -1;
                 }
                 return count;

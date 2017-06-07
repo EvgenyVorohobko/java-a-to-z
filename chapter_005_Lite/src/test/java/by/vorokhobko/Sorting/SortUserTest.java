@@ -47,8 +47,8 @@ public class SortUserTest {
                 new User("Nik", 40),
                 new User("Anton", 53),
                 new User("Vladlen", 10)));
-        Set<User> set = user.sortListToSet(list);
-        Set<User> result = new TreeSet<>(Arrays.asList(
+        List<User> set = user.sortNameLength(list);
+        List<User> result = new ArrayList<>(Arrays.asList(
                 new User("Nik", 40),
                 new User("Anton", 53),
                 new User("Vladlen", 10),
@@ -57,7 +57,7 @@ public class SortUserTest {
     }
     /**
      * Test.
-     *
+     */
     @Test
     public void whenArraySortToNameAndAge() {
         SortUser user = new SortUser();
@@ -73,5 +73,5 @@ public class SortUserTest {
                 new User("Mixail", 10),
                 new User("Mixail", 15)));
         assertThat(set, is(result));
-    }*/
+    }
 }
