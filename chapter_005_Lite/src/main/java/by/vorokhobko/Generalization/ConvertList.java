@@ -57,9 +57,9 @@ public class ConvertList {
      */
     public List<Integer> convert(List<int[]> list) {
         List<Integer> convert = new ArrayList<>();
-        for (int i = 0; i < list.size(); i++) {
-            for (int k = 0; k < list.get(i).length; k++) {
-                convert.add(list.get(i)[k]);
+        for (int[] count : list) {
+            for (int result : count) {
+                convert.add(result);
             }
         }
         return convert;
