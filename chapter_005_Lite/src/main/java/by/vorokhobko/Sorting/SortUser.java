@@ -1,8 +1,10 @@
 package by.vorokhobko.Sorting;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.ArrayList;
 
 /**
  * SortUser.
@@ -24,5 +26,40 @@ public class SortUser {
             set.add(user);
         }
         return set;
+    }
+    /**
+     * The method sort element to length name.
+     * @param list - list.
+     * @return tag.
+     */
+    public List<User> sortNameLength(List<User> list) {
+        List<User> result = new ArrayList<>();
+        result.sort(new Comparator<User>() {
+            @Override
+            public int compare(User user1, User user2) {
+                int count = user1.getName().length() > user2.getName().length() ? 1 : -1;
+                return count;
+            }
+        });
+        return result;
+    }
+    /**
+     * The method sort element to name and age.
+     * @param list - list.
+     * @return tag.
+     */
+    public List<User> sortByAllFields(List<User> list) {
+        List<User> result = new ArrayList<>();
+        result.sort(new Comparator<User>() {
+            @Override
+            public int compare(User user1, User user2) {
+                int count = 0;
+                if (count == user1.getName().compareTo(user2.getName())) {
+                    count = user1.getAge() > user2.getAge() ? 1 : -1;
+                }
+                return count;
+            }
+        });
+        return result;
     }
 }

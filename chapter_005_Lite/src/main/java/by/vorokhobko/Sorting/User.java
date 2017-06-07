@@ -68,4 +68,18 @@ public class User implements Comparable<User> {
     public int hashCode() {
         return age;
     }
+    /**
+     * Add getter name.
+     * @return tag.
+     */
+    public String getName() {
+        return name;
+    }
+    /**
+     * Add getter age.
+     * @return tag.
+     */
+    public int getAge() {
+        return age;
+    }
 }
