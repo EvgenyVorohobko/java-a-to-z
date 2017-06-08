@@ -1,10 +1,10 @@
 package by.vorokhobko.Sorting;
 
-import java.util.Comparator;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
-import java.util.ArrayList;
+import java.util.Comparator;
 
 /**
  * SortUser.
@@ -33,18 +33,8 @@ public class SortUser {
      * @return tag.
      */
     public List<User> sortNameLength(List<User> list) {
-        List<User> result = new ArrayList<>();
-        for (User user : list) {
-            result.add(user);
-        }
-        result.sort(new Comparator<User>() {
-            @Override
-            public int compare(User user1, User user2) {
-                int count = user1.getName().length() > user2.getName().length() ? 1 : -1;
-                return count;
-            }
-        });
-        return result;
+        Collections.sort(list, (user1, user2) -> Integer.compare(user1.getName().length(), user2.getName().length()));
+        return list;
     }
     /**
      * The method sort element to name and age.
@@ -52,20 +42,16 @@ public class SortUser {
      * @return tag.
      */
     public List<User> sortByAllFields(List<User> list) {
-        List<User> result = new ArrayList<>();
-        for (User user : list) {
-            result.add(user);
-        }
-        result.sort(new Comparator<User>() {
+        list.sort(new Comparator<User>() {
             @Override
             public int compare(User user1, User user2) {
                 int count = user1.getName().compareTo(user2.getName());
                 if (count == 0) {
-                    count = user1.getAge() > user2.getAge() ? 1 : -1;
+                    count = Integer.compare(user1.getAge(), user2.getAge());
                 }
                 return count;
             }
         });
-        return result;
+        return list;
     }
 }
