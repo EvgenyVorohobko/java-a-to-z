@@ -22,6 +22,7 @@ public class SortUser {
      */
     public Set<User> sortListToSet(List<User> list) {
         Set<User> set = new TreeSet<>();
+        Collections.sort(list, (user1, user2) -> Integer.compare(user1.getAge(), user2.getAge()));
         for (User user : list) {
             set.add(user);
         }
