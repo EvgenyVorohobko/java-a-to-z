@@ -33,14 +33,17 @@ public class User {
      */
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         User user = (User) o;
-
-        if (passport != user.passport) return false;
+        if (passport != user.passport) {
+            return false;
+        }
         return !(name != null ? !name.equals(user.name) : user.name != null);
-
     }
     /**
      * Override method hashCode.
@@ -51,19 +54,5 @@ public class User {
         int result = name != null ? name.hashCode() : 0;
         result = 31 * result + passport;
         return result;
-    }
-    /**
-     * Add getter name.
-     * @return tag.
-     */
-    public String getName() {
-        return name;
-    }
-    /**
-     * Add getter passport.
-     * @return tag.
-     */
-    public int getPassport() {
-        return passport;
     }
 }
