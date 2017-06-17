@@ -32,7 +32,11 @@ public class IteratorEvenNumbers implements Iterator {
      */
     @Override
     public boolean hasNext() {
-        return arrays.length > count;
+        boolean isNeedSave = false;
+        if (arrays.length > count) {
+            isNeedSave = true;
+        }
+        return isNeedSave;
     }
     /**
      * Override method next.
