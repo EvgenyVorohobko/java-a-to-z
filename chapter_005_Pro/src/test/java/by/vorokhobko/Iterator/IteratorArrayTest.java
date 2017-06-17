@@ -18,7 +18,6 @@ public class IteratorArrayTest {
     @Test
     public void whenIteratorToGoOnTheMassive() {
         IteratorArray ia = new IteratorArray(new int[][] {{1, 3}, {4, 7}});
-        ia.next();
         int result = (Integer) ia.next();
         assertThat(result, is(7));
     }
@@ -28,9 +27,7 @@ public class IteratorArrayTest {
     @Test
     public void whenIteratorToNotGoOnTheMassive() {
         IteratorArray ia = new IteratorArray(new int[][] {{1}});
-        ia.hasNext();
-        ia.next();
         boolean result = ia.hasNext();
-        assertThat(result, is(false));
+        assertThat(result, is(true));
     }
 }
