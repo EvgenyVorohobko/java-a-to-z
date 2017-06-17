@@ -25,6 +25,10 @@ public class IteratorArray implements Iterator {
      */
     private int value;
     /**
+     * The class field.
+     */
+    private int index;
+    /**
      * Override method hasNext.
      * @return tag.
      */
@@ -32,6 +36,7 @@ public class IteratorArray implements Iterator {
     public boolean hasNext() {
         boolean isNeedSave = false;
         if (arrays.length > count) {
+            if (arrays[value].length > index)
             isNeedSave = true;
         }
         return isNeedSave;
@@ -42,15 +47,11 @@ public class IteratorArray implements Iterator {
      */
     @Override
     public Object next() {
-        int result = 0;
         if (hasNext()) {
-            if (arrays[count].length > value) {
-                result = arrays[count++][value++];
-            } else {
-                throw new NoSuchElementException("No such element");
-            }
+            return arrays[count][value];
+        } else {
+            throw new NoSuchElementException("No such element");
         }
-        return result;
     }
     /**
      * Add constructor.
