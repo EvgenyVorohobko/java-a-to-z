@@ -24,10 +24,6 @@ public class IteratorArray implements Iterator {
      */
     private int value;
     /**
-     * The class field.
-     */
-    private int index;
-    /**
      * Override method hasNext.
      * @return tag.
      */
