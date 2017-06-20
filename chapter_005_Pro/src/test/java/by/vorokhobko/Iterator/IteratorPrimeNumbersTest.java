@@ -21,4 +21,13 @@ public class IteratorPrimeNumbersTest {
         int result = (Integer) prime.next();
         assertThat(result, is(73));
     }
+    /**
+     * Test.
+     */
+    @Test
+    public void whenIteratorDoNotReturnPrimeNumbers() {
+        IteratorPrimeNumbers prime = new IteratorPrimeNumbers(new int[] {4, 4, 4, 4, 18, 10, 16, 6});
+        boolean result = prime.hasNext();
+        assertThat(result, is(false));
+    }
 }

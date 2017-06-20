@@ -16,10 +16,6 @@ public class IteratorPrimeNumbers implements Iterator {
      */
     private final int[] array;
     /**
-     * The class field.
-     */
-    private int count;
-    /**
      * Add constructor.
      * @param array - array.
      */
@@ -32,11 +28,7 @@ public class IteratorPrimeNumbers implements Iterator {
      */
     @Override
     public boolean hasNext() {
-        boolean isNeedSave = false;
-        if (array.length > count) {
-            isNeedSave = true;
-        }
-        return isNeedSave;
+        return primeNumber() != 0;
     }
     /**
      * Override method next.
@@ -44,18 +36,23 @@ public class IteratorPrimeNumbers implements Iterator {
      */
     @Override
     public Object next() {
+        return hasNext() ? primeNumber() : null;
+    }
+    /**
+     * Run method number prime.
+     * @return tag.
+     */
+    public int primeNumber() {
         int result = 0;
-        if (hasNext()) {
-            for (int i = 0; i < array.length; i++) {
-                int divider = 0;
-                for (int j = 1; j <= array[i]; j++) {
-                    if (array[i] % j == 0) {
-                        divider++;
-                    }
+        for (int i = 0; i < array.length; i++) {
+            int divider = 0;
+            for (int j = 1; j <= array[i]; j++) {
+                if (array[i] % j == 0) {
+                    divider++;
                 }
-                if (divider == 2) {
-                    result = array[i];
-                }
+            }
+            if (divider == 2) {
+                result = array[i];
             }
         }
         return result;

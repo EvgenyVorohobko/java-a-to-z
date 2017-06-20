@@ -16,10 +16,6 @@ public class IteratorEvenNumbers implements Iterator {
      */
     private final int[] arrays;
     /**
-     * The class field.
-     */
-    private int count;
-    /**
      * Add constructor.
      * @param arrays - arrays.
      */
@@ -32,11 +28,7 @@ public class IteratorEvenNumbers implements Iterator {
      */
     @Override
     public boolean hasNext() {
-        boolean isNeedSave = false;
-        if (arrays.length > count) {
-            isNeedSave = true;
-        }
-        return isNeedSave;
+        return evenNumbers() != 0;
     }
     /**
      * Override method next.
@@ -44,12 +36,18 @@ public class IteratorEvenNumbers implements Iterator {
      */
     @Override
     public Object next() {
+        return hasNext() ? evenNumbers() : null;
+    }
+    /**
+     * Override method hasNext.
+     * @return tag.
+     */
+    public int evenNumbers() {
         int value = 0;
-        while (hasNext()) {
-            if (arrays[count] % 2 == 0) {
-                value = arrays[count];
+        for (int index = 0; index < arrays.length; index++) {
+            if (arrays[index] % 2 == 0) {
+                value = arrays[index];
             }
-            count++;
         }
         return value;
     }

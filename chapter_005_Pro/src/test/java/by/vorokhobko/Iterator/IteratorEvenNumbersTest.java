@@ -21,4 +21,13 @@ public class IteratorEvenNumbersTest {
         int result = (Integer) even.next();
         assertThat(result, is(44));
     }
+    /**
+     * Test.
+     */
+    @Test
+    public void whenIteratorDoNotReturnEvenNumbers() {
+        IteratorEvenNumbers even = new IteratorEvenNumbers(new int[] {1, 3, 9, 5, 7, 11, 15});
+        boolean result = even.hasNext();
+        assertThat(result, is(false));
+    }
 }
