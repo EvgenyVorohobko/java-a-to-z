@@ -30,10 +30,10 @@ public class IteratorArray implements Iterator {
     @Override
     public boolean hasNext() {
         boolean isNeedSave = false;
-        if (arrays.length > count) {
-            if (arrays[count].length > value) {
-                isNeedSave = true;
-            }
+        if (arrays[count].length > value) {
+            isNeedSave = true;
+        } else if (arrays.length > count) {
+            isNeedSave = true;
         }
         return isNeedSave;
     }
@@ -44,11 +44,17 @@ public class IteratorArray implements Iterator {
     @Override
     public Object next() {
         int result = 0;
-        for (count = 0; count < arrays.length; count++) {
-            for (value = 0; value < arrays[count].length; value++) {
-                    result = arrays[count][value];
-                }
-            }
+        if (hasNext()) {
+            result = arrays[count][value++];
+        } if (hasNext()) {
+            result = arrays[count][value];
+            value = 0;
+        } if (hasNext()) {
+            count++;
+            result = arrays[count][value++];
+        } if (hasNext()) {
+            result = arrays[count][value];
+        }
         return result;
     }
     /**
