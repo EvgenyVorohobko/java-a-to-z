@@ -1,6 +1,7 @@
 package by.vorokhobko.Iterator;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * IteratorEvenNumbers.
@@ -36,7 +37,11 @@ public class IteratorEvenNumbers implements Iterator {
      */
     @Override
     public Object next() {
-        return hasNext() ? evenNumbers() : null;
+        if (hasNext()) {
+            return evenNumbers();
+        } else {
+            throw new NoSuchElementException(null);
+        }
     }
     /**
      * Override method hasNext.

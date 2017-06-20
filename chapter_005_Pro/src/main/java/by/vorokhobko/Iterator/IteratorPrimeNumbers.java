@@ -1,6 +1,7 @@
 package by.vorokhobko.Iterator;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * IteratorPrimeNumbers.
@@ -36,7 +37,11 @@ public class IteratorPrimeNumbers implements Iterator {
      */
     @Override
     public Object next() {
-        return hasNext() ? primeNumber() : null;
+        if (hasNext()) {
+            return primeNumber();
+        } else {
+            throw new NoSuchElementException(null);
+        }
     }
     /**
      * Run method number prime.
