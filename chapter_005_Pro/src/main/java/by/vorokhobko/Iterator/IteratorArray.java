@@ -1,6 +1,7 @@
 package by.vorokhobko.Iterator;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * IteratorArray.
@@ -29,13 +30,7 @@ public class IteratorArray implements Iterator {
      */
     @Override
     public boolean hasNext() {
-        boolean isNeedSave = false;
-        if (arrays[count].length > value) {
-            isNeedSave = true;
-        } else if (arrays.length > count) {
-            isNeedSave = true;
-        }
-        return isNeedSave;
+        return (arrays[count].length > value && arrays.length > count);
     }
     /**
      * Override method next.
@@ -43,19 +38,16 @@ public class IteratorArray implements Iterator {
      */
     @Override
     public Object next() {
-        int result = 0;
-        if (hasNext()) {
-            result = arrays[count][value++];
-        } if (hasNext()) {
-            result = arrays[count][value];
-            value = 0;
-        } if (hasNext()) {
+        if (arrays[count].length <= value) {
             count++;
-            result = arrays[count][value++];
-        } if (hasNext()) {
-            result = arrays[count][value];
+            value = 0;
         }
-        return result;
+        if (hasNext()) {
+            int result = arrays[count][value++];
+            return result;
+        } else {
+            throw new NoSuchElementException();
+        }
     }
     /**
      * Add constructor.
