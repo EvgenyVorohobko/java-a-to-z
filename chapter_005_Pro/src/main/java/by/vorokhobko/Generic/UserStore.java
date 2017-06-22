@@ -8,7 +8,7 @@ package by.vorokhobko.Generic;
  * @since 21.06.2017.
  * @version 1.
  */
-public class UserStore extends Store {
+public class UserStore extends AbstractStore {
     /**
      * Override create constructor.
      * @param size - size.

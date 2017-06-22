@@ -9,45 +9,21 @@ package by.vorokhobko.Generic;
  * @version 1.
  * @param <E>.
  */
-public class Store<E extends Base> {
-    /**
-     * The class field.
-     */
-    private SimpleList<E> simple;
-    /**
-     * Create constructor.
-     * @param size - size.
-     */
-    public Store(int size) {
-        this.simple = new SimpleList<>(size);
-    }
-    /**
-     * Add getter Simple.
-     * @return tag.
-     */
-    public SimpleList<E> getSimple() {
-        return simple;
-    }
+public interface Store<E extends Base> {
     /**
      * Method add.
      * @param value - value.
      */
-    void add(E value) {
-        simple.add(value);
-    }
+    void add(E value);
     /**
      * Method update.
      * @param value - value.
      * @param index - index.
      */
-    void update(E value, int index) {
-        simple.update(value, index);
-    }
+    void update(E value, int index);
     /**
      * Method remove.
      * @param value - value.
      */
-    void remove(E value) {
-        simple.delete(value);
-    }
+    void remove(E value);
 }

@@ -17,36 +17,36 @@ public class StoreTest {
      */
     @Test
     public void whenAddUserInStore() {
-        Store store = new Store(10);
+        AbstractStore aStore = new AbstractStore(10);
         User user = new User("test");
-        store.add(user);
-        assertThat(store.getSimple().get(0), is(user));
+        aStore.add(user);
+        assertThat(aStore.getSimple().get(0), is(user));
     }
     /**
      * Test.
      */
     @Test
     public void whenDeleteUserInStore() {
-        Store store = new Store(10);
+        AbstractStore aStore = new AbstractStore(10);
         Role role1 = new Role("test");
         Role role2 = new Role("Old test");
-        store.add(role1);
-        store.add(role2);
-        store.remove(role2);
-        assertThat(null, is(store.getSimple().get(1)));
+        aStore.add(role1);
+        aStore.add(role2);
+        aStore.remove(role2);
+        assertThat(null, is(aStore.getSimple().get(1)));
     }
     /**
      * Test.
      */
     @Test
     public void whenUpdateUserInStore() {
-        Store store = new Store(10);
+        AbstractStore aStore = new AbstractStore(10);
         User user1 = new User("test");
         User user2 = new User("Old test");
         user1.setId(user2.getId());
-        store.add(user1);
-        store.update(user2, 0);
-        assertThat(store.getSimple().get(0), is(user2));
+        aStore.add(user1);
+        aStore.update(user2, 0);
+        assertThat(aStore.getSimple().get(0), is(user2));
     }
     /**
      * Test.
