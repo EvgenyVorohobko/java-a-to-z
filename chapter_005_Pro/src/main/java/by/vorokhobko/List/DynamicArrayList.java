@@ -4,15 +4,15 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * DynamicList.
+ * DynamicArrayList.
  *
- * Class DynamicList create the containers DynamicList 005_Pro, lesson 3.
+ * Class DynamicArrayList create the containers DynamicArrayList 005_Pro, lesson 3.
  * @author Evgeny Vorokhobko (vorokhobko2011@yandex.ru).
  * @since 24.06.2017.
  * @version 1.
  * @param <E>.
  */
-public class DynamicList<E> implements Iterable {
+public class DynamicArrayList<E> implements Iterable {
     /**
      * The class field.
      */
@@ -33,7 +33,7 @@ public class DynamicList<E> implements Iterable {
      * Add constructor.
      * @param size - size.
      */
-    public DynamicList(int size) {
+    public DynamicArrayList(int size) {
         this.container = new Object[size];
     }
     /**

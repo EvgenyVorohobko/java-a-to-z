@@ -13,11 +13,11 @@ import static org.junit.Assert.assertThat;
  * @version 1.
  * @since 24.06.2017.
  */
-public class DynamicListTest {
+public class DynamicArrayListTest {
     /**
      * The class field.
      */
-    private DynamicList list = new DynamicList(2);
+    private DynamicArrayList list = new DynamicArrayList(2);
     /**
      * The class field.
      */
