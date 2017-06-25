@@ -58,11 +58,8 @@ public class SimpleList<E> {
 	 * @param count - count.
 	 */
 	public void update(E updateValue, int count) {
-		for (int index = 0; index < objects.length; index++) {
-			if (index == count) {
-				this.objects[index] = updateValue;
-				break;
-			}
+		if (count < objects.length) {
+			this.objects[count] = updateValue;
 		}
 	}
 }
