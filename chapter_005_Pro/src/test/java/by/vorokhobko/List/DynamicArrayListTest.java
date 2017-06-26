@@ -17,11 +17,11 @@ public class DynamicArrayListTest {
     /**
      * The class field.
      */
-    private DynamicArrayList list = new DynamicArrayList(2);
+    private DynamicArrayList<String> list = new DynamicArrayList<>(2);
     /**
      * The class field.
      */
-    private Iterator<Object> iter = list.iterator();
+    private Iterator<String> iter = list.iterator();
     /**
      * Test.
      */
