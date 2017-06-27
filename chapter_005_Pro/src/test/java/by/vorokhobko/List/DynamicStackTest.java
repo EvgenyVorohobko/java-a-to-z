@@ -1,10 +1,8 @@
 package by.vorokhobko.List;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertNotSame;
 import static org.junit.Assert.assertThat;
 import org.junit.Test;
-import java.util.Iterator;
 
 /**
  * Test.
@@ -20,6 +18,7 @@ public class DynamicStackTest {
     private DynamicStack<Integer> stack = new DynamicStack<>();
     /**
      * Test.
+     * @throws InvalidOperationException tag.
      */
     @Test
     public void whenAddElementInStack() throws InvalidOperationException  {
@@ -38,12 +37,13 @@ public class DynamicStackTest {
     }
     /**
      * Test.
+     * @throws InvalidOperationException tag.
      */
     @Test
     public void whenDeleteElementInStack() throws InvalidOperationException  {
         stack.push(4);
         stack.push(3);
         stack.pop();
-        assertThat(stack.peek(), is(4));
+        assertThat(stack.getCount(), is(1));
     }
 }

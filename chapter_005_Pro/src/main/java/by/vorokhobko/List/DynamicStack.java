@@ -42,7 +42,7 @@ public class DynamicStack<E> {
             linked.remove();
             return result;
         } else {
-            throw new InvalidOperationException("The stack is empty");
+            throw new InvalidOperationException("The stack is empty!");
         }
     }
     /**
@@ -55,7 +55,7 @@ public class DynamicStack<E> {
             E result = linked.get(linked.size() - 1);
             return result;
         } else {
-            throw new InvalidOperationException("The stack is empty");
+            throw new InvalidOperationException("The stack is empty!");
         }
     }
     /**
