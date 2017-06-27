@@ -74,18 +74,18 @@ public class DynamicLinkedList<E> implements Iterable {
             this.currentElement = currentElement;
         }
         /**
+         * Add getter currentElement.
+         * @return tag.
+         */
+        public E getCurrentElement() {
+            return currentElement;
+        }
+        /**
          * Add setter nextElement.
          * @param nextElement - nextElement.
          */
         public void setNextElement(Node<E> nextElement) {
             this.nextElement = nextElement;
-        }
-        /**
-         * Add getter prevElement.
-         * @return tag.
-         */
-        public Node<E> getPrevElement() {
-            return prevElement;
         }
         /**
          * Add getter nextElement.
@@ -95,11 +95,11 @@ public class DynamicLinkedList<E> implements Iterable {
             return nextElement;
         }
         /**
-         * Add getter currentElement.
+         * Add getter prevElement.
          * @return tag.
          */
-        public E getCurrentElement() {
-            return currentElement;
+        public Node<E> getPrevElement() {
+            return prevElement;
         }
     }
     /**
@@ -128,9 +128,31 @@ public class DynamicLinkedList<E> implements Iterable {
         } else {
             throw new NoSuchElementException("The objects in the array is no more!");
         }
-
     }
 
+    public E remove() {
+        final Node<E> delete = lastNode;
+        if (delete != null) {
+            return deleteElementInList(delete);
+        } else {
+            throw new NoSuchElementException();
+        }
+    }
+
+    public E deleteElementInList(Node<E> delete) {
+        final E element = delete.currentElement;
+        final Node<E> prev = delete.prevElement;
+        delete.currentElement = null;
+        delete.prevElement = null;
+        lastNode = prev;
+        if (prev == null) {
+            firstNode = null;
+        } else {
+            prev.nextElement = null;
+        }
+        size--;
+        return element;
+    }
     /**
      * Get help in position.
      * @param current - current.

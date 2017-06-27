@@ -3,7 +3,6 @@ package by.vorokhobko.List;
 import org.junit.Test;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -23,9 +22,7 @@ public class DynamicLinkedListTest {
         DynamicLinkedList<Integer> list = new DynamicLinkedList<>();
         Iterator<Integer> iter = list.iterator();
         list.add(4);
-        iter.next();
         list.add(5);
-        assertThat(iter.hasNext(), is(true));
         assertThat(list.size(), is(2));
         assertThat(list.get(0), is(4));
     }
@@ -53,5 +50,17 @@ public class DynamicLinkedListTest {
         iter.next();
         iter.next();
         iter.next();
+    }
+    /**
+     * Test.
+     */
+    @Test
+    public void whenDeleteElementInLinked() {
+        DynamicLinkedList<Integer> list = new DynamicLinkedList<>();
+        Iterator<Integer> iter = list.iterator();
+        list.add(4);
+        list.add(5);
+        list.remove();
+        assertThat(list.size(), is(1));
     }
 }
