@@ -129,7 +129,10 @@ public class DynamicLinkedList<E> implements Iterable {
             throw new NoSuchElementException("The objects in the array is no more!");
         }
     }
-
+    /**
+     * Get generic E in position.
+     * @return tag.
+     */
     public E remove() {
         final Node<E> delete = lastNode;
         if (delete != null) {
@@ -138,7 +141,11 @@ public class DynamicLinkedList<E> implements Iterable {
             throw new NoSuchElementException();
         }
     }
-
+    /**
+     * Get generic E in position.
+     * @param delete - delete.
+     * @return tag.
+     */
     public E deleteElementInList(Node<E> delete) {
         final E element = delete.currentElement;
         final Node<E> prev = delete.prevElement;

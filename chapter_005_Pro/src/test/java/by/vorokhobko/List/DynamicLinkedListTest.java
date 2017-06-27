@@ -23,8 +23,8 @@ public class DynamicLinkedListTest {
         Iterator<Integer> iter = list.iterator();
         list.add(4);
         list.add(5);
-        assertThat(list.size(), is(2));
         assertThat(list.get(0), is(4));
+        assertThat(iter.hasNext(), is(true));
     }
     /**
      * Test.
