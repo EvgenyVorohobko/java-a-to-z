@@ -4,15 +4,15 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * MyLinkedList.
+ * DynamicLinkedList.
  *
- * Class MyLinkedList create the LinkedList for 005_Pro, lesson 3.
+ * Class DynamicLinkedList create the LinkedList for 005_Pro, lesson 3.
  * @author Evgeny Vorokhobko (vorokhobko2011@yandex.ru).
  * @since 25.06.2017.
  * @version 1.
  * @param <E>.
  */
-public class MyLinkedList<E> implements Iterable {
+public class DynamicLinkedList<E> implements Iterable {
     /**
      * The class field.
      */
@@ -32,7 +32,7 @@ public class MyLinkedList<E> implements Iterable {
     /**
      * Add constructor.
      */
-    public MyLinkedList() {
+    public DynamicLinkedList() {
         lastNode = new Node<E>(null, firstNode, null);
         firstNode = new Node<E>(null, null, lastNode);
     }

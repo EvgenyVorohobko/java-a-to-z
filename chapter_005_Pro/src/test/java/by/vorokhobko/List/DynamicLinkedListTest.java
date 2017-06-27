@@ -14,13 +14,13 @@ import static org.junit.Assert.assertThat;
  * @version 1.
  * @since 25.06.2017.
  */
-public class MyLinkedListTest {
+public class DynamicLinkedListTest {
     /**
      * Test.
      */
     @Test
     public void whenAddElementInLinked() {
-        MyLinkedList<Integer> list = new MyLinkedList<>();
+        DynamicLinkedList<Integer> list = new DynamicLinkedList<>();
         Iterator<Integer> iter = list.iterator();
         list.add(4);
         iter.next();
@@ -34,7 +34,7 @@ public class MyLinkedListTest {
      */
     @Test
     public void whenNextElementDoNotLinked() {
-        MyLinkedList<Integer> list = new MyLinkedList<>();
+        DynamicLinkedList<Integer> list = new DynamicLinkedList<>();
         Iterator<Integer> iter = list.iterator();
         list.add(4);
         iter.next();
@@ -46,7 +46,7 @@ public class MyLinkedListTest {
      */
     @Test(expected = NoSuchElementException.class)
     public void whenNotElementInLinked() throws NoSuchElementException {
-        MyLinkedList<Integer> list = new MyLinkedList<>();
+        DynamicLinkedList<Integer> list = new DynamicLinkedList<>();
         Iterator<Integer> iter = list.iterator();
         list.add(4);
         list.add(5);
