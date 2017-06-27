@@ -1,7 +1,5 @@
 package by.vorokhobko.List;
 
-import java.util.Iterator;
-
 /**
  * DynamicStack.
  *
@@ -16,14 +14,6 @@ public class DynamicStack<E> {
      * The class field.
      */
     private DynamicLinkedList<E> linked = new DynamicLinkedList<>();
-    /**
-     * The class field.
-     */
-    private Iterator<E> iter = linked.iterator();
-    /**
-     * The class field.
-     */
-    private int count;
     /**
      * Add objects in Stack.
      * @param value - value.
