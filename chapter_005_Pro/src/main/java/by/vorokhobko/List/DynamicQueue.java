@@ -15,6 +15,10 @@ public class DynamicQueue<E> {
      */
     private DynamicLinkedList<E> linked = new DynamicLinkedList<>();
     /**
+     * The class field.
+     */
+    private int count = 0;
+    /**
      * Add objects in Queue.
      * @param value - value.
      */
@@ -28,7 +32,7 @@ public class DynamicQueue<E> {
      */
     public E dequeue() throws InvalidOperationException {
         if (getCount() != 0) {
-            E result = linked.get(1);
+            E result = linked.get(count++);
             linked.remove();
             return result;
         } else {
@@ -42,7 +46,7 @@ public class DynamicQueue<E> {
      */
     public E peek() throws InvalidOperationException {
         if (getCount() != 0) {
-            E result = linked.get(linked.size() - 1);
+            E result = linked.get(count++);
             return result;
         } else {
             throw new InvalidOperationException("The stack is empty!");

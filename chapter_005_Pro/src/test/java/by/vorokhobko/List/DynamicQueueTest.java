@@ -24,7 +24,7 @@ public class DynamicQueueTest {
     public void whenAddElementInStack() throws InvalidOperationException  {
         queue.enqueue(4);
         queue.enqueue(3);
-        assertThat(queue.peek(), is(3));
+        assertThat(queue.peek(), is(4));
         assertThat(queue.getCount(), is(2));
     }
     /**
