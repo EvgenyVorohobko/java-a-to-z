@@ -36,7 +36,7 @@ public class CyclicalLinkedListTest {
      * Test.
      */
     @Test
-    public void whenHaveCycle() {
+    public void whenHaveCycleOne() {
         oneNode.setNext(twoNode);
         twoNode.setNext(thirdNode);
         thirdNode.setNext(fourNode);
@@ -52,5 +52,16 @@ public class CyclicalLinkedListTest {
         twoNode.setNext(thirdNode);
         thirdNode.setNext(fourNode);
         assertThat(cycle.hasCycle(fourNode), is(false));
+    }
+    /**
+     * Test.
+     */
+    @Test
+    public void whenHaveCycleThird() {
+        oneNode.setNext(twoNode);
+        twoNode.setNext(thirdNode);
+        thirdNode.setNext(fourNode);
+        fourNode.setNext(oneNode);
+        assertThat(cycle.hasCycle(thirdNode), is(true));
     }
 }
