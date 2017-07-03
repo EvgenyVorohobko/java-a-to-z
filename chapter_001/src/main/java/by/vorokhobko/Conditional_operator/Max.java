@@ -1,4 +1,5 @@
 package by.vorokhobko.Conditional_operator;
+
 /**
  * Max.
  *
@@ -16,7 +17,6 @@ public class Max {
 	* @return tag.
 	*/
 	public int max(int first, int second) {
-	int largeNum = first < second ? second : first;
-	return largeNum;
+		return first < second ? second : first;
 	}
 }

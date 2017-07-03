@@ -1,4 +1,5 @@
 package by.vorokhobko.Conditional_operator;
+
 /**
  * MaxThree.
  *
@@ -19,7 +20,6 @@ public class MaxThree {
 	public int maxThree(int first, int second, int third) {
 		Max max = new Max();
 		int firstMax = max.max(first, second);
-		int largeNum = firstMax < third ? third : firstMax;
-		return largeNum;
+		return firstMax < third ? third : firstMax;
 	}
 }
