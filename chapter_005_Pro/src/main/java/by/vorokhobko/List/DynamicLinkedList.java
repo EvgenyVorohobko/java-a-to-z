@@ -33,7 +33,7 @@ public class DynamicLinkedList<E> implements Iterable {
      * Add constructor.
      */
     public DynamicLinkedList() {
-        lastNode = new Node<E>(null, firstNode, null);
+        lastNode = new Node<E>(firstNode, null, null);
         firstNode = new Node<E>(null, null, lastNode);
     }
     /**
@@ -61,7 +61,7 @@ public class DynamicLinkedList<E> implements Iterable {
          * @param nextElement    - nextElement.
          * @param prevElement    - prevElement.
          */
-        private Node(E currentElement, Node<E> nextElement, Node<E> prevElement) {
+        private Node(Node<E> prevElement, E currentElement, Node<E> nextElement) {
             this.currentElement = currentElement;
             this.nextElement = nextElement;
             this.prevElement = prevElement;
@@ -94,13 +94,6 @@ public class DynamicLinkedList<E> implements Iterable {
         public Node<E> getNextElement() {
             return nextElement;
         }
-        /**
-         * Add getter prevElement.
-         * @return tag.
-         */
-        public Node<E> getPrevElement() {
-            return prevElement;
-        }
     }
     /**
      * Add generic T in objects.
@@ -109,7 +102,7 @@ public class DynamicLinkedList<E> implements Iterable {
     public void add(E value) {
         Node<E> prev = lastNode;
         prev.setCurrentElement(value);
-        lastNode = new Node<E>(null, prev, null);
+        lastNode = new Node<E>(prev, null, null);
         prev.setNextElement(lastNode);
         size++;
     }
@@ -120,7 +113,7 @@ public class DynamicLinkedList<E> implements Iterable {
      */
     public E get(int index)  {
         if (index < size) {
-            Node<E> target = firstNode.getPrevElement();
+            Node<E> target = firstNode.getNextElement();
             for (int i = 0; i < index; i++) {
                 target = getNextElement(target);
             }
