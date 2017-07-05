@@ -56,8 +56,26 @@ public class SimpleSetArray<E> implements Iterable {
                 }
             }
         }
+        sortByHashCode();
     }
     /**
+     * Method sort element in array by hashCode.
+     */
+    private void sortByHashCode() {
+        for (int x = array.length - 1; x > 0; x--) {
+            for (int y = 0; y < x; y++) {
+                if (array[y + 1] != null) {
+                    if (array[y].hashCode() > array[y + 1].hashCode()) {
+                        Object values = array[y];
+                        array[y] = array[y + 1];
+                        array[y + 1] = values;
+                    }
+                }
+            }
+        }
+    }
+    /**
+     *
      * Get position in object.
      * @param index - index.
      * @return tag.

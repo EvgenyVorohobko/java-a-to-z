@@ -27,12 +27,13 @@ public class SimpleSetArrayTest {
      */
     @Test
     public void whenAddElementsInArray() {
-        set.add("object1");
-        set.add("object2");
-        set.add("object3");
-        assertThat(set.get(0), is("object1"));
-        assertThat(set.get(1), is("object2"));
-        assertThat(set.get(2), is("object3"));
+        set.add(5);
+        set.add(2);
+        set.add(8);
+        set.add(10);
+        set.add(-1);
+        assertThat(set.get(0), is(-1));
+        assertThat(set.get(4), is(10));
     }
     /**
      * Test.
