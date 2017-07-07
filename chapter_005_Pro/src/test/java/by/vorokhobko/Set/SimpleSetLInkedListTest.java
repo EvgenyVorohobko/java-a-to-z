@@ -2,6 +2,8 @@ package by.vorokhobko.Set;
 
 import org.junit.Test;
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.NoSuchElementException;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -17,27 +19,29 @@ public class SimpleSetLInkedListTest {
     /**
      * The class field.
      */
-    private SimpleSetLinkedList list = new SimpleSetLinkedList();
+    private SimpleSetLinkedList<Integer> set = new SimpleSetLinkedList<>();
     /**
      * The class field.
      */
-    private Iterator<Integer> iter = list.iterator();
+    private Iterator<Integer> iter = set.iterator();
     /**
      * Test.
      */
     @Test
     public void whenAddElementInLinked() {
-        list.add(4);
-        list.add(5);
-        assertThat(list.get(0), is(4));
-        assertThat(list.get(1), is(5));
+        set.addList(4);
+        set.addList(3);
+        set.addList(5);
+        set.addList(9);
+        assertThat(set.getElement(0), is(3));
+        assertThat(set.getElement(3), is(9));
     }
     /**
      * Test.
      */
     @Test
     public void whenNextElementDoNotLinked() {
-        list.add(4);
+        set.addList(4);
         assertThat(iter.hasNext(), is(true));
         iter.next();
         assertThat(iter.hasNext(), is(false));
@@ -48,8 +52,8 @@ public class SimpleSetLInkedListTest {
      */
     @Test(expected = NoSuchElementException.class)
     public void whenNotElementInLinked() throws NoSuchElementException {
-        list.add(4);
-        list.add(5);
+        set.addList(4);
+        set.addList(5);
         iter.next();
         iter.next();
         iter.next();
@@ -59,9 +63,8 @@ public class SimpleSetLInkedListTest {
      */
     @Test
     public void whenDeleteElementInLinked() {
-        list.add(4);
-        list.add(5);
-        list.remove();
-        assertThat(list.size(), is(1));
+        set.addList(4);
+        set.addList(5);
+        assertThat(set.size(), is(2));
     }
 }
