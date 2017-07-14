@@ -55,14 +55,9 @@ public class CyclicalLinkedList<T> {
     public boolean hasCycle(Node first) {
         boolean isNeedSave = false;
         Node count = first.getNext();
-        if (first == null) {
-            isNeedSave = false;
-        }
         while ((first = count) != null) {
-            if (first.equals(count)) {
                 isNeedSave = true;
                 break;
-            }
         }
         return isNeedSave;
     }
