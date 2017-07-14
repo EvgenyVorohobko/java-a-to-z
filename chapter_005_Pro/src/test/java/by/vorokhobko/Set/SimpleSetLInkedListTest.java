@@ -2,8 +2,6 @@ package by.vorokhobko.Set;
 
 import org.junit.Test;
 import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.NoSuchElementException;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;

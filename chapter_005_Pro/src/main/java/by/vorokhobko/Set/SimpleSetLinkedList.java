@@ -49,6 +49,7 @@ public class SimpleSetLinkedList<E> implements Iterable {
     }
     /**
      * Method sort element in list by hashCode.
+     * @return tag.
      */
     public List<E> sortedList() {
         Collections.sort(list, (elementOne, elementTwo) -> Integer.compare(elementOne.hashCode(), elementTwo.hashCode()));
@@ -62,6 +63,10 @@ public class SimpleSetLinkedList<E> implements Iterable {
     public E getElement(int index) {
         return list.get(index);
     }
+    /**
+     * Get size SimpleSetLinkedList.
+     * @return tag.
+     */
     public int size() {
         return list.size();
     }
