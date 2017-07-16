@@ -27,6 +27,8 @@ public class UserTest {
         mapFirst.put(userSecond, "Kark");
         assertThat(mapFirst.size(), is(2));
         System.out.println(mapFirst);
+        System.out.println(userFirst.hashCode());
+        System.out.println(userSecond.hashCode());
     }
     /**
      * Test.
@@ -40,19 +42,23 @@ public class UserTest {
         mapSecond.put(userSecond, "Kark");
         assertThat(mapSecond.size(), is(2));
         System.out.println(mapSecond);
+        System.out.println(userFirst.hashCode());
+        System.out.println(userSecond.hashCode());
     }
     /**
      * Test.
      */
     @Test
     public void whenAddUserOverrideEqualsInMap() {
-        UserOverrideEquals userThird = new UserOverrideEquals("Skott", 2, new GregorianCalendar(1990, 6, 13));
+        UserOverrideEquals userFirst = new UserOverrideEquals("Skott", 2, new GregorianCalendar(1990, 6, 13));
         UserOverrideEquals userSecond = new UserOverrideEquals("Skott", 2, new GregorianCalendar(1990, 6, 13));
         Map<UserOverrideEquals, Object> mapThird = new HashMap<>();
-        mapThird.put(userThird, "Stark");
+        mapThird.put(userFirst, "Stark");
         mapThird.put(userSecond, "Kark");
         assertThat(mapThird.size(), is(2));
         System.out.println(mapThird);
+        System.out.println(userFirst.hashCode());
+        System.out.println(userSecond.hashCode());
     }
     /**
      * Test.
@@ -66,5 +72,7 @@ public class UserTest {
         mapFourth.put(userSecond, "Kark");
         assertThat(mapFourth.size(), is(1));
         System.out.println(mapFourth);
+        System.out.println(userFirst.hashCode());
+        System.out.println(userSecond.hashCode());
     }
 }
