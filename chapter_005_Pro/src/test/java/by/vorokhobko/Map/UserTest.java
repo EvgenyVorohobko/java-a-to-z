@@ -49,6 +49,21 @@ public class UserTest {
      * Test.
      */
     @Test
+    public void whenAddUserForLineNullOverrideHashCodeInMap() {
+        UserOverrideHashCode userFirst = new UserOverrideHashCode(null, 2, null);
+        UserOverrideHashCode userSecond = new UserOverrideHashCode(null, 2, null);
+        Map<UserOverrideHashCode, Object> mapSecond = new HashMap<>();
+        mapSecond.put(userFirst, "Stark");
+        mapSecond.put(userSecond, "Kark");
+        assertThat(mapSecond.size(), is(2));
+        System.out.println(mapSecond);
+        System.out.println(userFirst.hashCode());
+        System.out.println(userSecond.hashCode());
+    }
+    /**
+     * Test.
+     */
+    @Test
     public void whenAddUserOverrideEqualsInMap() {
         UserOverrideEquals userFirst = new UserOverrideEquals("Skott", 2, new GregorianCalendar(1990, 6, 13));
         UserOverrideEquals userSecond = new UserOverrideEquals("Skott", 2, new GregorianCalendar(1990, 6, 13));
@@ -67,6 +82,21 @@ public class UserTest {
     public void whenAddUserOverrideHashCodeAndEqualsInMap() {
         UserOverrideHashCodeAndEquals userFirst = new UserOverrideHashCodeAndEquals("Skott", 2, new GregorianCalendar(1990, 6, 13));
         UserOverrideHashCodeAndEquals userSecond = new UserOverrideHashCodeAndEquals("Skott", 2, new GregorianCalendar(1990, 6, 13));
+        Map<UserOverrideHashCodeAndEquals, Object> mapFourth = new HashMap<>();
+        mapFourth.put(userFirst, "Stark");
+        mapFourth.put(userSecond, "Kark");
+        assertThat(mapFourth.size(), is(1));
+        System.out.println(mapFourth);
+        System.out.println(userFirst.hashCode());
+        System.out.println(userSecond.hashCode());
+    }
+    /**
+     * Test.
+     */
+    @Test
+    public void whenAddUserForLineNullOverrideHashCodeAndEqualsInMap() {
+        UserOverrideHashCodeAndEquals userFirst = new UserOverrideHashCodeAndEquals(null, 2, null);
+        UserOverrideHashCodeAndEquals userSecond = new UserOverrideHashCodeAndEquals(null, 2, null);
         Map<UserOverrideHashCodeAndEquals, Object> mapFourth = new HashMap<>();
         mapFourth.put(userFirst, "Stark");
         mapFourth.put(userSecond, "Kark");
