@@ -18,4 +18,9 @@ public interface SimpleTree<E extends Comparable<E>> extends Iterable<E> {
      * @return tag.
      */
     boolean add(E parent, E child);
+    /**
+     * The method should check the number of child elements in the tree.
+     * @return tag.
+     */
+    boolean isBinary();
 }

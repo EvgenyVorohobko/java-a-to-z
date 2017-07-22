@@ -5,6 +5,15 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+/**
+ * Tree.
+ *
+ * Class Tree for create simple Tree part 005_pro, lesson 6.
+ * @author Evgeny Vorokhobko (vorokhobko2011@yandex.ru).
+ * @since 22.07.2017.
+ * @version 1.
+ * @param <E> - element.
+ */
 public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     /**
      * The class field.
@@ -97,13 +106,30 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     }
 
     /**
+     * The method should check the number of child elements in the tree.
+     * @return tag.
+     */
+    @Override
+    public boolean isBinary() {
+        int number = 2;
+        boolean isNeedSave = true;
+        if (root != null) {
+            for (Node<E> element : root.getChildren()) {
+                if (root.getChildren().size() > number) {
+                    isNeedSave = false;
+                }
+            }
+        }
+        return isNeedSave;
+    }
+
+    /**
      * Override iterator constructor.
      * @return tag.
      */
     @Override
     public Iterator<E> iterator() {
         return new Iterator<E>() {
-            private Node<E> result;
 
             @Override
             public boolean hasNext() {
@@ -118,7 +144,11 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
 
             @Override
             public E next() {
-                return result.getValue();
+                if (hasNext()) {
+                    return root.getValue();
+                } else {
+                    throw new NoSuchElementException();
+                }
             }
         };
     }
