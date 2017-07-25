@@ -3,7 +3,6 @@ package by.vorokhobko.Tree;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.NoSuchElementException;
 
 /**
  * Tree.
@@ -131,24 +130,29 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     public Iterator<E> iterator() {
         return new Iterator<E>() {
 
-            @Override
-            public boolean hasNext() {
-                boolean isNeedSave = false;
-                if (root.getValue() != null) {
-                    isNeedSave = true;
-                } else if (root.getChildren().iterator().hasNext()) {
-                    isNeedSave = true;
+            private List<E> listE = new ArrayList<>();
+            private int index = 0;
+
+            private List<E> addElementToIterator(Node<E> node) {
+                for (Node<E> element : node.getChildren()) {
+                    if (element.getChildren().size() > 1) {
+                        addElementToIterator(element);
+                    }
+                    this.listE.add(element.getValue());
                 }
-                return isNeedSave;
+                return this.listE;
             }
+
+             @Override
+            public boolean hasNext() {
+                 addElementToIterator(root);
+                 return this.index < this.listE.size();
+             }
 
             @Override
             public E next() {
-                if (hasNext()) {
-                    return root.getValue();
-                } else {
-                    throw new NoSuchElementException();
-                }
+                addElementToIterator(root);
+                return this.listE.get(this.index++);
             }
         };
     }
