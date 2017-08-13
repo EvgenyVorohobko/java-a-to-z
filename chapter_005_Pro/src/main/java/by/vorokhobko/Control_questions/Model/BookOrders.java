@@ -15,6 +15,18 @@ public class BookOrders {
     /**
      * The class field.
      */
+    private static final String FOR_BUY = "BUY";
+    /**
+     * The class field.
+     */
+    private static final String FOR_SELL = "SELL";
+    /**
+     * The class field.
+     */
+    private static final String BOOK_FOR_ORDERS_ONE = "book-1";
+    /**
+     * The class field.
+     */
     private Book book;
     /**
      * The class field.
@@ -23,87 +35,35 @@ public class BookOrders {
     /**
      * The class field.
      */
-    private Map<Double, Book> buyBook1 = new TreeMap<>();
+    private Map<Double, Book> buyBook = new TreeMap<>();
     /**
      * The class field.
      */
-    private Map<Double, Book> buyBook2 = new TreeMap<>();
-    /**
-     * The class field.
-     */
-    private Map<Double, Book> buyBook3 = new TreeMap<>();
-    /**
-     * The class field.
-     */
-    private Map<Double, Book> sellBook1 = new TreeMap<>();
-    /**
-     * The class field.
-     */
-    private Map<Double, Book> sellBook2 = new TreeMap<>();
-    /**
-     * The class field.
-     */
-    private Map<Double, Book> sellBook3 = new TreeMap<>();
+    private Map<Double, Book> sellBook = new TreeMap<>();
     /**
      * The method add element in Map.
      * @param map - map.
      */
     public void addElementsInMap(Map<Integer, Book> map) {
         this.orderBook = map;
-        for (Map.Entry<Integer, Book> elements : orderBook.entrySet()) {
+        for (Map.Entry<Integer, Book> elements : this.orderBook.entrySet()) {
             Book book = elements.getValue();
-            if (book.getOperation().equals("BUY") && book.getBook().equals("book-1")) {
+            if (FOR_BUY.equals(book.getOperation()) && BOOK_FOR_ORDERS_ONE.equals(book.getBook())) {
                 Book book1 = this.book;
-                buyBook1.put(book.getPrice(), book);
+                this.buyBook.put(book.getPrice(), book);
                 if (book1 != null) {
                     int volume = book1.getVolume();
-                    int finalVolume = buyBook1.get(book.getPrice()).getVolume() + volume;
-                    buyBook1.get(book.getPrice()).setVolume(finalVolume);
+                    int finalVolume = this.buyBook.get(book.getPrice()).getVolume() + volume;
+                    this.buyBook.get(book.getPrice()).setVolume(finalVolume);
                 }
             }
-            if (book.getOperation().equals("SELL") && book.getBook().equals("book-1")) {
+            if (FOR_SELL.equals(book.getOperation()) && BOOK_FOR_ORDERS_ONE.equals(book.getBook())) {
                 Book book1 = this.book;
-                sellBook1.put(book.getPrice(), book);
+                this.sellBook.put(book.getPrice(), book);
                 if (book1 != null) {
                     int volume = book1.getVolume();
-                    int finalVolume = sellBook1.get(book.getPrice()).getVolume() + volume;
-                    sellBook1.get(book.getPrice()).setVolume(finalVolume);
-                }
-            }
-            if (book.getOperation().equals("BUY") && book.getBook().equals("book-2")) {
-                Book book2 = this.book;
-                buyBook2.put(book.getPrice(), book);
-                if (book2 != null) {
-                    int volume = book2.getVolume();
-                    int finalVolume = buyBook2.get(book.getPrice()).getVolume() + volume;
-                    buyBook2.get(book.getPrice()).setVolume(finalVolume);
-                }
-            }
-            if (book.getOperation().equals("SELL") && book.getBook().equals("book-2")) {
-                Book book2 = this.book;
-                sellBook2.put(book.getPrice(), book);
-                if (book2 != null) {
-                    int volume = book2.getVolume();
-                    int finalVolume = sellBook2.get(book.getPrice()).getVolume() + volume;
-                    sellBook2.get(book.getPrice()).setVolume(finalVolume);
-                }
-            }
-            if (book.getOperation().equals("BUY") && book.getBook().equals("book-3")) {
-                Book book3 = this.book;
-                buyBook3.put(book.getPrice(), book);
-                if (book3 != null) {
-                    int volume = book3.getVolume();
-                    int finalVolume = buyBook3.get(book.getPrice()).getVolume() + volume;
-                    buyBook3.get(book.getPrice()).setVolume(finalVolume);
-                }
-            }
-            if (book.getOperation().equals("SELL") && book.getBook().equals("book-3")) {
-                Book book3 = this.book;
-                sellBook3.put(book.getPrice(), book);
-                if (book3 != null) {
-                    int volume = book3.getVolume();
-                    int finalVolume = sellBook3.get(book.getPrice()).getVolume() + volume;
-                    sellBook3.get(book.getPrice()).setVolume(finalVolume);
+                    int finalVolume = this.sellBook.get(book.getPrice()).getVolume() + volume;
+                    this.sellBook.get(book.getPrice()).setVolume(finalVolume);
                 }
             }
         }
@@ -112,14 +72,14 @@ public class BookOrders {
      * Add getter buyBook1.
      * @return tag.
      */
-    public Map<Double, Book> getBuyBook1() {
-        return buyBook1;
+    public Map<Double, Book> getBuyBook() {
+        return buyBook;
     }
     /**
      * Add getter getSellBook1.
      * @return tag.
      */
-    public Map<Double, Book> getSellBook1() {
-        return sellBook1;
+    public Map<Double, Book> getSellBook() {
+        return sellBook;
     }
 }

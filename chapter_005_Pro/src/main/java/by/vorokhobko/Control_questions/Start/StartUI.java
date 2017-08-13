@@ -38,7 +38,7 @@ public class StartUI {
     public void runApplicationForFirstBook(File file) {
         this.parser.parsingXMLDocument(file);
         this.orders.addElementsInMap(parser.getOrderBook());
-        this.compare.compareElementInListForBook(orders.getBuyBook1(), orders.getSellBook1());
+        this.compare.compareElementInListForBook(orders.getBuyBook(), orders.getSellBook());
         this.compare.decreaseInTheNumberOfOrders();
     }
     /**
