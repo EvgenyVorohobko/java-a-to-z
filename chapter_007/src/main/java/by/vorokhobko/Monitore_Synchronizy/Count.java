@@ -77,17 +77,16 @@ public class Count {
      * @throws InterruptedException tag.
      */
     public static void main(String[] args) throws InterruptedException {
-        Count counterA = new Count();
-        counterA.add(1);
-        Count counterB = new Count();
-        counterB.add(2);
-        Thread threadA = new Thread(new RunnableCount(counterA, counterB));
-        Thread threadB = new Thread(new RunnableCount(counterB, counterA));
+        Count counter = new Count();
+        counter.add(1);
+        counter.add(2);
+        Thread threadA = new Thread(new RunnableCount(counter, counter));
+        Thread threadB = new Thread(new RunnableCount(counter, counter));
 
         threadA.start();
         threadB.start();
         threadA.join();
         threadB.join();
-        System.out.println(counterA.count);
+        System.out.println(counter.count);
     }
 }
