@@ -39,68 +39,10 @@ public class DynamicArrayList<E> implements Iterable {
         this.container = new Object[size];
     }
     /**
-     * Main method.
-     * @param args - args.
-     */
-    public static void main(String[] args) {
-        try {
-            DynamicArrayList<String> list = new DynamicArrayList<>(1);
-            Iterator<String> iter = list.iterator();
-            Thread arrayList1 = new Thread(new List(list, iter));
-            Thread arrayList2 = new Thread(new List(list, iter));
-            arrayList1.start();
-            arrayList2.start();
-            arrayList1.join();
-            arrayList2.join();
-        } catch (InterruptedException ex) {
-            ex.printStackTrace();
-        }
-    }
-    /**
-     * List.
-     *
-     * Class List implements Runnable.
-     */
-    public static class List implements Runnable {
-        /**
-         * The class field.
-         */
-        private final DynamicArrayList<String> list;
-        /**
-         * The class field.
-         */
-        private final Iterator<String> iter;
-        /**
-         * Add constructor.
-         * @param list - list.
-         * @param iter - iter.
-         */
-        public List(DynamicArrayList<String> list, Iterator<String> iter) {
-            this.list = list;
-            this.iter = iter;
-        }
-        @Override
-        public void run() {
-            synchronized (this.list) {
-                synchronized (this.iter) {
-                    list.add("object 1");
-                    list.add("object 2");
-                    list.add("object 3");
-                    System.out.println(iter.hasNext());
-                    System.out.println(list.get(1));
-                    if (iter.hasNext()) {
-                        iter.remove();
-                    }
-                    System.out.println(list.get(0));
-                }
-            }
-        }
-    }
-    /**
-     * Add generic E in objects.
+     * Add generic T in objects.
      * @param value - value.
      */
-    public void add(E value) {
+    public synchronized void add(E value) {
         if (count == container.length - 1) {
             resize(container.length * 3 / 2 + 1);
         }
@@ -110,7 +52,7 @@ public class DynamicArrayList<E> implements Iterable {
      * Helper method to add an element.
      * @param size - size.
      */
-    public void resize(int size) {
+    public synchronized void resize(int size) {
         Object[] newContainer = new Object[size];
         System.arraycopy(container, 0, newContainer, 0, count);
         container = newContainer;
@@ -120,7 +62,7 @@ public class DynamicArrayList<E> implements Iterable {
      * @param index - index.
      * @return tag.
      */
-    public E get(int index) {
+    public synchronized E get(int index) {
         return (E) this.container[index];
     }
     /**
@@ -128,8 +70,8 @@ public class DynamicArrayList<E> implements Iterable {
      * @return tag.
      */
     @Override
-    public Iterator<E> iterator() {
-        return new ListArrayIterator<E>();
+    public synchronized Iterator<E> iterator() {
+        return new MyIterator<E>();
     }
     /**
      * MyIterator.
@@ -137,13 +79,13 @@ public class DynamicArrayList<E> implements Iterable {
      * Class MyIterator create own implementation of the iterator.
      * @param <E>.
      */
-    public class ListArrayIterator<E> implements Iterator<E> {
+    public class MyIterator<E> implements Iterator<E> {
         /**
          * Override method hasNext.
          * @return tag.
          */
         @Override
-        public boolean hasNext() {
+        public synchronized boolean hasNext() {
             boolean isNeedSave = false;
             if (container.length > count) {
                 isNeedSave = true;
@@ -155,7 +97,7 @@ public class DynamicArrayList<E> implements Iterable {
          * @return tag.
          */
         @Override
-        public E next() throws NoSuchElementException {
+        public synchronized E next() throws NoSuchElementException {
             if (hasNext()) {
                 return (E) container[count++];
             } else {
@@ -166,7 +108,7 @@ public class DynamicArrayList<E> implements Iterable {
          * Override method remove.
          */
         @Override
-        public void remove() {
+        public synchronized void remove() {
             for (int i = index; i < count; i++) {
                 container[i] = container[i + 1];
             }

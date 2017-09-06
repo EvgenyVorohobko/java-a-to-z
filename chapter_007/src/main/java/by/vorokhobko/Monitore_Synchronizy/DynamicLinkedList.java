@@ -1,7 +1,8 @@
 package by.vorokhobko.Monitore_Synchronizy;
 
+import net.jcip.annotations.ThreadSafe;
+
 import java.util.Iterator;
-import java.util.List;
 import java.util.NoSuchElementException;
 
 /**
@@ -13,6 +14,7 @@ import java.util.NoSuchElementException;
  * @version 1.
  * @param <E>.
  */
+@ThreadSafe
 public class DynamicLinkedList<E> implements Iterable {
     /**
      * The class field.
@@ -36,66 +38,6 @@ public class DynamicLinkedList<E> implements Iterable {
     public DynamicLinkedList() {
         lastNode = new Node<E>(firstNode, null, null);
         firstNode = new Node<E>(null, null, lastNode);
-    }
-    /**
-     * Main method.
-     * @param args - args.
-     */
-    public static void main(String[] args) {
-        try {
-            DynamicLinkedList<String> list = new DynamicLinkedList<>();
-            Iterator<String> iter = list.iterator();
-            Thread arrayList1 = new Thread(new List(list, iter));
-            Thread arrayList2 = new Thread(new List(list, iter));
-            arrayList1.start();
-            arrayList2.start();
-            arrayList1.join();
-            arrayList2.join();
-        } catch (InterruptedException ex) {
-            ex.printStackTrace();
-        }
-    }
-    /**
-     * List.
-     *
-     * Class List implements Runnable.
-     */
-    public static class List implements Runnable {
-        /**
-         * The class field.
-         */
-        private final DynamicLinkedList<String> list;
-        /**
-         * The class field.
-         */
-        private final Iterator<String> iter;
-        /**
-         * Add constructor.
-         * @param list - list.
-         * @param iter - iter.
-         */
-        public List(DynamicLinkedList<String> list, Iterator<String> iter) {
-            this.list = list;
-            this.iter = iter;
-        }
-        @Override
-        public void run() {
-            synchronized (this.list) {
-                synchronized (this.iter) {
-                    list.add("object 1");
-                    list.add("object 2");
-                    list.add("object 3");
-                    System.out.println(iter.hasNext());
-                    System.out.println(list.size());
-                    System.out.println(list.get(1));
-                    if (iter.hasNext()) {
-                        list.remove();
-                    }
-                    System.out.println(list.get(0));
-                    System.out.println(list.size());
-                }
-            }
-        }
     }
     /**
      * Node.
@@ -131,28 +73,28 @@ public class DynamicLinkedList<E> implements Iterable {
          * Add setter currentElement.
          * @param currentElement - currentElement.
          */
-        public void setCurrentElement(E currentElement) {
+        public synchronized void setCurrentElement(E currentElement) {
             this.currentElement = currentElement;
         }
         /**
          * Add getter currentElement.
          * @return tag.
          */
-        public E getCurrentElement() {
+        public synchronized E getCurrentElement() {
             return currentElement;
         }
         /**
          * Add setter nextElement.
          * @param nextElement - nextElement.
          */
-        public void setNextElement(Node<E> nextElement) {
+        public synchronized void setNextElement(Node<E> nextElement) {
             this.nextElement = nextElement;
         }
         /**
          * Add getter nextElement.
          * @return tag.
          */
-        public Node<E> getNextElement() {
+        public synchronized Node<E> getNextElement() {
             return nextElement;
         }
     }
@@ -160,7 +102,7 @@ public class DynamicLinkedList<E> implements Iterable {
      * Add generic T in objects.
      * @param value - value.
      */
-    public void add(E value) {
+    public synchronized void add(E value) {
         Node<E> prev = lastNode;
         prev.setCurrentElement(value);
         lastNode = new Node<E>(prev, null, null);
@@ -172,7 +114,7 @@ public class DynamicLinkedList<E> implements Iterable {
      * @param index - index.
      * @return tag.
      */
-    public E get(int index)  {
+    public synchronized E get(int index)  {
         if (index < size) {
             Node<E> target = firstNode.getNextElement();
             for (int i = 0; i < index; i++) {
@@ -187,7 +129,7 @@ public class DynamicLinkedList<E> implements Iterable {
      * Get generic E in position.
      * @return tag.
      */
-    public E remove() {
+    public synchronized E remove() {
         final Node<E> delete = lastNode;
         if (delete != null) {
             return deleteElementInList(delete);
@@ -200,7 +142,7 @@ public class DynamicLinkedList<E> implements Iterable {
      * @param delete - delete.
      * @return tag.
      */
-    public E deleteElementInList(Node<E> delete) {
+    public synchronized E deleteElementInList(Node<E> delete) {
         final E element = delete.currentElement;
         final Node<E> prev = delete.prevElement;
         delete.currentElement = null;
@@ -219,14 +161,14 @@ public class DynamicLinkedList<E> implements Iterable {
      * @param current - current.
      * @return tag.
      */
-    private Node<E> getNextElement(Node<E> current) {
+    private synchronized Node<E> getNextElement(Node<E> current) {
         return current.getNextElement();
     }
     /**
      * Get size.
      * @return tag.
      */
-    public int size() {
+    public synchronized int size() {
         return size;
     }
     /**
@@ -234,7 +176,7 @@ public class DynamicLinkedList<E> implements Iterable {
      * @return tag.
      */
     @Override
-    public Iterator iterator() {
+    public synchronized Iterator iterator() {
         return new MyIteratorLinked<E>();
     }
     /**
@@ -249,7 +191,7 @@ public class DynamicLinkedList<E> implements Iterable {
          * @return tag.
          */
         @Override
-        public boolean hasNext() {
+        public synchronized boolean hasNext() {
             return counter < size;
         }
         /**
@@ -257,7 +199,7 @@ public class DynamicLinkedList<E> implements Iterable {
          * @return tag.
          */
         @Override
-        public Object next() {
+        public synchronized Object next() {
             return get(counter++);
         }
     }
