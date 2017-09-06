@@ -22,14 +22,14 @@ public class UserStorage {
      * The method adds a user to the UserStorage.
      * @param user - user.
      */
-    public void add(User user) {
+    public synchronized void add(User user) {
         this.storage.add(user);
     }
     /**
      * The method needs to replace the user in the UserStorage.
      * @param userUpdate - userUpdate.
      */
-    public void update(User userUpdate) {
+    public synchronized void update(User userUpdate) {
         for (int index = 0; index < this.storage.size(); index++) {
             if (this.storage.get(index).getId() == userUpdate.getId()) {
                 this.storage.set(index, userUpdate);
@@ -41,7 +41,7 @@ public class UserStorage {
      * The method should delete the user in the UserStorage.
      * @param userDelete - userDelete.
      */
-    public void delete(User userDelete) {
+    public synchronized void delete(User userDelete) {
         for (int index = 0; index < this.storage.size(); index++) {
             if (this.storage.get(index).getId() == userDelete.getId()) {
                 this.storage.remove(index);
@@ -55,7 +55,7 @@ public class UserStorage {
      * @param toId - toId.
      * @param amount - amount.
      */
-    public void transfer(int fromId, int toId, int amount) {
+    public synchronized void transfer(int fromId, int toId, int amount) {
         try {
             if (storage.get(toId).getId() == toId) {
                 this.storage.get(fromId).setAmount(storage.get(fromId).getAmount() - amount);
@@ -69,7 +69,7 @@ public class UserStorage {
      * The method searches all Users.
      * @return tag.
      */
-    public List<User> findAll() {
+    public synchronized List<User> findAll() {
         return this.storage;
     }
     /**
@@ -77,7 +77,7 @@ public class UserStorage {
      * @param id - id.
      * @return tag.
      */
-    public User getStorage(int id) {
+    public synchronized User getStorage(int id) {
         return storage.get(id);
     }
 }
