@@ -26,33 +26,4 @@ public class User {
         this.name = name;
         this.passport = passport;
     }
-    /**
-     * Override method equals.
-     * @param o - o.
-     * @return tag.
-     */
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        User user = (User) o;
-        if (passport != user.passport) {
-            return false;
-        }
-        return !(name != null ? !name.equals(user.name) : user.name != null);
-    }
-    /**
-     * Override method hashCode.
-     * @return tag.
-     */
-    @Override
-    public int hashCode() {
-        int result = name != null ? name.hashCode() : 0;
-        result = 31 * result + passport;
-        return result;
-    }
 }
