@@ -29,17 +29,15 @@ public class StringCompare {
      * The method compare words.
      * @param text1 - text1.
      * @param text2 - text2.
+     * @return tag.
      */
-    public void compareString(String text1, String text2) {
+    public int compareString(String text1, String text2) {
         Set word1 = addElementInHashSet(text1.toLowerCase());
         Set word2 = addElementInHashSet(text2.toLowerCase());
         int wordBeforeSize = word1.size();
         word1.removeAll(word2);
         int wordAfterSize = word1.size();
-        if (wordBeforeSize - wordAfterSize == word2.size()) {
-            System.out.println("В первом слове есть буквы второго слова.");
-        } else {
-            System.out.println("В словах нет совпадений.");
-        }
+        int result = wordBeforeSize - wordAfterSize;
+        return result;
     }
 }
