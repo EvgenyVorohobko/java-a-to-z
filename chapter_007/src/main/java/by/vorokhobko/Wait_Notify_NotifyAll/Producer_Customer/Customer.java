@@ -1,7 +1,5 @@
 package by.vorokhobko.Wait_Notify_NotifyAll.Producer_Customer;
 
-import java.util.concurrent.BlockingQueue;
-
 /**
  * Customer.
  *
@@ -14,12 +12,12 @@ public class Customer implements Runnable {
     /**
      * The class field.
      */
-    private final BlockingQueue queue;
+    private final BlockingQueueRealization queue;
     /**
      * Add constructor.
-     * @param queue - BlockingQueue.
+     * @param queue - BlockingQueueRealization.
      */
-    public Customer(BlockingQueue queue) {
+    public Customer(BlockingQueueRealization queue) {
         this.queue = queue;
     }
     /**

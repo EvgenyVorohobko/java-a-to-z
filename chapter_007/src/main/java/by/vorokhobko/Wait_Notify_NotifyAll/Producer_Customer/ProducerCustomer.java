@@ -1,8 +1,5 @@
 package by.vorokhobko.Wait_Notify_NotifyAll.Producer_Customer;
 
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingQueue;
-
 /**
  * Producer_Customer.
  *
@@ -15,7 +12,7 @@ public class ProducerCustomer {
     /**
      * The class field.
      */
-    private static BlockingQueue queue = new LinkedBlockingQueue();
+    private static BlockingQueueRealization queue = new BlockingQueueRealization(10);
     /**
      * The main method.
      * @param args - args.
