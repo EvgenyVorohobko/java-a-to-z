@@ -1,4 +1,4 @@
-package by.vorokhobko.Cycles;
+package by.vorokhobko.cycles;
 
 /**
 * Counter.
