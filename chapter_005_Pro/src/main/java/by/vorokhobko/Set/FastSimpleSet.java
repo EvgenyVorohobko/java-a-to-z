@@ -1,4 +1,4 @@
-package by.vorokhobko.Set;
+package by.vorokhobko.set;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * FastSimpleSet.
  *
- * Class FastSimpleSet create fast add element in Set 005_Pro, lesson 4.
+ * Class FastSimpleSet create fast add element in set 005_Pro, lesson 4.
  * @author Evgeny Vorokhobko (vorokhobko2011@yandex.ru).
  * @since 14.07.2017.
  * @version 1.
@@ -24,7 +24,7 @@ public class FastSimpleSet<E> {
         this.list = new ArrayList<>();
     }
     /**
-     * Add objects in Set.
+     * Add objects in set.
      * @param element - element.
      */
     public void add(E element) {
@@ -46,7 +46,7 @@ public class FastSimpleSet<E> {
         return list.size();
     }
     /**
-     * Method determines position elements in Set.
+     * Method determines position elements in set.
      * @param element - element.
      * @param newList - newList.
      * @param start - start.
@@ -66,7 +66,7 @@ public class FastSimpleSet<E> {
         }
     }
     /**
-     * Add objects in List.
+     * Add objects in list.
      * @param element - element.
      */
     private void addElement(E element) {
@@ -75,7 +75,7 @@ public class FastSimpleSet<E> {
                 list.add(i, element);
                 break;
             } else if (list.get(i).hashCode() == element.hashCode()) {
-                System.out.println("This element " + element + " have in Set!");
+                System.out.println("This element " + element + " have in set!");
             }
         }
     }

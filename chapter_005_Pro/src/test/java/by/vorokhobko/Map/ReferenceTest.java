@@ -1,4 +1,4 @@
-package by.vorokhobko.Map;
+package by.vorokhobko.map;
 
 import org.junit.Test;
 import java.util.Iterator;

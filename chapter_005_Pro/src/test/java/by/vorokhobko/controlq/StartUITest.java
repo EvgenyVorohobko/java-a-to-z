@@ -1,6 +1,6 @@
 package by.vorokhobko.controlq;
 
-import by.vorokhobko.controlq.Start.StartUI;
+import by.vorokhobko.controlq.start.StartUI;
 import org.junit.Test;
 import java.io.File;
 

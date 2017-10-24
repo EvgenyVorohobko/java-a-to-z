@@ -1,4 +1,4 @@
-package by.vorokhobko.Set;
+package by.vorokhobko.set;
 
 import org.junit.Test;
 import java.util.Iterator;
@@ -45,7 +45,7 @@ public class SimpleSetLInkedListTest {
         assertThat(iter.hasNext(), is(false));
     }
     /**
-     * Test by Exception.
+     * Test by exception.
      * @throws NoSuchElementException tag.
      */
     @Test(expected = NoSuchElementException.class)

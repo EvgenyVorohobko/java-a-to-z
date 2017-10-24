@@ -1,4 +1,4 @@
-package by.vorokhobko.Iterator;
+package by.vorokhobko.iterator;
 
 import org.junit.Test;
 import java.util.ArrayList;

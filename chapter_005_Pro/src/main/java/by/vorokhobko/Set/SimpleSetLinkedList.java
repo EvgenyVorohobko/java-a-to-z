@@ -1,4 +1,4 @@
-package by.vorokhobko.Set;
+package by.vorokhobko.set;
 
 import java.util.Collections;
 import java.util.Iterator;
@@ -9,7 +9,7 @@ import java.util.NoSuchElementException;
 /**
  * SimpleSetLinkedList.
  *
- * Class SimpleSetLinkedList create the Set for 005_Pro, lesson 4.
+ * Class SimpleSetLinkedList create the set for 005_Pro, lesson 4.
  * @author Evgeny Vorokhobko (vorokhobko2011@yandex.ru).
  * @since 05.07.2017.
  * @version 1.

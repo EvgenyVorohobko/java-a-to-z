@@ -1,4 +1,4 @@
-package by.vorokhobko.List;
+package by.vorokhobko.list;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -28,7 +28,7 @@ public class DynamicStackTest {
         assertThat(stack.getCount(), is(2));
     }
     /**
-     * Test by Exception.
+     * Test by exception.
      * @throws InvalidOperationException tag.
      */
     @Test(expected = InvalidOperationException.class)

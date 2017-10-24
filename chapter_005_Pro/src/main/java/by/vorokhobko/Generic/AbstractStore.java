@@ -1,4 +1,4 @@
-package by.vorokhobko.Generic;
+package by.vorokhobko.generic;
 
 /**
  * AbstractStore.

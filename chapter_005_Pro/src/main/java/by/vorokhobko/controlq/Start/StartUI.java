@@ -1,9 +1,9 @@
-package by.vorokhobko.controlq.Start;
+package by.vorokhobko.controlq.start;
 
-import by.vorokhobko.controlq.Model.Book;
-import by.vorokhobko.controlq.Model.BookOrders;
-import by.vorokhobko.controlq.Model.Compare;
-import by.vorokhobko.controlq.SAXParsing.SAXPars;
+import by.vorokhobko.controlq.model.Book;
+import by.vorokhobko.controlq.model.BookOrders;
+import by.vorokhobko.controlq.model.Compare;
+import by.vorokhobko.controlq.saxparsing.SAXPars;
 import java.io.File;
 
 /**

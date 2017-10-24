@@ -1,4 +1,4 @@
-package by.vorokhobko.Iterator;
+package by.vorokhobko.iterator;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

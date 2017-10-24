@@ -1,11 +1,11 @@
-package by.vorokhobko.Iterator;
+package by.vorokhobko.iterator;
 
 import java.util.Iterator;
 
 /**
  * ArrayIterator.
  *
- * Class ArrayIterator for convert Iterator 005_Pro, lesson 1.
+ * Class ArrayIterator for convert iterator 005_Pro, lesson 1.
  * @author Evgeny Vorokhobko (vorokhobko2011@yandex.ru).
  * @since 18.06.2017.
  * @version 1.

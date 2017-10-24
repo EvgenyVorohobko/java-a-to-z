@@ -1,4 +1,4 @@
-package by.vorokhobko.controlq.Model;
+package by.vorokhobko.controlq.model;
 
 import java.util.Map;
 import java.util.TreeMap;
@@ -41,7 +41,7 @@ public class BookOrders {
      */
     private Map<Double, Book> sellBook = new TreeMap<>();
     /**
-     * The method add element in Map.
+     * The method add element in map.
      * @param map - map.
      */
     public void addElementsInMap(Map<Integer, Book> map) {

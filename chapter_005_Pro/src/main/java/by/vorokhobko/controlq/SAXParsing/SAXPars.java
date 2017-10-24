@@ -1,6 +1,6 @@
-package by.vorokhobko.controlq.SAXParsing;
+package by.vorokhobko.controlq.saxparsing;
 
-import by.vorokhobko.controlq.Model.Book;
+import by.vorokhobko.controlq.model.Book;
 import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;

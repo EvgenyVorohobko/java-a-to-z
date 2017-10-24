@@ -1,13 +1,13 @@
-package by.vorokhobko.Tree;
+package by.vorokhobko.tree;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 /**
- * Tree.
+ * tree.
  *
- * Class Tree for create simple Tree part 005_pro, lesson 6.
+ * Class tree for create simple tree part 005_pro, lesson 6.
  * @author Evgeny Vorokhobko (vorokhobko2011@yandex.ru).
  * @since 22.07.2017.
  * @version 1.
@@ -61,7 +61,7 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
     }
 
     /**
-     * The method insert element in Tree.
+     * The method insert element in tree.
      * @param parent - parent.
      * @param child - child.
      * @return tag.
@@ -84,7 +84,7 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
         return isNeedSave;
     }
     /**
-     * Method search element in Tree.
+     * Method search element in tree.
      * @param root - root.
      * @param newNode - newNode.
      * @return tag.

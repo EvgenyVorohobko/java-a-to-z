@@ -1,4 +1,4 @@
-package by.vorokhobko.Map;
+package by.vorokhobko.map;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -111,7 +111,7 @@ public class Reference<K, V> implements Book<K, V> {
         return true;
     }
     /**
-     * Method when key have in List, but value do not match.
+     * Method when key have in list, but value do not match.
      * @param nodeFromList - node is list.
      * @param newNode      - newNode.
      * @param value        - value.

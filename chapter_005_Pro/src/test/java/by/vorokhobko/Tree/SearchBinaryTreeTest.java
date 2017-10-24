@@ -1,4 +1,4 @@
-package by.vorokhobko.Tree;
+package by.vorokhobko.tree;
 
 import org.junit.Test;
 import static org.hamcrest.core.Is.is;

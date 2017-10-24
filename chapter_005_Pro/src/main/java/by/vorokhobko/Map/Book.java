@@ -1,4 +1,4 @@
-package by.vorokhobko.Map;
+package by.vorokhobko.map;
 
 /**
  * Book.

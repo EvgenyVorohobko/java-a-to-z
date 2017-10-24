@@ -1,4 +1,4 @@
-package by.vorokhobko.controlq.Model;
+package by.vorokhobko.controlq.model;
 
 import java.util.ArrayList;
 import java.util.Collections;

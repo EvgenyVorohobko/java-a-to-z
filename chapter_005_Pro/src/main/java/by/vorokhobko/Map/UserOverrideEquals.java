@@ -1,11 +1,11 @@
-package by.vorokhobko.Map;
+package by.vorokhobko.map;
 
 import java.util.Calendar;
 
 /**
  * UserOverrideEquals.
  *
- * Class UserOverrideEquals for Map, lesson 5.
+ * Class UserOverrideEquals for map, lesson 5.
  * @author Evgeny Vorokhobko (vorokhobko2011@yandex.ru).
  * @since 14.07.2017.
  * @version 1.

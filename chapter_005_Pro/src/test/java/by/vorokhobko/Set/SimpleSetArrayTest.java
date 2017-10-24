@@ -1,4 +1,4 @@
-package by.vorokhobko.Set;
+package by.vorokhobko.set;
 
 import org.junit.Test;
 import java.util.Iterator;

@@ -1,4 +1,4 @@
-package by.vorokhobko.Generic;
+package by.vorokhobko.generic;
 
 import org.junit.Test;
 import static org.hamcrest.core.Is.is;

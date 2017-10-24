@@ -1,6 +1,6 @@
-package by.vorokhobko.controlq.SAXParsing;
+package by.vorokhobko.controlq.saxparsing;
 
-import by.vorokhobko.controlq.Model.Book;
+import by.vorokhobko.controlq.model.Book;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -35,7 +35,7 @@ public class Handler extends DefaultHandler {
      */
     @Override
     public void startDocument() throws SAXException {
-        System.out.println("Start parsing...");
+        System.out.println("start parsing...");
         this.start = System.currentTimeMillis();
     }
 

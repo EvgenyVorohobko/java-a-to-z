@@ -1,9 +1,9 @@
-package by.vorokhobko.Tree;
+package by.vorokhobko.tree;
 
 /**
  * SimpleTree.
  *
- * Class SimpleTree the interface for the Tree part 005_Pro, lesson 6.
+ * Class SimpleTree the interface for the tree part 005_Pro, lesson 6.
  * @author Evgeny Vorokhobko (vorokhobko2011@yandex.ru).
  * @since 17.07.2017.
  * @version 1.

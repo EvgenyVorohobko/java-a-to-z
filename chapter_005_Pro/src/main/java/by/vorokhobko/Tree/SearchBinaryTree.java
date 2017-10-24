@@ -1,4 +1,4 @@
-package by.vorokhobko.Tree;
+package by.vorokhobko.tree;
 
 /**
  * SearchBinaryTree.
