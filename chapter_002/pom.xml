@@ -25,7 +25,7 @@
                         <finalName>tracker</finalName>
                         <transformers>
                             <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                <mainClass>by.vorokhobko.Polymorphism.StartUI</mainClass>
+                                <mainClass>by.vorokhobko.polymorphism.StartUI</mainClass>
                             </transformer>
                         </transformers>
                     </configuration>
