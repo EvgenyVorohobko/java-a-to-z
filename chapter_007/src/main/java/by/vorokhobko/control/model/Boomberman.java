@@ -52,37 +52,13 @@ public class Boomberman implements Runnable {
         final ReentrantLock point = this.gameBoard[this.positionX][this.positionY];
         while (!service.isShutdown()) {
             if (this.positionX != this.positionX - 1) {
-                if (closePointField(this.positionX - 1, this.positionY) & noteFieldInBooard(this.positionX - 1, this.positionY)) {
-                    if (lock.tryLock()) {
-                        this.gameBoard[this.positionX - 1][this.positionY] = point;
-                        this.gameBoard[this.positionX][this.positionY] = null;
-                        lock.unlock();
-                    }
-                }
+                moveDown(point);
             } else if (this.positionX != this.positionX + 1) {
-                if (closePointField(this.positionX + 1, this.positionY) & noteFieldInBooard(this.positionX + 1, this.positionY)) {
-                    if (lock.tryLock()) {
-                        this.gameBoard[this.positionX + 1][this.positionY] = point;
-                        this.gameBoard[this.positionX][this.positionY] = null;
-                        lock.unlock();
-                    }
-                }
+                moveUp(point);
             } else if (this.positionY != this.positionY - 1) {
-                if (closePointField(this.positionX, this.positionY - 1) & noteFieldInBooard(this.positionX, this.positionY - 1)) {
-                    if (lock.tryLock()) {
-                        this.gameBoard[this.positionX][this.positionY - 1] = point;
-                        this.gameBoard[this.positionX][this.positionY] = null;
-                        lock.unlock();
-                    }
-                }
+                moveLeft(point);
             } else if (this.positionY != this.positionY + 1) {
-                if (closePointField(this.positionX, this.positionY + 1) & noteFieldInBooard(this.positionX, this.positionY + 1)) {
-                    if (lock.tryLock()) {
-                        this.gameBoard[this.positionX][this.positionY + 1] = point;
-                        this.gameBoard[this.positionX][this.positionY] = null;
-                        lock.unlock();
-                    }
-                }
+                moveRight(point);
             }
         }
         return gameBoard;
@@ -108,6 +84,66 @@ public class Boomberman implements Runnable {
             isNeedSave = false;
         }
         return isNeedSave;
+    }
+    /**
+     * The method determines to move element down.
+     * @param point - point.
+     * @return tag.
+     */
+    public ReentrantLock moveDown(final ReentrantLock point) {
+        if (closePointField(this.positionX - 1, this.positionY) & noteFieldInBooard(this.positionX - 1, this.positionY)) {
+            if (lock.tryLock()) {
+                this.gameBoard[this.positionX - 1][this.positionY] = point;
+                this.gameBoard[this.positionX][this.positionY] = null;
+                lock.unlock();
+            }
+        }
+        return point;
+    }
+    /**
+     * The method determines to move element up.
+     * @param point - point.
+     * @return tag.
+     */
+    public ReentrantLock moveUp(final ReentrantLock point) {
+        if (closePointField(this.positionX + 1, this.positionY) & noteFieldInBooard(this.positionX + 1, this.positionY)) {
+            if (lock.tryLock()) {
+                this.gameBoard[this.positionX + 1][this.positionY] = point;
+                this.gameBoard[this.positionX][this.positionY] = null;
+                lock.unlock();
+            }
+        }
+        return point;
+    }
+    /**
+     * The method determines to move element left.
+     * @param point - point.
+     * @return tag.
+     */
+    public ReentrantLock moveLeft(final ReentrantLock point) {
+        if (closePointField(this.positionX, this.positionY - 1) & noteFieldInBooard(this.positionX, this.positionY - 1)) {
+            if (lock.tryLock()) {
+                this.gameBoard[this.positionX][this.positionY - 1] = point;
+                this.gameBoard[this.positionX][this.positionY] = null;
+                lock.unlock();
+            }
+        }
+        return point;
+    }
+    /**
+     * The method determines to move element right.
+     * @param point - point.
+     * @return tag.
+     */
+    public ReentrantLock moveRight(final ReentrantLock point) {
+        if (closePointField(this.positionX, this.positionY + 1) & noteFieldInBooard(this.positionX, this.positionY + 1)) {
+            if (lock.tryLock()) {
+                this.gameBoard[this.positionX][this.positionY + 1] = point;
+                this.gameBoard[this.positionX][this.positionY] = null;
+                lock.unlock();
+            }
+        }
+        return point;
     }
     /**
      * The method override method run.
