@@ -95,7 +95,7 @@ public class BankOperationTest {
         assertThat(list, is(bo.getUserAccounts(user1)));
     }
     /**
-     * Test by Exception.
+     * Test by exception.
      * @throws DoNotUserForMap tag.
      */
     @Test(expected = DoNotUserForMap.class)

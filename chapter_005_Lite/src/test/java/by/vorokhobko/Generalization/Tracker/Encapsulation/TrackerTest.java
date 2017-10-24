@@ -1,7 +1,7 @@
-package by.vorokhobko.Generalization.Tracker.Encapsulation;
+package by.vorokhobko.generalization.tracker.encapsulation;
 
-import by.vorokhobko.Generalization.Tracker.Encapsulation.models.Item;
-import by.vorokhobko.Generalization.Tracker.Encapsulation.start.Tracker;
+import by.vorokhobko.generalization.tracker.encapsulation.models.Item;
+import by.vorokhobko.generalization.tracker.encapsulation.start.Tracker;
 import org.junit.Test;
 import java.util.List;
 import static org.hamcrest.core.Is.is;

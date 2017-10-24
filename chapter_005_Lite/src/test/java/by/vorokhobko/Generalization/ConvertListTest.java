@@ -1,4 +1,4 @@
-package by.vorokhobko.Generalization;
+package by.vorokhobko.generalization;
 
 import org.junit.Test;
 import java.util.ArrayList;

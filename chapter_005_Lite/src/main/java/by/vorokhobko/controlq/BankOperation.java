@@ -19,7 +19,7 @@ public class BankOperation {
      */
     private Map<User, List<Account>> result = new HashMap<>();
     /**
-     * The method adds a user to Map.
+     * The method adds a user to map.
      * @param user - user.
      */
     public void addUser(User user) {
@@ -33,7 +33,7 @@ public class BankOperation {
         return this.result.size();
     }
     /**
-     * The method should delete Users in the List.
+     * The method should delete Users in the list.
      * @param user - user.
      * @throws DoNotUserForMap tag.
      */

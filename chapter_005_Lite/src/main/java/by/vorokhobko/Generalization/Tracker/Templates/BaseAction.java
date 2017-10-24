@@ -1,8 +1,8 @@
-package by.vorokhobko.Generalization.Tracker.Templates;
+package by.vorokhobko.generalization.tracker.templates;
 
-import by.vorokhobko.Generalization.Tracker.AbstractClasses.Input;
-import by.vorokhobko.Generalization.Tracker.AbstractClasses.UserAction;
-import by.vorokhobko.Generalization.Tracker.Encapsulation.start.Tracker;
+import by.vorokhobko.generalization.tracker.abstractclass.Input;
+import by.vorokhobko.generalization.tracker.abstractclass.UserAction;
+import by.vorokhobko.generalization.tracker.encapsulation.start.Tracker;
 
 /**
  * BaseAction.

@@ -1,4 +1,4 @@
-package by.vorokhobko.Sorting;
+package by.vorokhobko.sorting;
 
 /**
  * User.

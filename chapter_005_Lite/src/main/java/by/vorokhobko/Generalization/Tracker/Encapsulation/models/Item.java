@@ -1,4 +1,4 @@
-package by.vorokhobko.Generalization.Tracker.Encapsulation.models;
+package by.vorokhobko.generalization.tracker.encapsulation.models;
 
 /**
  * Item.

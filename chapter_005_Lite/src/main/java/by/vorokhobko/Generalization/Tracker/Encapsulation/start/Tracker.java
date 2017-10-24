@@ -1,14 +1,14 @@
-package by.vorokhobko.Generalization.Tracker.Encapsulation.start;
+package by.vorokhobko.generalization.tracker.encapsulation.start;
 
-import by.vorokhobko.Generalization.Tracker.Encapsulation.models.Item;
+import by.vorokhobko.generalization.tracker.encapsulation.models.Item;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 /**
- * Tracker.
+ * tracker.
  *
- * Class Tracker a wrapper over an array part 002, lesson 3.
+ * Class tracker a wrapper over an array part 002, lesson 3.
  * @author Evgeny Vorokhobko (vorokhobko2011@yandex.ru).
  * @since 24.02.2017.
  * @version 1.

@@ -1,6 +1,6 @@
 package by.vorokhobko.generalization.tracker.abstractclass;
 
-import by.vorokhobko.generalization.tracker.Encapsulation.start.Tracker;
+import by.vorokhobko.generalization.tracker.encapsulation.start.Tracker;
 
 /**
  * UserAction.

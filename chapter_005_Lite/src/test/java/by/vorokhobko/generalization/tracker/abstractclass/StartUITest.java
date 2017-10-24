@@ -1,7 +1,7 @@
 package by.vorokhobko.generalization.tracker.abstractclass;
 
-import by.vorokhobko.generalization.tracker.Encapsulation.models.Item;
-import by.vorokhobko.generalization.tracker.Encapsulation.start.Tracker;
+import by.vorokhobko.generalization.tracker.encapsulation.models.Item;
+import by.vorokhobko.generalization.tracker.encapsulation.start.Tracker;
 import org.junit.Assert;
 import org.junit.Test;
 import java.util.List;

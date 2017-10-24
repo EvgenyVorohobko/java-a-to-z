@@ -1,4 +1,4 @@
-package by.vorokhobko.Generalization;
+package by.vorokhobko.generalization;
 
 import java.util.HashMap;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * UserConvert.
  *
- * Class UserConvert converts List to Map 005_Lite, lesson 2.
+ * Class UserConvert converts list to map 005_Lite, lesson 2.
  * @author Evgeny Vorokhobko (vorokhobko2011@yandex.ru).
  * @since 04.06.2017.
  * @version 1.

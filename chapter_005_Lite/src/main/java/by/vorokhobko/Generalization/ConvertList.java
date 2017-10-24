@@ -1,4 +1,4 @@
-package by.vorokhobko.Generalization;
+package by.vorokhobko.generalization;
 
 import java.util.ArrayList;
 import java.util.Iterator;

@@ -1,9 +1,9 @@
 package by.vorokhobko.generalization.tracker.abstractclass;
 
-import by.vorokhobko.generalization.tracker.Encapsulation.models.Item;
-import by.vorokhobko.generalization.tracker.Encapsulation.models.Task;
-import by.vorokhobko.generalization.tracker.Encapsulation.start.Tracker;
-import by.vorokhobko.generalization.tracker.Templates.BaseAction;
+import by.vorokhobko.generalization.tracker.encapsulation.models.Item;
+import by.vorokhobko.generalization.tracker.encapsulation.models.Task;
+import by.vorokhobko.generalization.tracker.encapsulation.start.Tracker;
+import by.vorokhobko.generalization.tracker.templates.BaseAction;
 
 import java.util.ArrayList;
 import java.util.List;

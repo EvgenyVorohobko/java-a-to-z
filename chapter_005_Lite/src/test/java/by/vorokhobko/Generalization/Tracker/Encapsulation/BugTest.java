@@ -1,6 +1,6 @@
-package by.vorokhobko.Generalization.Tracker.Encapsulation;
+package by.vorokhobko.generalization.tracker.encapsulation;
 
-import by.vorokhobko.Generalization.Tracker.Encapsulation.models.Bug;
+import by.vorokhobko.generalization.tracker.encapsulation.models.Bug;
 import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;

@@ -1,4 +1,4 @@
-package by.vorokhobko.Sorting;
+package by.vorokhobko.sorting;
 
 import java.util.Collections;
 import java.util.List;
@@ -9,14 +9,14 @@ import java.util.Comparator;
 /**
  * SortUser.
  *
- * Class SortUser converts List to Set 005_Lite, lesson 3.
+ * Class SortUser converts list to set 005_Lite, lesson 3.
  * @author Evgeny Vorokhobko (vorokhobko2011@yandex.ru).
  * @since 04.06.2017.
  * @version 1.
  */
 public class SortUser {
     /**
-     * The method add sort element to Set.
+     * The method add sort element to set.
      * @param list - list.
      * @return tag.
      */

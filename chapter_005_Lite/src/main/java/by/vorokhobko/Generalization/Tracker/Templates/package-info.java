@@ -5,4 +5,4 @@
  * @version 1.
  * @since 11.11.2016.
  */
- package by.vorokhobko.Generalization.Tracker.Templates;
+ package by.vorokhobko.generalization.tracker.templates;
