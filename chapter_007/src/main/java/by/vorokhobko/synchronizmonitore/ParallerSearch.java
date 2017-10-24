@@ -89,7 +89,7 @@ public class ParallerSearch {
      * The method starts the search and prints all elements.
      */
     public void start() {
-        System.out.println("Start search...");
+        System.out.println("start search...");
         findThreadFile();
         findThreadText();
 

@@ -1,4 +1,4 @@
-package by.vorokhobko.Thread;
+package by.vorokhobko.thread;
 
 /**
  * AsynchronousOperations.
@@ -26,7 +26,7 @@ public class AsynchronousOperations {
      */
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
-        System.out.println("Start program.");
+        System.out.println("start program.");
         Thread showSymbol = new Thread(new CountChar());
         showSymbol.start();
         try {

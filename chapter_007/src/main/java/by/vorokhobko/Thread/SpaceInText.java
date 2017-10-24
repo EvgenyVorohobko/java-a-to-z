@@ -1,4 +1,4 @@
-package by.vorokhobko.Thread;
+package by.vorokhobko.thread;
 
 /**
  * SpaceInText.

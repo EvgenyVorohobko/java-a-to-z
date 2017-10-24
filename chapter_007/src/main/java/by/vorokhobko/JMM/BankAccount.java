@@ -1,4 +1,4 @@
-package by.vorokhobko.JMM;
+package by.vorokhobko.jmm;
 
 /**
  * BankAccount.

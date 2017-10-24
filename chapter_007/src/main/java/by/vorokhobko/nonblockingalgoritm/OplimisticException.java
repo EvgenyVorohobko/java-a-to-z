@@ -3,7 +3,7 @@ package by.vorokhobko.nonblockingalgoritm;
 /**
  * OplimisticException.
  *
- * Class OplimisticException for processing Exception part 007, lesson 5.
+ * Class OplimisticException for processing exception part 007, lesson 5.
  * @author Evgeny Vorokhobko (vorokhobko2011@yandex.ru).
  * @since 11.10.2017.
  * @version 1.

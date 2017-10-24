@@ -1,4 +1,4 @@
-package by.vorokhobko.Thread;
+package by.vorokhobko.thread;
 
 /**
  * WaitingForOutput.
@@ -30,7 +30,7 @@ public class WaitingForOutput {
      */
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
-        System.out.println("Start program.");
+        System.out.println("start program.");
         Thread showSpace = new Thread(new Space());
         Thread showSymbol = new Thread(new Symbol());
         showSpace.start();
