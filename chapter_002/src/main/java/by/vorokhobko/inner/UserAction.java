@@ -1,6 +1,6 @@
 package by.vorokhobko.inner;
 
-import by.vorokhobko.Encapsulation.start.Tracker;
+import by.vorokhobko.encapsulation.start.Tracker;
 
 /**
  * UserAction.

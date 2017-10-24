@@ -1,8 +1,8 @@
-package by.vorokhobko.Chess.models;
+package by.vorokhobko.chess.models;
 
-import by.vorokhobko.Chess.exceptions.FigureNotFoundException;
-import by.vorokhobko.Chess.exceptions.ImposibleMoveException;
-import by.vorokhobko.Chess.exceptions.OccupiedWayException;
+import by.vorokhobko.chess.exceptions.FigureNotFoundException;
+import by.vorokhobko.chess.exceptions.ImposibleMoveException;
+import by.vorokhobko.chess.exceptions.OccupiedWayException;
 
 /**
  * Board.

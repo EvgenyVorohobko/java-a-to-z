@@ -1,4 +1,4 @@
-package by.vorokhobko.Polymorphism;
+package by.vorokhobko.polymorphism;
 
 import org.junit.Test;
 import static org.hamcrest.core.Is.is;

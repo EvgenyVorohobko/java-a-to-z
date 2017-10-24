@@ -1,4 +1,4 @@
-package by.vorokhobko.Exception;
+package by.vorokhobko.exception;
 /**
  * MenuOutException.
  *

@@ -1,9 +1,9 @@
-package by.vorokhobko.Chess.models;
+package by.vorokhobko.chess.models;
 
 /**
  * Cell.
  *
- * Class Cell describes the cells of the chessboard for Chess 002, lesson test.
+ * Class Cell describes the cells of the chessboard for chess 002, lesson test.
  * @author Evgeny Vorokhobko (vorokhobko2011@yandex.ru).
  * @since 13.05.2017.
  * @version 1.

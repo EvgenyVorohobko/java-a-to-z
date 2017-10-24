@@ -1,11 +1,11 @@
-package by.vorokhobko.Exception;
+package by.vorokhobko.exception;
 
-import by.vorokhobko.Encapsulation.models.Item;
+import by.vorokhobko.encapsulation.models.Item;
 import org.junit.Test;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.core.Is.is;
 import org.junit.Assert;
-import by.vorokhobko.Encapsulation.start.Tracker;
+import by.vorokhobko.encapsulation.start.Tracker;
 
 /**
  * Test.
@@ -215,7 +215,7 @@ import by.vorokhobko.Encapsulation.start.Tracker;
         Assert.assertNotNull(tracker.findAll()[0].getId());
     }
     /**
-     * Test by Exception(StubInputTest).
+     * Test by exception(StubInputTest).
      * @throws MenuOutException tag.
      */
     @Test(expected = MenuOutException.class)

@@ -1,4 +1,4 @@
-package by.vorokhobko.Polymorphism;
+package by.vorokhobko.polymorphism;
 /**
  * Triangle.
  *

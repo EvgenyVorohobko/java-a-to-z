@@ -1,7 +1,7 @@
-package by.vorokhobko.Encapsulation;
+package by.vorokhobko.encapsulation;
 
-import by.vorokhobko.Encapsulation.models.Item;
-import by.vorokhobko.Encapsulation.start.Tracker;
+import by.vorokhobko.encapsulation.models.Item;
+import by.vorokhobko.encapsulation.start.Tracker;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.core.Is.is;
 import org.junit.Test;

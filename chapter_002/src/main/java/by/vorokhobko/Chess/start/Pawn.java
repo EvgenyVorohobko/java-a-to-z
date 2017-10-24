@@ -1,8 +1,8 @@
-package by.vorokhobko.Chess.start;
+package by.vorokhobko.chess.start;
 
-import by.vorokhobko.Chess.exceptions.ImposibleMoveException;
-import by.vorokhobko.Chess.models.Cell;
-import by.vorokhobko.Chess.models.Figure;
+import by.vorokhobko.chess.exceptions.ImposibleMoveException;
+import by.vorokhobko.chess.models.Cell;
+import by.vorokhobko.chess.models.Figure;
 
 /**
  * Pawn.

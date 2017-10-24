@@ -1,8 +1,8 @@
-package by.vorokhobko.Chess.exceptions;
+package by.vorokhobko.chess.exceptions;
 /**
  * FigureNotFoundException.
  *
- * Class FigureNotFoundException for processing Exception part 002, lesson test.
+ * Class FigureNotFoundException for processing exception part 002, lesson test.
  * @author Evgeny Vorokhobko (vorokhobko2011@yandex.ru).
  * @since 13.05.2017.
  * @version 1.

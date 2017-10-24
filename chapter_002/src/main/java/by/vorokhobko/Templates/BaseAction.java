@@ -1,8 +1,8 @@
-package by.vorokhobko.Templates;
+package by.vorokhobko.templates;
 
-import by.vorokhobko.AbstractClasses.Input;
-import by.vorokhobko.Encapsulation.start.Tracker;
-import by.vorokhobko.AbstractClasses.UserAction;
+import by.vorokhobko.abstractclass.Input;
+import by.vorokhobko.encapsulation.start.Tracker;
+import by.vorokhobko.abstractclass.UserAction;
 
 /**
  * BaseAction.

@@ -1,8 +1,8 @@
-package by.vorokhobko.Encapsulation;
+package by.vorokhobko.encapsulation;
 
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.core.Is.is;
-import by.vorokhobko.Encapsulation.models.Bug;
+import by.vorokhobko.encapsulation.models.Bug;
 import org.junit.Test;
 
 /**

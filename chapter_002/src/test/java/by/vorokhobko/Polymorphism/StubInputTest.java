@@ -1,6 +1,6 @@
-package by.vorokhobko.Polymorphism;
+package by.vorokhobko.polymorphism;
 
-import by.vorokhobko.Encapsulation.start.Tracker;
+import by.vorokhobko.encapsulation.start.Tracker;
 import org.junit.Assert;
 import org.junit.Test;
 import static org.junit.Assert.assertThat;

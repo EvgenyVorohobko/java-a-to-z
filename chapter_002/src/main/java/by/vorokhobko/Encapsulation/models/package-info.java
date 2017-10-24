@@ -5,4 +5,4 @@
  * @version 1.
  * @since 16.01.2017.
  */
-package by.vorokhobko.Encapsulation.models;
+package by.vorokhobko.encapsulation.models;

@@ -1,4 +1,4 @@
-package by.vorokhobko.Exception;
+package by.vorokhobko.exception;
 
 import org.junit.Test;
 import java.io.ByteArrayInputStream;

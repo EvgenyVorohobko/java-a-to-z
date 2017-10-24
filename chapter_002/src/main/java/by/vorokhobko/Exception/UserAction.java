@@ -1,6 +1,6 @@
-package by.vorokhobko.Exception;
+package by.vorokhobko.exception;
 
-import by.vorokhobko.Encapsulation.start.Tracker;
+import by.vorokhobko.encapsulation.start.Tracker;
 
 /**
  * UserAction.

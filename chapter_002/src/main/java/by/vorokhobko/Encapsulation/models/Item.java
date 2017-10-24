@@ -1,4 +1,4 @@
-package by.vorokhobko.Encapsulation.models;
+package by.vorokhobko.encapsulation.models;
 
 /**
  * Item.

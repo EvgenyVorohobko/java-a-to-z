@@ -5,4 +5,4 @@
  * @version 1.
  * @since 11.11.2016.
  */
-package by.vorokhobko.Encapsulation;
+package by.vorokhobko.encapsulation;

@@ -1,8 +1,8 @@
 package by.vorokhobko.inner;
 
-import by.vorokhobko.Encapsulation.start.Tracker;
-import by.vorokhobko.Encapsulation.models.Task;
-import by.vorokhobko.Encapsulation.models.Item;
+import by.vorokhobko.encapsulation.start.Tracker;
+import by.vorokhobko.encapsulation.models.Task;
+import by.vorokhobko.encapsulation.models.Item;
 
 /**
  * MenuTracker.

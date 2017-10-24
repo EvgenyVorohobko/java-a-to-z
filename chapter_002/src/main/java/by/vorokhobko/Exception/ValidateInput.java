@@ -1,8 +1,8 @@
-package by.vorokhobko.Exception;
+package by.vorokhobko.exception;
 /**
  * ValidateInput.
  *
- * Class ValidateInput to work with Exception 002, lesson 7.
+ * Class ValidateInput to work with exception 002, lesson 7.
  * @author Evgeny Vorokhobko (vorokhobko2011@yandex.ru).
  * @since 18.04.2017.
  * @version 1.

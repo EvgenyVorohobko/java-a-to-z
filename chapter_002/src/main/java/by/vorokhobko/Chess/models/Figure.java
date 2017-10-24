@@ -1,11 +1,11 @@
-package by.vorokhobko.Chess.models;
+package by.vorokhobko.chess.models;
 
-import by.vorokhobko.Chess.exceptions.ImposibleMoveException;
+import by.vorokhobko.chess.exceptions.ImposibleMoveException;
 
 /**
  * Figure.
  *
- * Class Figure abstract class for Chess 002, lesson test.
+ * Class Figure abstract class for chess 002, lesson test.
  * @author Evgeny Vorokhobko (vorokhobko2011@yandex.ru).
  * @since 13.05.2017.
  * @version 1.
