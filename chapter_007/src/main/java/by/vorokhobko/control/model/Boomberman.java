@@ -1,5 +1,8 @@
 package by.vorokhobko.control.model;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -11,23 +14,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @since 23.10.2017.
  * @version 1.
  */
-public class Boomberman implements Runnable {
-    /**
-     * The class field.
-     */
-    private final ExecutorService service;
-    /**
-     * The class field.
-     */
-    private final ReentrantLock[][] gameBoard;
-    /**
-     * The class field.
-     */
-    private final int positionX;
-    /**
-     * The class field.
-     */
-    private final int positionY;
+public class Boomberman extends StartModel implements Runnable {
     /**
      * The class field.
      */
@@ -35,33 +22,43 @@ public class Boomberman implements Runnable {
     /**
      * Add Boomberman.
      * @param gameBoard - gameBoard.
-     * @param service - service.
+     * @param service   - service.
      */
-    public Boomberman(final ReentrantLock[][] gameBoard, final ExecutorService service) {
-        this.gameBoard = gameBoard;
-        this.positionX = gameBoard.length - 1;
-        this.positionY = gameBoard[0].length - 1;
-        this.service = service;
-        this.service.execute(this);
+    public Boomberman(ReentrantLock[][] gameBoard, ExecutorService service) {
+        super(gameBoard, service);
+        getGameBoard()[0][0] = new ReentrantLock();
     }
     /**
      * The method moves Boomberman.
      * @return tag.
      */
+    @Override
     public ReentrantLock[][] moveFigure() {
-        final ReentrantLock point = this.gameBoard[this.positionX][this.positionY];
-        while (!service.isShutdown()) {
-            if (this.positionX != this.positionX - 1) {
+        final ReentrantLock point = getGameBoard()[getPositionX()][getPositionY()];
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String text = "";
+        while (text.equals("w") & text.equals("s") & text.equals("a") & text.equals("d")) {
+            try {
+                text = reader.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        while (!getService().isShutdown()) {
+            if (text.equals("s") & getPositionX() - 1 > -1) {
                 moveDown(point);
-            } else if (this.positionX != this.positionX + 1) {
+            } else if (text.equals("w") & getPositionX() + 1 > getGameBoard().length - 1) {
                 moveUp(point);
-            } else if (this.positionY != this.positionY - 1) {
+            } else if (text.equals("a") & getPositionY() - 1 > 1) {
                 moveLeft(point);
-            } else if (this.positionY != this.positionY + 1) {
+            } else if (text.equals("d") & getPositionY() + 1 > getGameBoard()[0].length - 1) {
                 moveRight(point);
             }
         }
-        return gameBoard;
+        if (!getService().isShutdown()) {
+            getService().execute(this);
+        }
+        return getGameBoard();
     }
     /**
      * The method determines whether the cell is busy, which comes.
@@ -70,7 +67,7 @@ public class Boomberman implements Runnable {
      * @return tag.
      */
     private boolean closePointField(final int closeX, final int closeY) {
-        return this.gameBoard[closeX][closeY] == null;
+        return getGameBoard()[closeX][closeY] == null;
     }
     /**
      * The method determines whether the cell which comes Boomberman.
@@ -78,9 +75,9 @@ public class Boomberman implements Runnable {
      * @param closeY - closeY.
      * @return tag.
      */
-    private boolean noteFieldInBooard(final int closeX, final int closeY) {
+    private boolean noteFieldInBoard(final int closeX, final int closeY) {
         boolean isNeedSave = true;
-        if (closeX > -1 && closeY > -1 && closeX < gameBoard.length && closeY < gameBoard[0].length) {
+        if (closeX > -1 && closeY > -1 && closeX < getGameBoard().length && closeY < getGameBoard()[0].length) {
             isNeedSave = false;
         }
         return isNeedSave;
@@ -91,10 +88,10 @@ public class Boomberman implements Runnable {
      * @return tag.
      */
     public ReentrantLock moveDown(final ReentrantLock point) {
-        if (closePointField(this.positionX - 1, this.positionY) & noteFieldInBooard(this.positionX - 1, this.positionY)) {
+        if (closePointField(getPositionX() - 1, getPositionY()) & noteFieldInBoard(getPositionX() - 1, getPositionY())) {
             if (lock.tryLock()) {
-                this.gameBoard[this.positionX - 1][this.positionY] = point;
-                this.gameBoard[this.positionX][this.positionY] = null;
+                getGameBoard()[getPositionX() - 1][getPositionY()] = point;
+                getGameBoard()[getPositionX()][getPositionY()] = null;
                 lock.unlock();
             }
         }
@@ -106,10 +103,10 @@ public class Boomberman implements Runnable {
      * @return tag.
      */
     public ReentrantLock moveUp(final ReentrantLock point) {
-        if (closePointField(this.positionX + 1, this.positionY) & noteFieldInBooard(this.positionX + 1, this.positionY)) {
+        if (closePointField(getPositionX() + 1, getPositionY()) & noteFieldInBoard(getPositionX() + 1, getPositionY())) {
             if (lock.tryLock()) {
-                this.gameBoard[this.positionX + 1][this.positionY] = point;
-                this.gameBoard[this.positionX][this.positionY] = null;
+                getGameBoard()[getPositionX() + 1][getPositionY()] = point;
+                getGameBoard()[getPositionX()][getPositionY()] = null;
                 lock.unlock();
             }
         }
@@ -121,10 +118,10 @@ public class Boomberman implements Runnable {
      * @return tag.
      */
     public ReentrantLock moveLeft(final ReentrantLock point) {
-        if (closePointField(this.positionX, this.positionY - 1) & noteFieldInBooard(this.positionX, this.positionY - 1)) {
+        if (closePointField(getPositionX(), getPositionY() - 1) & noteFieldInBoard(getPositionX(), getPositionY())) {
             if (lock.tryLock()) {
-                this.gameBoard[this.positionX][this.positionY - 1] = point;
-                this.gameBoard[this.positionX][this.positionY] = null;
+                getGameBoard()[getPositionX()][getPositionY() - 1] = point;
+                getGameBoard()[getPositionX()][getPositionY()] = null;
                 lock.unlock();
             }
         }
@@ -136,10 +133,10 @@ public class Boomberman implements Runnable {
      * @return tag.
      */
     public ReentrantLock moveRight(final ReentrantLock point) {
-        if (closePointField(this.positionX, this.positionY + 1) & noteFieldInBooard(this.positionX, this.positionY + 1)) {
+        if (closePointField(getPositionX(), getPositionY() + 1) & noteFieldInBoard(getPositionX(), getPositionY() + 1)) {
             if (lock.tryLock()) {
-                this.gameBoard[this.positionX][this.positionY + 1] = point;
-                this.gameBoard[this.positionX][this.positionY] = null;
+                getGameBoard()[getPositionX()][getPositionY() + 1] = point;
+                getGameBoard()[getPositionX()][getPositionY()] = null;
                 lock.unlock();
             }
         }

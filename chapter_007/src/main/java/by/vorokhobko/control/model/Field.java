@@ -16,34 +16,63 @@ public class Field {
     /**
      * The class field.
      */
-    private static ExecutorService service = Executors.newFixedThreadPool(2);
+    private int index = 0;
     /**
      * The class field.
      */
-    private final ReentrantLock[][] gameBoard;
+    private int count = 0;
+    /**
+     * The class field.
+     */
+    private int startSize = 10;
+    /**
+     * The class field.
+     */
+    private static ExecutorService service = Executors.newCachedThreadPool();
+    /**
+     * The class field.
+     */
+    private ReentrantLock[][] gameBoard;
     /**
      * Add Field.
      * @param size - size.
      */
     public Field(int size) {
-        this.gameBoard = new ReentrantLock[size][size];
+        if (size > this.startSize) {
+            this.gameBoard = new ReentrantLock[size][size];
+        } else {
+            this.gameBoard = new ReentrantLock[this.startSize][this.startSize];
+        }
         for (int i = 0; i < gameBoard[0].length; i++) {
             for (int j = 0; j < gameBoard.length; j++) {
                 this.gameBoard[i][j] = new ReentrantLock();
+                this.index = this.gameBoard.length * this.gameBoard[0].length;
             }
         }
-        new Boomberman(this.gameBoard, this.service);
+        addMonster();
     }
+    /**
+     * The add Monsters and Boomberman on field.
+     */
+    public void addMonster() {
+        new Boomberman(this.gameBoard, this.service);
+        count++;
+        while ((float) this.count / this.index < 0.2F) {
+            new Monster(this.gameBoard, this.service);
+            this.count++;
+        }
+    }
+
     /**
      * The main method.
      * @param args - args.
      */
     public static void main(String[] args) {
-        System.out.println("NEW GAME!");
-        Field field = new Field(10);
+        System.out.println("Let's BATTLE!");
+        Field field = new Field(20);
         System.out.println("Let's go!");
         try {
-            Thread.sleep(10000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
