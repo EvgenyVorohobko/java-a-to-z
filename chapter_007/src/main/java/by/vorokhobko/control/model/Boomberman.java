@@ -1,8 +1,5 @@
 package by.vorokhobko.control.model;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -35,15 +32,20 @@ public class Boomberman extends StartModel implements Runnable {
     @Override
     public ReentrantLock[][] moveFigure() {
         final ReentrantLock point = getGameBoard()[getPositionX()][getPositionY()];
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String text = "";
-        while (text.equals("w") & text.equals("s") & text.equals("a") & text.equals("d")) {
-            try {
-                text = reader.readLine();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        move(point);
+        if (!getService().isShutdown()) {
+            getService().execute(this);
         }
+        return getGameBoard();
+    }
+    /**
+     * The method helps to move Boomberman.
+     * @param point - point.
+     * @return tag.
+     */
+    private ReentrantLock move(final ReentrantLock point) {
+        String text = "";
+        new ConsoleInput().askUser(text);
         while (!getService().isShutdown()) {
             if (text.equals("s") & getPositionX() - 1 > -1) {
                 moveDown(point);
@@ -55,10 +57,7 @@ public class Boomberman extends StartModel implements Runnable {
                 moveRight(point);
             }
         }
-        if (!getService().isShutdown()) {
-            getService().execute(this);
-        }
-        return getGameBoard();
+        return point;
     }
     /**
      * The method determines whether the cell is busy, which comes.
@@ -88,8 +87,8 @@ public class Boomberman extends StartModel implements Runnable {
      * @return tag.
      */
     public ReentrantLock moveDown(final ReentrantLock point) {
-        if (closePointField(getPositionX() - 1, getPositionY()) & noteFieldInBoard(getPositionX() - 1, getPositionY())) {
-            if (lock.tryLock()) {
+        if (lock.tryLock()) {
+            if (closePointField(getPositionX() - 1, getPositionY()) & noteFieldInBoard(getPositionX() - 1, getPositionY())) {
                 getGameBoard()[getPositionX() - 1][getPositionY()] = point;
                 getGameBoard()[getPositionX()][getPositionY()] = null;
                 lock.unlock();
@@ -103,8 +102,8 @@ public class Boomberman extends StartModel implements Runnable {
      * @return tag.
      */
     public ReentrantLock moveUp(final ReentrantLock point) {
-        if (closePointField(getPositionX() + 1, getPositionY()) & noteFieldInBoard(getPositionX() + 1, getPositionY())) {
-            if (lock.tryLock()) {
+        if (lock.tryLock()) {
+            if (closePointField(getPositionX() + 1, getPositionY()) & noteFieldInBoard(getPositionX() + 1, getPositionY())) {
                 getGameBoard()[getPositionX() + 1][getPositionY()] = point;
                 getGameBoard()[getPositionX()][getPositionY()] = null;
                 lock.unlock();
@@ -118,8 +117,8 @@ public class Boomberman extends StartModel implements Runnable {
      * @return tag.
      */
     public ReentrantLock moveLeft(final ReentrantLock point) {
-        if (closePointField(getPositionX(), getPositionY() - 1) & noteFieldInBoard(getPositionX(), getPositionY())) {
-            if (lock.tryLock()) {
+        if (lock.tryLock()) {
+            if (closePointField(getPositionX(), getPositionY() - 1) & noteFieldInBoard(getPositionX(), getPositionY())) {
                 getGameBoard()[getPositionX()][getPositionY() - 1] = point;
                 getGameBoard()[getPositionX()][getPositionY()] = null;
                 lock.unlock();
@@ -133,8 +132,8 @@ public class Boomberman extends StartModel implements Runnable {
      * @return tag.
      */
     public ReentrantLock moveRight(final ReentrantLock point) {
-        if (closePointField(getPositionX(), getPositionY() + 1) & noteFieldInBoard(getPositionX(), getPositionY() + 1)) {
-            if (lock.tryLock()) {
+        if (lock.tryLock()) {
+            if (closePointField(getPositionX(), getPositionY() + 1) & noteFieldInBoard(getPositionX(), getPositionY() + 1)) {
                 getGameBoard()[getPositionX()][getPositionY() + 1] = point;
                 getGameBoard()[getPositionX()][getPositionY()] = null;
                 lock.unlock();
