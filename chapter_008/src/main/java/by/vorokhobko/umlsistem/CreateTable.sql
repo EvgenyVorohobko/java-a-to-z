@@ -8,20 +8,21 @@ create table enter (
 
 create table items (
 	item_id PRIMARY KEY,
-	date_id INTEGER REFERENCES attached_files (date_id),
-	application_id INTEGER REFERENCES application (application_id),
-	role_id INTEGER REFERENCES role (role_id),
-	create_data timestamp
+	work_application CHARACTER VARYING (50),
+	work_role CHARACTER VARYING (50),
+	create_data timestamp,
 	id_enter INTEGER REFERENCES enter (enter_id),
+	work_user CHARACTER VARYING (50)
 )
 
-create table user (
+create table users (
 	user_id serial PRIMARY KEY,
 	user_login INTEGER REFERENCES enter (user_login), 
 	name CHARACTER VARYING (15),
 	create_information CHARACTER VARYING (100),
 	password INTEGER REFERENCES enter (password),
-	id_item INTEGER REFERENCES items (item_id)
+	id_item INTEGER REFERENCES items (item_id),
+	work_date CHARACTER VARYING (50)
 )
 
 create table role (
@@ -42,7 +43,7 @@ create table attached_files (
 	date_id serial PRIMARY KEY,
 	documents CHARACTER VARYING (2000),
 	letters CHARACTER VARYING (1000),
-	id_user INTEGER REFERENCES user (user_id)
+	id_user INTEGER REFERENCES users (user_id)
 )
 
 create table application (
