@@ -1,4 +1,4 @@
-INSERT INTO user(user_login, name, create_information, password) VALUES ('zanoza', 'Alexey', 'VIP-client', 'ambassador1853');
+INSERT INTO users(user_login, name, create_information, password) VALUES ('zanoza', 'Alexey', 'VIP-client', 'ambassador1853');
 INSERT INTO role(status_role, description_role, id_user) VALUES ('workStatus', 'upWorking', 1);
 INSERT INTO rule_role(algoritm, number_rows, id_role) VALUES ('rules_algoritm', 'count_rows', 1);
 INSERT INTO attached_files(documents, letters, id_user) VALUES ('documents_add', 'letters_arrive', 1);
