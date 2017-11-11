@@ -15,6 +15,10 @@ public class Boomberman extends StartModel implements Runnable {
     /**
      * The class field.
      */
+    private ReentrantLock current;
+    /**
+     * The class field.
+     */
     private ReentrantLock lock;
     /**
      * Add Boomberman.
@@ -87,11 +91,11 @@ public class Boomberman extends StartModel implements Runnable {
      * @return tag.
      */
     public ReentrantLock moveDown(final ReentrantLock point) {
-        if (lock.tryLock()) {
-            if (closePointField(getPositionX() - 1, getPositionY()) & noteFieldInBoard(getPositionX() - 1, getPositionY())) {
+        if (closePointField(getPositionX() - 1, getPositionY()) & noteFieldInBoard(getPositionX() - 1, getPositionY())) {
+            if (this.lock.tryLock()) {
                 getGameBoard()[getPositionX() - 1][getPositionY()] = point;
                 getGameBoard()[getPositionX()][getPositionY()] = null;
-                lock.unlock();
+                this.current.unlock();
             }
         }
         return point;
@@ -102,11 +106,11 @@ public class Boomberman extends StartModel implements Runnable {
      * @return tag.
      */
     public ReentrantLock moveUp(final ReentrantLock point) {
-        if (lock.tryLock()) {
-            if (closePointField(getPositionX() + 1, getPositionY()) & noteFieldInBoard(getPositionX() + 1, getPositionY())) {
+        if (closePointField(getPositionX() + 1, getPositionY()) & noteFieldInBoard(getPositionX() + 1, getPositionY())) {
+            if (this.lock.tryLock()) {
                 getGameBoard()[getPositionX() + 1][getPositionY()] = point;
                 getGameBoard()[getPositionX()][getPositionY()] = null;
-                lock.unlock();
+                this.current.unlock();
             }
         }
         return point;
@@ -117,11 +121,11 @@ public class Boomberman extends StartModel implements Runnable {
      * @return tag.
      */
     public ReentrantLock moveLeft(final ReentrantLock point) {
-        if (lock.tryLock()) {
-            if (closePointField(getPositionX(), getPositionY() - 1) & noteFieldInBoard(getPositionX(), getPositionY())) {
+        if (closePointField(getPositionX(), getPositionY() - 1) & noteFieldInBoard(getPositionX(), getPositionY())) {
+            if (this.lock.tryLock()) {
                 getGameBoard()[getPositionX()][getPositionY() - 1] = point;
                 getGameBoard()[getPositionX()][getPositionY()] = null;
-                lock.unlock();
+                this.current.unlock();
             }
         }
         return point;
@@ -132,11 +136,11 @@ public class Boomberman extends StartModel implements Runnable {
      * @return tag.
      */
     public ReentrantLock moveRight(final ReentrantLock point) {
-        if (lock.tryLock()) {
-            if (closePointField(getPositionX(), getPositionY() + 1) & noteFieldInBoard(getPositionX(), getPositionY() + 1)) {
+        if (closePointField(getPositionX(), getPositionY() + 1) & noteFieldInBoard(getPositionX(), getPositionY() + 1)) {
+            if (this.lock.tryLock()) {
                 getGameBoard()[getPositionX()][getPositionY() + 1] = point;
                 getGameBoard()[getPositionX()][getPositionY()] = null;
-                lock.unlock();
+                this.current.unlock();
             }
         }
         return point;
