@@ -12,7 +12,8 @@ create table items (
 	work_role CHARACTER VARYING (50),
 	create_data timestamp,
 	id_enter INTEGER REFERENCES enter (enter_id),
-	work_user CHARACTER VARYING (50)
+	work_user CHARACTER VARYING (50),
+	work_date CHARACTER VARYING (50)
 )
 
 create table users (
@@ -22,20 +23,18 @@ create table users (
 	create_information CHARACTER VARYING (100),
 	password INTEGER REFERENCES enter (password),
 	id_item INTEGER REFERENCES items (item_id),
-	work_date CHARACTER VARYING (50)
+	id_role INTEGER REFERENCES role (role_id)
 )
 
 create table role (
 	role_id serial PRIMARY KEY,
-	status_role CHARACTER VARYING (20),
-	description_role CHARACTER VARYING (1000),
-	id_item INTEGER REFERENCES items (item_id)
+	status_role_permis CHARACTER VARYING (20),
+	description_role CHARACTER VARYING (1000)
 )
 
-create table rule_role (
+create table role_permission (
 	rule_id serial PRIMARY KEY,
 	algoritm CHARACTER VARYING (300),
-	number_rows CHARACTER VARYING (30),
 	id_role INTEGER REFERENCES role (role_id)
 )
 
@@ -43,7 +42,7 @@ create table attached_files (
 	date_id serial PRIMARY KEY,
 	documents CHARACTER VARYING (2000),
 	letters CHARACTER VARYING (1000),
-	id_user INTEGER REFERENCES users (user_id)
+	id_item INTEGER REFERENCES items (item_id)
 )
 
 create table application (
