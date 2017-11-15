@@ -7,7 +7,7 @@ create table enter (
 )
 
 create table items (
-	item_id PRIMARY KEY,
+	item_id serial PRIMARY KEY,
 	work_application CHARACTER VARYING (50),
 	work_role CHARACTER VARYING (50),
 	create_data timestamp,
@@ -46,14 +46,14 @@ create table attached_files (
 )
 
 create table application (
-	application_id PRIMARY KEY,
+	application_id serial PRIMARY KEY,
 	applications CHARACTER VARYING (400),
 	description_application CHARACTER VARYING (1000),
 	id_item INTEGER REFERENCES items (item_id)
 )
 
 create table comment_application (
-	comment_id PRIMARY KEY,
+	comment_id serial PRIMARY KEY,
 	comments CHARACTER VARYING (500),
 	id_application INTEGER REFERENCES application(application_id)
 )
