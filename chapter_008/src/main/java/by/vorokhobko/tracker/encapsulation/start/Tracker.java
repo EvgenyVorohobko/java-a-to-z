@@ -47,8 +47,7 @@ public class Tracker {
      * The method create database.
      */
     public void createTable() {
-        try {
-            Statement statement = this.connection.createStatement();
+        try (Statement statement = this.connection.createStatement()) {
             statement.execute("CREATE TABLE if NOT EXISTS items (id INTEGER PRIMARY KEY, "
                         + "name_author VARCHAR(100),"
                         + "description VARCHAR(100),"
@@ -65,8 +64,7 @@ public class Tracker {
 	*/
 	public void add(Item item) {
         String sqlQuestion = "INSERT INTO items(name_author, description, creates) VALUES (?, ?, ?);";
-        try {
-            PreparedStatement statement = this.connection.prepareStatement(sqlQuestion);
+        try (PreparedStatement statement = this.connection.prepareStatement(sqlQuestion)) {
             statement.setString(1, item.getAuthor());
             statement.setString(2, item.getDescription());
             statement.setTimestamp(3, new Timestamp(item.getCreates()));
@@ -85,8 +83,7 @@ public class Tracker {
 	public Item findById(int id) {
 		Item result = null;
         String sqlQuestion = "SELECT * FROM items WHERE id = ?;";
-        try {
-            PreparedStatement statement = this.connection.prepareStatement(sqlQuestion);
+        try (PreparedStatement statement = this.connection.prepareStatement(sqlQuestion)) {
             statement.setInt(1, id);
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
@@ -105,8 +102,7 @@ public class Tracker {
 	public List<Item> findAll() {
         List<Item> list = new ArrayList<>();
         String sqlQuestion = "SELECT * FROM items;";
-        try {
-            PreparedStatement statement = this.connection.prepareStatement(sqlQuestion);
+        try (PreparedStatement statement = this.connection.prepareStatement(sqlQuestion)) {
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
                 Item result = new Item(rs.getString("name_author"), rs.getString("description"), rs.getTimestamp("creates").getTime());
@@ -124,8 +120,7 @@ public class Tracker {
 	*/
 	public void update(Item item) {
         String sqlQuestion = "UPDATE items SET name_author = ?, description = ?, creates = ? WHERE id = ?;";
-        try {
-            PreparedStatement statement = this.connection.prepareStatement(sqlQuestion);
+        try (PreparedStatement statement = this.connection.prepareStatement(sqlQuestion)) {
             statement.setString(1, item.getAuthor());
             statement.setString(2, item.getDescription());
             statement.setTimestamp(3, new Timestamp(item.getCreates()));
@@ -143,8 +138,7 @@ public class Tracker {
 	*/
 	public void delete(Item itemDelete) {
         String sqlQuestion = "DELETE FROM items WHERE id = ?;";
-        try {
-            PreparedStatement statement = this.connection.prepareStatement(sqlQuestion);
+        try (PreparedStatement statement = this.connection.prepareStatement(sqlQuestion)) {
             statement.setLong(1, itemDelete.getId());
             statement.executeUpdate();
             this.connection.commit();
@@ -160,8 +154,7 @@ public class Tracker {
     public Item findByName(String key) {
         Item result = null;
         String sqlQuestion = "SELECT * FROM items WHERE name_author = ?;";
-        try {
-            PreparedStatement statement = this.connection.prepareStatement(sqlQuestion);
+        try (PreparedStatement statement = this.connection.prepareStatement(sqlQuestion)) {
             statement.setString(1, key);
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
