@@ -14,19 +14,7 @@ public class ATM {
     /**
      * The class field.
      */
-    private static final int CENT_1  = 1;
-    /**
-     * The class field.
-     */
-    private static final int CENT_2  = 2;
-    /**
-     * The class field.
-     */
-    private static final int CENT_5  = 5;
-    /**
-     * The class field.
-     */
-    private static final int CENT_10  = 10;
+    private static final int[] DATA = {10, 5, 2, 1};
     /**
      * The class field.
      */
@@ -43,50 +31,15 @@ public class ATM {
         if (result < 0) {
             throw new NullException("Could you put much money, please?");
         }
-        if (result / CENT_10 > 0) {
-            int last = lastNumber(result, CENT_10);
-            if (CENT_5 > last) {
-                int set = lastNumber(last, CENT_2);
-                if (CENT_2 > set) {
-                    if (CENT_1 == set) {
-                        change.add(CENT_1);
-                    }
-                } else {
-                    int stop = lastNumber(set, CENT_2);
-                    if (CENT_1 == stop) {
-                        change.add(CENT_1);
-                    }
-                }
-            } else {
-                int cost = lastNumber(last, CENT_5);
-                if (CENT_2 < cost) {
-                    int lastIndex = lastNumber(cost, CENT_2);
-                    if (CENT_1 == lastIndex) {
-                        change.add(CENT_1);
-                    }
-                } else {
-                    if (CENT_1 == cost) {
-                        change.add(CENT_1);
-                    }
+        while (result > 0) {
+            for (int coin : DATA) {
+                if (result - coin >= 0) {
+                    this.change.add(coin);
+                    result -= coin;
+                    break;
                 }
             }
         }
         return this.change;
-    }
-    /**
-     * The method helps the method change.
-     * @param result - result.
-     * @param element - element.
-     * @return tag.
-     */
-    private int lastNumber(int result, int element) {
-        int count = result / element;
-        int start = element * count;
-        result -= start;
-        while (start != 0) {
-            start -= element;
-            change.add(element);
-        }
-        return result;
     }
 }
