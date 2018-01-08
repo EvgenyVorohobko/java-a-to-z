@@ -1,6 +1,6 @@
 <project>
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>java-a-to-z</artifactId>
+	<artifactId>chapter_005_Lite</artifactId>
 	<packaging>jar</packaging>
 	<version>2.2</version>
 	<parent>
