@@ -1,0 +1,20 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>webproject</artifactId>
+	<packaging>war</packaging>
+	<version>1.0</version>
+	<dependencies>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+	</dependencies>
+	<name>chapter_004_web</name>
+	<parent>
+		<groupId>java-a-to-z</groupId>
+		<artifactId>java-a-to-z</artifactId>
+		<version>1.0</version>
+	</parent>
+
+</project>
