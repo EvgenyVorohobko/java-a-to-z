@@ -1,0 +1,17 @@
+<web-app>
+    <servlet>
+        <servlet-name>UsersServlet</servlet-name>
+        <servlet-class>by.vorokhobko.http.UsersServlet</servlet-class>
+        <description>This servlet is an example servlet</description>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UsersServlet</servlet-name>
+        <url-pattern>/userserv</url-pattern>
+    </servlet-mapping>
+</web-app>
