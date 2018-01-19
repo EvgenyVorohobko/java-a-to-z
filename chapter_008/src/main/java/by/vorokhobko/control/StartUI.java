@@ -1,7 +1,5 @@
 package by.vorokhobko.control;
 
-import org.apache.log4j.BasicConfigurator;
-
 /**
  * StartUI.
  *
@@ -23,7 +21,6 @@ public class StartUI {
      * The method need for start program.
      */
     public void runWork() {
-        BasicConfigurator.configure();
         this.db.createConnection();
         this.db.createTable();
         this.js.addDatabaseElements(db);

@@ -13,6 +13,7 @@
 
 	<modules>
 		<module>webproject</module>
+        <module>httpprotocol</module>
 	</modules>
 
 	<dependencies>
