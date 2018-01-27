@@ -2,9 +2,11 @@ package by.vorokhobko.http;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * UserStore.
@@ -14,7 +16,11 @@ import java.util.List;
  * @since 13.01.2018.
  * @version 1.
  */
-public class UserStore {
+public enum UserStore {
+    /**
+     * The class field.
+     */
+    INSTANCE;
     /**
      * The class field.
      */
@@ -42,20 +48,18 @@ public class UserStore {
     /**
      * The class field.
      */
-    private static UserStore instance;
+    private static final Random RN = new Random();
+    /**
+     * The method the method generates random Id.
+     * @return tag.
+     */
+    public int generateId() {
+        return RN.nextInt(100000);
+    }
     /**
      * Add constructor.
      */
-    private UserStore() {
-    }
-    /**
-     * The method synchronized in class UserStore.
-     * @return tag.
-     */
-    public static synchronized UserStore getInstance() {
-        if (instance == null)
-            instance = new UserStore();
-        return instance;
+    UserStore() {
     }
     /**
      * The method create connection with database.
@@ -77,7 +81,7 @@ public class UserStore {
     public void createTable() {
         try (Statement statement = this.connection.createStatement()) {
             statement.execute("CREATE TABLE if NOT EXISTS userWork("
-                    + "id INTEGER PRIMARY KEY,"
+                    + "id INT,"
                     + "nameUser VARCHAR(100),"
                     + "loginUser VARCHAR(100),"
                     + "emailUser VARCHAR(100),"
@@ -93,12 +97,13 @@ public class UserStore {
      * @param user - user.
      */
     public void addUser(User user) {
-        String sqlQuestion = "INSERT INTO userWork(nameUser, loginUser, emailUser, createDate) VALUES (?, ?, ?, ?)";
+        String sqlQuestion = "INSERT INTO userWork(id, nameUser, loginUser, emailUser, createDate) VALUES (?, ?, ?, ?, ?)";
         try (PreparedStatement statement = this.connection.prepareStatement(sqlQuestion)) {
-            statement.setString(1, user.getName());
-            statement.setString(2, user.getLogin());
-            statement.setString(3, user.getEmail());
-            statement.setTimestamp(4, new Timestamp(System.currentTimeMillis()));
+            statement.setInt(1, generateId());
+            statement.setString(2, user.getName());
+            statement.setString(3, user.getLogin());
+            statement.setString(4, user.getEmail());
+            statement.setTimestamp(5, new Timestamp(System.currentTimeMillis()));
             statement.executeUpdate();
             this.connection.commit();
             statement.close();

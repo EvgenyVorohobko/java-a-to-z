@@ -26,7 +26,7 @@ public class UsersServlet extends HttpServlet {
     /**
      * The class field.
      */
-    private UserStore users = UserStore.getInstance();
+    private UserStore users = UserStore.INSTANCE;
     /**
      * The method starts working with the database.
      */
