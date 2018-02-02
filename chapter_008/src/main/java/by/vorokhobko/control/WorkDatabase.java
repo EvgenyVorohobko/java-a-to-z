@@ -63,7 +63,6 @@ public class WorkDatabase {
                     + "description VARCHAR(100),"
                     + "creates VARCHAR(100));");
             this.connection.commit();
-            statement.close();
         } catch (SQLException e) {
             LOG.error(e.getMessage(), e);
         }
@@ -82,7 +81,6 @@ public class WorkDatabase {
             statement.setString(3, creates);
             statement.executeUpdate();
             this.connection.commit();
-            statement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -95,7 +93,6 @@ public class WorkDatabase {
         try (PreparedStatement statement = this.connection.prepareStatement(sqlQuestion)) {
             statement.executeUpdate();
             this.connection.commit();
-            statement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -60,7 +60,6 @@ public class WorkSQL {
             statement.addBatch("CREATE TABLE test (field INTEGER NOT NULL);");
             statement.executeBatch();
             this.connection.commit();
-            statement.close();
         } catch (SQLException e) {
             LOG.error(e.getMessage(), e);
         }
@@ -79,7 +78,6 @@ public class WorkSQL {
             }
             statement.executeBatch();
             this.connection.commit();
-            statement.close();
         } catch (SQLException e) {
             LOG.error(e.getMessage(), e);
         }

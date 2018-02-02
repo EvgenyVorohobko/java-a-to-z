@@ -87,7 +87,6 @@ public enum UserStore {
                     + "emailUser VARCHAR(100),"
                     + "createDate TIMESTAMP)");
             this.connection.commit();
-            statement.close();
         } catch (SQLException e) {
             LOG.error(e.getMessage(), e);
         }
@@ -106,7 +105,6 @@ public enum UserStore {
             statement.setTimestamp(5, new Timestamp(System.currentTimeMillis()));
             statement.executeUpdate();
             this.connection.commit();
-            statement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -124,7 +122,6 @@ public enum UserStore {
             statement.setTimestamp(4, new Timestamp(System.currentTimeMillis()));
             statement.executeUpdate();
             this.connection.commit();
-            statement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -138,7 +135,6 @@ public enum UserStore {
             statement.setInt(1, id);
             statement.executeUpdate();
             this.connection.commit();
-            statement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
