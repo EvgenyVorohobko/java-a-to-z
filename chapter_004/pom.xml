@@ -15,6 +15,7 @@
 		<module>webproject</module>
         <module>httpprotocol</module>
 		<module>workuser</module>
+		<module>jsp</module>
 	</modules>
 
 	<dependencies>

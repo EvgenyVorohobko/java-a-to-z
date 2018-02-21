@@ -1,0 +1,20 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>jsp</artifactId>
+    <packaging>war</packaging>
+    <version>1.0</version>
+    <name>chapter_004_web</name>
+    <parent>
+        <groupId>chapter_004</groupId>
+        <artifactId>chapter_004</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <dependencies>
+    <dependency>
+        <groupId>javax.servlet.jsp</groupId>
+        <artifactId>jsp-api</artifactId>
+        <version>2.2</version>
+    </dependency>
+    </dependencies>
+</project>
