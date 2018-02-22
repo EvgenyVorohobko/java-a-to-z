@@ -16,6 +16,7 @@
         <module>httpprotocol</module>
 		<module>workuser</module>
 		<module>jsp</module>
+		<module>mvc</module>
 	</modules>
 
 	<dependencies>
