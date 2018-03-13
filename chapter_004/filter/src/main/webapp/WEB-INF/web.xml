@@ -1,0 +1,57 @@
+<web-app>
+
+    <filter>
+        <filter-name>AuthFilter</filter-name>
+        <filter-class>by.vorokhobko.servletwithuser.servlets.AuthFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>ControllerServlet</servlet-name>
+        <servlet-class>by.vorokhobko.servletwithuser.servlets.ControllerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ControllerServlet</servlet-name>
+        <url-pattern>/control</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ShowAllElement</servlet-name>
+        <servlet-class>by.vorokhobko.servletwithuser.servlets.ShowAllElement</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowAllElement</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CreateServlet</servlet-name>
+        <servlet-class>by.vorokhobko.servletwithuser.servlets.CreateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateServlet</servlet-name>
+        <url-pattern>/create</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateServlet</servlet-name>
+        <servlet-class>by.vorokhobko.servletwithuser.servlets.UpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateServlet</servlet-name>
+        <url-pattern>/update</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteServlet</servlet-name>
+        <servlet-class>by.vorokhobko.servletwithuser.servlets.DeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteServlet</servlet-name>
+        <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+
+</web-app>

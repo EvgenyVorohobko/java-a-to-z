@@ -17,6 +17,7 @@
 		<module>workuser</module>
 		<module>jsp</module>
 		<module>mvc</module>
+		<module>filter</module>
 	</modules>
 
 	<dependencies>
