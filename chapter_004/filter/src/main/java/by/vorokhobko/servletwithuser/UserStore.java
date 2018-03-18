@@ -241,4 +241,19 @@ public enum UserStore {
             throw new NoSuchElementException("This user we don't have!");
         }
     }
+    /**
+     * The method updates a user to database.
+     * @param login - login.
+     * @param password - password.
+     */
+    public User searchLoginAndPassword(String login, String password) {
+        User result = null;
+        for (User user : this.findAll()) {
+            if (login.equals(user.getLogin()) && password.equals(user.getPassword())) {
+                result = user;
+                break;
+            }
+        }
+        return result;
+    }
 }
