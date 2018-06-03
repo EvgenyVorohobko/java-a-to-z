@@ -20,10 +20,9 @@
             <th>LOGIN</th>
             <th>EMAIL</th>
             <th>TIME</th>
-            <c:if test="${sessionScope.user.role.name=='ADMIN'}">
+            <c:if test="${sessionScope.user.role == 'ADMIN'}">
                 <th>ROLE</th>
             </c:if>
-            <th>ACTION</th>
         </tr>
         <c:forEach items="${users}" var = "element">
             <tr>
@@ -37,19 +36,16 @@
                     <td><a href="${pageContext.servletContext.contextPath}/delete?id=${element.id}">Delete user</a></td>
                     <td><a href="${pageContext.servletContext.contextPath}/update?id=${element.id}">Update user</a></td>
                 </c:if>
-                <c:if test="${sessionScope.user.role.name == 'USER'}">
-                    <c:if test="${element.id == sessionScope.user.id}">
+                <c:if test="${sessionScope.user.role == 'USER'}">
+                    <c:if test="${element.role == sessionScope.user.role}">
                         <td><a href="${pageContext.servletContext.contextPath}/update?id=${element.id}">Update user</a></td>
                     </c:if>
                 </c:if>
             </tr>
         </c:forEach>
     </table><br>
-    <a href="${pageContext.servletContext.contextPath}/create">Add new user</a>
-    <a href="${pageContext.servletContext.contextPath}/updaterole">Edit roles</a>
     <c:if test="${sessionScope.user.role.name =='ADMIN'}">
         <a href="${pageContext.servletContext.contextPath}/create">Add new user</a>
-        <a href="${pageContext.servletContext.contextPath}/updaterole">Edit roles</a>
     </c:if>
 </form>
 </body>

@@ -15,16 +15,17 @@
 <h2>UPDATE USERS</h2>
 <form action='${pageContext.servletContext.contextPath}/update' method='post' accept-charset='UTF-8'>
     <input type='hidden' name='id' value='${param.id}'><br>
-    Name User: <input type = 'text' name = 'name' placeholder="Name"><br>
-    Login User: <input type = 'text' name = 'login' placeholder="Login" readonly="readonly"><br>
-    Email User: <input type = 'text' name = 'email' placeholder="Email"><br>
-    Password: <input type = 'password' name = 'password' placeholder="Password"><br>
+    Name User: <input type = 'text' name = 'name'><br>
+    Login User: <input type = 'text' name = 'login'><br>
+    Email User: <input type = 'text' name = 'email'><br>
+    Password: <input type = 'password' name = 'password'><br>
     Role User:
-    <c:if test="${user.role.name == 'ADMIN'}">
-        Role: <input type='text' name='id' value='${user.role.id}'><br>
+    <c:if test="${user.role == 'ADMIN'}">
+        <input type='radio' name='role' value='ADMIN'>ADMIN
+        <input type='radio' name='role' value='USER'>USER<br>
     </c:if>
-    <c:if test="${user.role.name == 'USER'}">
-        Role: <input type='text' name='id' value='${user.role.id}' readonly="readonly"><br>
+    <c:if test="${user.role == 'USER'}">
+        <input type='hidden' name='role' value='USER'>USER<br>
     </c:if>
     <input type='submit' value='Update user'><br>
 </form>

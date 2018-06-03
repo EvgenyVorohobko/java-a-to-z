@@ -1,6 +1,5 @@
 package by.vorokhobko.servletwithuser.servlets;
 
-import by.vorokhobko.servletwithuser.Role;
 import by.vorokhobko.servletwithuser.User;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -39,8 +38,8 @@ public class UpdateServlet extends SimpleServlet {
                         req.getParameter("email"),
                         new Timestamp(System.currentTimeMillis()),
                         req.getParameter("password"),
-                        new Role(Integer.parseInt(req.getParameter("id")),
-                                req.getParameter("name"))));
+                        req.getParameter("role")
+                ));
         resp.sendRedirect(String.format("%s/", req.getContextPath()));
     }
 }
