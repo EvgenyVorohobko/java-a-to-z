@@ -82,16 +82,43 @@ public enum UserStore {
     public void createTable() {
         try (Statement statement = this.connection.createStatement()) {
             statement.execute("CREATE TABLE if NOT EXISTS userWork("
-                    + "id INTEGER,"
-                    + "nameUser VARCHAR(100),"
-                    + "loginUser VARCHAR(100),"
-                    + "emailUser VARCHAR(100),"
+                    + "id INTEGER PRIMARY KEY,"
+                    + "name VARCHAR(100),"
+                    + "login VARCHAR(100),"
+                    + "email VARCHAR(100),"
                     + "createDate TIMESTAMP,"
                     + "password VARCHAR(100),"
-                    + "role VARCHAR(100))");
+                    + "role_id INTEGER REFERENCES roles(id))");
             this.connection.commit();
         } catch (SQLException e) {
             LOG.error(e.getMessage(), e);
+        }
+    }
+    /**
+     * The method create database.
+     */
+    public void createTableRole() {
+        try (Statement statement = this.connection.createStatement()) {
+            statement.execute("CREATE TABLE if NOT EXISTS roles("
+                    + "id INTEGER PRIMARY KEY,"
+                    + "name VARCHAR(100))");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    /**
+     * The method adds a role to database.
+     * @param role - role.
+     */
+    public void addRole(Role role) {
+        String sqlQuestion = "INSERT INTO roles(id, name) VALUES (?, ?)";
+        try (PreparedStatement statement = this.connection.prepareStatement(sqlQuestion)) {
+            statement.setInt(1, generateId());
+            statement.setString(2, role.getName());
+            statement.executeUpdate();
+            this.connection.commit();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
     /**
@@ -99,8 +126,8 @@ public enum UserStore {
      * @param user - user.
      */
     public void addUser(User user) {
-        String sqlQuestion = "INSERT INTO userWork(id, nameUser, loginUser, "
-                + "emailUser, createDate, password, role) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sqlQuestion = "INSERT INTO userWork(id, name, login, "
+                + "email, createDate, password, role_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement statement = this.connection.prepareStatement(sqlQuestion)) {
             statement.setInt(1, generateId());
             statement.setString(2, user.getName());
@@ -108,7 +135,7 @@ public enum UserStore {
             statement.setString(4, user.getEmail());
             statement.setTimestamp(5, new Timestamp(System.currentTimeMillis()));
             statement.setString(6, user.getPassword());
-            statement.setString(7, user.getRole());
+            statement.setInt(7, user.getRole().getId());
             statement.executeUpdate();
             this.connection.commit();
         } catch (SQLException e) {
@@ -117,18 +144,19 @@ public enum UserStore {
     }
     /**
      * The method updates a user to database.
+     * @param id - id.
      * @param user - user.
      */
     public void updateUser(int id, User user) {
-        String sqlQuestion = "UPDATE userWork SET nameUser = ?, loginUser = ?,"
-                + "emailUser = ?, createDate = ?, password = ?, role = ? WHERE id = ?";
+        String sqlQuestion = "UPDATE userWork SET name = ?, login = ?,"
+                + "email = ?, createDate = ?, password = ?, role_id = ? WHERE id = ?";
         try (PreparedStatement statement = this.connection.prepareStatement(sqlQuestion)) {
             statement.setString(1, user.getName());
             statement.setString(2, user.getLogin());
             statement.setString(3, user.getEmail());
             statement.setTimestamp(4, new Timestamp(System.currentTimeMillis()));
             statement.setString(5, user.getPassword());
-            statement.setString(6, user.getRole());
+            statement.setInt(6, user.getRole().getId());
             statement.setInt(7, id);
             statement.executeUpdate();
             this.connection.commit();
@@ -138,9 +166,25 @@ public enum UserStore {
     }
     /**
      * The method deletes duplicate.
+     * @param id - id.
      */
     public void removeUser(String id) {
         String sqlQuestion = "DELETE FROM userWork WHERE id = ?";
+        try (PreparedStatement statement = this.connection.prepareStatement(sqlQuestion)) {
+            statement.setInt(1, Integer.parseInt(id));
+            statement.executeUpdate();
+            this.connection.commit();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            //LOG.error(e.getMessage(), e);
+        }
+    }
+    /**
+     * The method deletes duplicate.
+     * @param id - id.
+     */
+    public void removeRole(String id) {
+        String sqlQuestion = "DELETE FROM roles WHERE id = ?";
         try (PreparedStatement statement = this.connection.prepareStatement(sqlQuestion)) {
             statement.setInt(1, Integer.parseInt(id));
             statement.executeUpdate();
@@ -156,24 +200,45 @@ public enum UserStore {
      */
     public List<User> findAll() {
         List<User> list = new ArrayList<>();
-        String sqlQuestion = "SELECT * FROM userWork";
+        String sqlQuestion = "SELECT u.name, u.login, u.email, u.createDate, u.password," +
+                "r.id, r.name FROM userWork as u INNER JOIN roles as r ON u.role_id = r.id";
         try (PreparedStatement statement = this.connection.prepareStatement(sqlQuestion)) {
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
                 User result = new User(
-                        rs.getString("nameUser"),
-                        rs.getString("loginUser"),
-                        rs.getString("emailUser"),
+                        rs.getString("name"),
+                        rs.getString("login"),
+                        rs.getString("email"),
                         rs.getTimestamp("createDate"),
                         rs.getString("password"),
-                        rs.getString("role")
-                );
+                        new Role(rs.getInt("id"),
+                                rs.getString("name")));
                 result.setId(rs.getInt("id"));
                 list.add(result);
             }
         } catch (SQLException e) {
             e.printStackTrace();
             //LOG.error(e.getMessage(), e);
+        }
+        return list;
+    }
+    /**
+     * The method searches all users.
+     * @return tag.
+     */
+    public List<Role> findAllRole() {
+        List<Role> list = new ArrayList<>();
+        String sqlQuestion = "SELECT * FROM roles";
+        try (PreparedStatement statement = this.connection.prepareStatement(sqlQuestion)) {
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                Role result = new Role(rs.getInt("id"),
+                        rs.getString("name"));
+                result.setId(rs.getInt("id"));
+                list.add(result);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         return list;
     }
@@ -223,13 +288,13 @@ public enum UserStore {
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
                 user = new User(
-                        rs.getString("nameUser"),
-                        rs.getString("loginUser"),
-                        rs.getString("emailUser"),
+                        rs.getString("name"),
+                        rs.getString("login"),
+                        rs.getString("email"),
                         rs.getTimestamp("createDate"),
                         rs.getString("password"),
-                        rs.getString("role")
-                );
+                        new Role(rs.getInt("id"),
+                                rs.getString("name")));
             }
         } catch (SQLException e) {
             e.printStackTrace();

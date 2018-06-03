@@ -9,16 +9,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>CreateUsers</title>
+    <title>Create Roles</title>
 </head>
 <body>
-<h2>CREATE USERS</h2>
-<form action='${pageContext.servletContext.contextPath}/create' method='post' accept-charset = 'UTF-8'>
-    Name User: <input type = 'text' name = 'name' placeholder="Name"><br>
-    Login User: <input type = 'text' name = 'login' placeholder="Login"><br>
-    Email User: <input type = 'text' name = 'email' placeholder="Email"><br>
-    Password: <input type = 'password' name = 'password' placeholder="Password"><br>
-    Role User: <input type="text" name = "id" placeholder="ID role">
+<h2>CREATE ROLES</h2>
+<form action='${pageContext.servletContext.contextPath}/addrole' method='post' accept-charset = 'UTF-8'>
+    Role User:
+    <input type='radio' name='name' value='ADMIN'>ADMIN
+    <input type='radio' name='name' value='USER'>USER<br>
     <input type = 'submit' value = 'Create User'><br>
 </form>
 <form action='${pageContext.servletContext.contextPath}/' method='get' accept-charset = 'UTF-8'>

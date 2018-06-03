@@ -34,6 +34,7 @@ public abstract class SimpleServlet extends HttpServlet {
     @Override
     public void init() {
         this.users.createConnection();
+        this.users.createTableRole();
         this.users.createTable();
     }
     /**

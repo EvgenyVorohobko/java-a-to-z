@@ -1,6 +1,6 @@
 <web-app>
 
-    <filter>
+    <!--<filter>
         <filter-name>AuthFilter</filter-name>
         <filter-class>by.vorokhobko.servletwithuser.servlets.AuthFilter</filter-class>
     </filter>
@@ -16,7 +16,7 @@
     <servlet-mapping>
         <servlet-name>ControllerServlet</servlet-name>
         <url-pattern>/control</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping>-->
 
     <servlet>
         <servlet-name>ShowAllElement</servlet-name>
@@ -52,6 +52,33 @@
     <servlet-mapping>
         <servlet-name>DeleteServlet</servlet-name>
         <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CreateServletRole</servlet-name>
+        <servlet-class>by.vorokhobko.servletwithuser.servlets.CreateServletRole</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateServletRole</servlet-name>
+        <url-pattern>/addrole</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateServletRole</servlet-name>
+        <servlet-class>by.vorokhobko.servletwithuser.servlets.UpdateServletRole</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateServletRole</servlet-name>
+        <url-pattern>/updaterole</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteServletRole</servlet-name>
+        <servlet-class>by.vorokhobko.servletwithuser.servlets.DeleteServletRole</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteServletRole</servlet-name>
+        <url-pattern>/deleterole</url-pattern>
     </servlet-mapping>
 
 </web-app>
