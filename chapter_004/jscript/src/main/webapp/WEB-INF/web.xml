@@ -1,6 +1,6 @@
 <web-app>
 
-    <!--<filter>
+    <filter>
         <filter-name>AuthFilter</filter-name>
         <filter-class>by.vorokhobko.servletwithuser.servlets.AuthFilter</filter-class>
     </filter>
@@ -16,7 +16,7 @@
     <servlet-mapping>
         <servlet-name>JsonController</servlet-name>
         <url-pattern>/json</url-pattern>
-    </servlet-mapping>-->
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>ShowAllElement</servlet-name>
