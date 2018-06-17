@@ -18,6 +18,7 @@
 		<module>jsp</module>
 		<module>mvc</module>
 		<module>filter</module>
+		<module>jscript</module>
 	</modules>
 
 	<dependencies>
