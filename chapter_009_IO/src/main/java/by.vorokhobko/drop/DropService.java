@@ -3,9 +3,9 @@ package by.vorokhobko.drop;
 import java.io.*;
 
 /**
- * CheckEvenNumbers.
+ * DropService.
  *
- * Class CheckEvenNumbers drop words in stream for 009_IO, lesson 1.
+ * Class DropService drop words in stream for 009_IO, lesson 1.
  * @author Evgeny Vorokhobko (vorokhobko2011@yandex.ru).
  * @since 18.07.2018.
  * @version 1.

@@ -4,7 +4,7 @@
     <groupId>chapter_002</groupId>
 	<packaging>jar</packaging>
 	<version>1.2</version>
-    <name>java-a-to-z</name>
+    <name>chapter_002</name>
 	<parent>
 		<groupId>java-a-to-z</groupId>
 		<artifactId>java-a-to-z</artifactId>

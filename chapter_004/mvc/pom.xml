@@ -3,7 +3,7 @@
     <artifactId>mvc</artifactId>
     <packaging>war</packaging>
     <version>1.0</version>
-    <name>chapter_004_web</name>
+    <name>mvc</name>
     <parent>
         <groupId>chapter_004</groupId>
         <artifactId>chapter_004</artifactId>

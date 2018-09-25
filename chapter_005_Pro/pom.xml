@@ -4,7 +4,7 @@
 	<groupId>chapter_005_Pro</groupId>
 	<packaging>pom</packaging>
 	<version>1.5</version>
-	<name>java-a-to-z</name>
+	<name>chapter_005_Pro</name>
 	<parent>
 		<groupId>java-a-to-z</groupId>
 		<artifactId>java-a-to-z</artifactId>

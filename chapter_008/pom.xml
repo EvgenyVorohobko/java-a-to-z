@@ -4,7 +4,7 @@
 	<groupId>chapter_008</groupId>
 	<packaging>pom</packaging>
 	<version>1.8</version>
-	<name>java-a-to-z</name>
+	<name>chapter_008</name>
 	<parent>
 		<groupId>java-a-to-z</groupId>
 		<artifactId>java-a-to-z</artifactId>

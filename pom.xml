@@ -21,6 +21,8 @@
         <module>chapter_007</module>
         <module>chapter_008</module>
         <module>chapter_004</module>
+        <module>chapter_009_IO</module>
+        <module>chapter_010_hibernate</module>
 	</modules>
 
     <dependencies>

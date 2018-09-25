@@ -19,6 +19,7 @@
 		<module>mvc</module>
 		<module>filter</module>
 		<module>jscript</module>
+		<module>controlquestion</module>
 	</modules>
 
 	<dependencies>
