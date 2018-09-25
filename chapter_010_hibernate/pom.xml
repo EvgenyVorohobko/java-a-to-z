@@ -1,0 +1,32 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>chapter_010_hibernate</artifactId>
+    <groupId>chapter_010_hibernate</groupId>
+    <packaging>pom</packaging>
+    <version>1.8</version>
+    <name>chapter_010_hibernate</name>
+    <parent>
+        <groupId>java-a-to-z</groupId>
+        <artifactId>java-a-to-z</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <modules>
+        <module>configuration</module>
+    </modules>
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/postgresql/postgresql -->
+        <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.1-901-1.jdbc4</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.3.3.Final</version>
+        </dependency>
+    </dependencies>
+</project>

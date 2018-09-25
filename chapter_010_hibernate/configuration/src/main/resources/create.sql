@@ -1,0 +1,8 @@
+CREATE SCHEMA IF NOT EXISTS test AUTHORIZATION postgres;
+
+CREATE TABLE IF NOT EXISTS items(
+  id serial PRIMARY KEY,
+  description VARCHAR(255),
+  done BOOLEAN DEFAULT FALSE,
+  createDate TIMESTAMP
+);

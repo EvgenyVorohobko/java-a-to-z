@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Item Database</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https:////netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="jScript.js"></script>
+</head>
+<script>
+    $(document).ready(function () {
+        showItems();
+    });
+</script>
+
+<body>
+<div class="container">
+    <h2 style="padding-bottom: 30px">ITEMS DATABASE</h2>
+
+    <div class="row">
+        <div class="col-md-9">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h4>Add new item</h4>
+                </div>
+                <div class="panel-body">
+                    <textarea style="width: 100%; padding-bottom: 20px" id="description"></textarea><br/>
+                    <button class='btn btn-success pull-right' onclick='return addItem()'>Add item</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>All items in database</h4>
+                </div>
+                <div class="panel-body" style="padding-bottom: 105px">
+                    <label>Select finished <input type="checkbox" id="status" onchange="return showItems()"/></label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+    <h3 style="padding-bottom: 30px">Items Database</h3>
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table table-bordered" id="items">
+                <thead style="background: black">
+                <tr style="color: wheat">
+                    <th>ID</th>
+                    <th>Description</th>
+                    <th>CreateDate</th>
+                    <th>isDone</th>
+                    <th>DELETE</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

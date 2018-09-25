@@ -1,0 +1,39 @@
+<web-app>
+
+    <servlet>
+        <servlet-name>ShowAllItems</servlet-name>
+        <servlet-class>by.vorokhobko.servlets.ShowAllItems</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowAllItems</servlet-name>
+        <url-pattern>/showItem</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddItem</servlet-name>
+        <servlet-class>by.vorokhobko.servlets.AddItem</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddItem</servlet-name>
+        <url-pattern>/addItem</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateStatusItems</servlet-name>
+        <servlet-class>by.vorokhobko.servlets.UpdateStatusItems</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateStatusItems</servlet-name>
+        <url-pattern>/updateStatus</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteItems</servlet-name>
+        <servlet-class>by.vorokhobko.servlets.DeleteItems</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteItems</servlet-name>
+        <url-pattern>/deleteItem</url-pattern>
+    </servlet-mapping>
+
+</web-app>
