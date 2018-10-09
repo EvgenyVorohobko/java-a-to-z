@@ -6,8 +6,9 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Function;
 
 /**
  * DatabaseImp.
@@ -38,22 +39,49 @@ public class DatabaseImp implements Database {
     public static DatabaseImp getINSTANCE() {
         return INSTANCE;
     }
+
+    private <T> T tx(final Function<Session, T> command) {
+        final Session session = this.factory.openSession();
+        final Transaction transaction = session.beginTransaction();
+        try {
+            return command.apply(session);
+        } catch (final Exception e) {
+            session.getTransaction().rollback();
+            throw e;
+        } finally {
+            transaction.commit();
+            session.close();
+        }
+    }
+
+    private void init(final Consumer<Session> workWithSession) {
+        final Session session = this.factory.openSession();
+        final Transaction transaction = session.beginTransaction();
+        try {
+            workWithSession.accept(session);
+        } catch (final Exception e) {
+            session.getTransaction().rollback();
+            throw e;
+        } finally {
+            transaction.commit();
+            session.close();
+        }
+    }
+
     /**
      * The method adds item to database.
      * @param description - description.
      */
     @Override
     public void addItem(String description) {
-        Transaction transaction = null;
-        try (Session session = this.factory.openSession()) {
-            transaction = session.beginTransaction();
-            Item item = new Item();
-            item.setDescription(description);
-            item.setCreateDate(new Timestamp(System.currentTimeMillis()));
-            session.save(item);
-            transaction.commit();
-            session.close();
-        }
+        this.init(session ->
+                {
+                    Item item = new Item();
+                    item.setDescription(description);
+                    item.setCreateDate(new Timestamp(System.currentTimeMillis()));
+                    session.save(item);
+                }
+        );
     }
     /**
      * The method updates status item in database.
@@ -62,15 +90,13 @@ public class DatabaseImp implements Database {
      */
     @Override
     public void updateStatusItem(int id, boolean isDone) {
-        Transaction transaction = null;
-        try (Session session = this.factory.openSession()) {
-            transaction = session.beginTransaction();
-            Item item = session.get(Item.class, id);
-            item.setDone(isDone);
-            session.update(item);
-            transaction.commit();
-            session.close();
-        }
+        this.init(session ->
+                {
+                    Item item = session.get(Item.class, id);
+                    item.setDone(isDone);
+                    session.update(item);
+                }
+        );
     }
     /**
      * The method delete item in database.
@@ -78,14 +104,12 @@ public class DatabaseImp implements Database {
      */
     @Override
     public void deleteItem(int id) {
-        Transaction transaction = null;
-        try (Session session = this.factory.openSession()) {
-            transaction = session.beginTransaction();
-            Item item = session.get(Item.class, id);
-            session.delete(item);
-            transaction.commit();
-            session.close();
-        }
+        this.init(session ->
+                {
+                    Item item = session.get(Item.class, id);
+                    session.delete(item);
+                }
+        );
     }
     /**
      * The method get all item in database.
@@ -93,14 +117,8 @@ public class DatabaseImp implements Database {
      */
     @Override
     public List<Item> getAllItems(boolean isDone) {
-        List<Item> itemsList = new ArrayList<>();
-        Transaction transaction = null;
-        try (Session session = this.factory.openSession()) {
-            transaction = session.beginTransaction();
-            itemsList = session.createQuery("FROM Item").list();
-            transaction.commit();
-            session.close();
-        }
-        return itemsList;
+        return this.tx(
+                session -> session.createQuery("FROM Item").list()
+        );
     }
 }
