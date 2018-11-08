@@ -1,0 +1,17 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="by.vorokhobko.models.Order" table="orders">
+        <id name="id" column="id">
+            <generator class="identity"/>
+        </id>
+        <property name="createDate" column="createDate"/>
+        <many-to-one name="car" column="id_car" class="by.vorokhobko.models.Car"/>
+        <property name="description" column="description"/>
+        <many-to-one name="location" column="id_location" class="by.vorokhobko.models.Location"/>
+        <many-to-one name="imageList" column="id_image" class="by.vorokhobko.models.Image"/>
+        <many-to-one name="owner" column="id_owner" class="by.vorokhobko.models.Owner"/>
+        <many-to-one name="price" column="id_price" class="by.vorokhobko.models.Price"/>
+        <property name="sold" column="sold"/>
+    </class>
+</hibernate-mapping>

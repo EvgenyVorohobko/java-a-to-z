@@ -1,0 +1,10 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="by.vorokhobko.models.Brand" table="brand">
+        <id name="id" column="id">
+            <generator class="identity"/>
+        </id>
+        <property name="brandCar" column="brandCar"/>
+    </class>
+</hibernate-mapping>

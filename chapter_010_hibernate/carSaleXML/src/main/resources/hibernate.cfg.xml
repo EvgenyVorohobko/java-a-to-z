@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/carStore</property>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">1</property>
+        <property name="dialect">org.hibernate.dialect.PostgreSQL94Dialect</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <mapping resource="by.vorokhobko.models/Body.hbm.xml"/>
+        <mapping resource="by.vorokhobko.models/Brand.hbm.xml"/>
+        <mapping resource="by.vorokhobko.models/Car.hbm.xml"/>
+        <mapping resource="by.vorokhobko.models/Drive.hbm.xml"/>
+        <mapping resource="by.vorokhobko.models/Engine.hbm.xml"/>
+        <mapping resource="by.vorokhobko.models/Fuel.hbm.xml"/>
+        <mapping resource="by.vorokhobko.models/Image.hbm.xml"/>
+        <mapping resource="by.vorokhobko.models/Location.hbm.xml"/>
+        <mapping resource="by.vorokhobko.models/Model.hbm.xml"/>
+        <mapping resource="by.vorokhobko.models/Order.hbm.xml"/>
+        <mapping resource="by.vorokhobko.models/Owner.hbm.xml"/>
+        <mapping resource="by.vorokhobko.models/Price.hbm.xml"/>
+        <mapping resource="by.vorokhobko.models/Transmission.hbm.xml"/>
+        <mapping resource="by.vorokhobko.models/Year.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

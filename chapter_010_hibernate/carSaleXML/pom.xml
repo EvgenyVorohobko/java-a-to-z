@@ -1,0 +1,33 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>carSaleXML</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+    <groupId>carSaleXML</groupId>
+    <artifactId>carSaleXML</artifactId>
+    <version>1.8</version>
+    <name>salesCar</name>
+    <parent>
+        <groupId>chapter_010_hibernate</groupId>
+        <artifactId>chapter_010_hibernate</artifactId>
+        <version>1.8</version>
+    </parent>
+</project>

@@ -1,0 +1,28 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="by.vorokhobko.models.Car" table="car">
+        <id name="id" column="id">
+            <generator class="identity"/>
+        </id>
+
+        <many-to-one name="body" column="id_body"
+                     class="by.vorokhobko.models.Body"/>
+        <many-to-one name="brand" column="id_brand"
+                     class="by.vorokhobko.models.Brand"/>
+        <many-to-one name="drive" column="id_drive"
+                     class="by.vorokhobko.models.Drive"/>
+        <many-to-one name="engineSize" column="id_engine"
+                     class="by.vorokhobko.models.Engine"/>
+        <many-to-one name="fuel" column="id_fuel"
+                     class="by.vorokhobko.models.Fuel"/>
+        <many-to-one name="model" column="id_model"
+                     class="by.vorokhobko.models.Model"/>
+        <many-to-one name="transmission" column="id_transmission"
+                     class="by.vorokhobko.models.Transmission"/>
+        <many-to-one name="year" column="id_year"
+                     class="by.vorokhobko.models.Year"/>
+        <property name="color" column="color"/>
+        <property name="mileage" column="mileage"/>
+    </class>
+</hibernate-mapping>
