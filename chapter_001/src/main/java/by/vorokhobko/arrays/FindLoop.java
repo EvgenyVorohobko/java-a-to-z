@@ -21,6 +21,7 @@ public class FindLoop {
         for (int i = 0; i < data.length - 1; i++) {
             if (data[i] == el) {
                 rst = i;
+                break;
             }
         }
         return rst;
