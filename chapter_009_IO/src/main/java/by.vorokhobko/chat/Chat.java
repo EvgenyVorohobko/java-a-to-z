@@ -65,34 +65,35 @@ public class Chat {
     /**
      * Method works chat.
      */
-    public void workChat() {
+    public void workChat(File text, File log) {
         System.out.println("Please, let's begin chat with bot.");
         try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(new FileInputStream(TEXT), StandardCharsets.UTF_8));
+                new InputStreamReader(new FileInputStream(text), StandardCharsets.UTF_8));
              Scanner scanner = new Scanner(System.in);
-             BufferedWriter writer = new BufferedWriter(new FileWriter(LOG))) {
+             BufferedWriter writer = new BufferedWriter(new FileWriter(log))) {
 
             ArrayList<String> list = takeRandomLineFromTextDocument(reader);
             boolean isNeedSave = false;
             while (scanner.hasNext()) {
                 String phrase = scanner.nextLine();
-                if (END.equals(phrase.toLowerCase())) {
-                    writer.write(String.format("User: %s%s", phrase, System.lineSeparator()));
-                    break;
-                }
-                if (STOP.equals(phrase.toLowerCase())) {
-                    isNeedSave = true;
-                }
-                if (CONTINUE.equals(phrase.toLowerCase())) {
-                    isNeedSave = false;
+                switch (phrase.toLowerCase()) {
+                    case END:
+                        writer.write(String.format("User: %s%s", phrase, System.lineSeparator()));
+                        break;
+                    case STOP:
+                        isNeedSave = true;
+                        break;
+                    case CONTINUE:
+                        isNeedSave = false;
+                        break;
                 }
                 if (isNeedSave) {
                     writer.write(String.format("User: %s%s", phrase, System.lineSeparator()));
                 } else {
                     writer.write(String.format("User: %s%s", phrase, System.lineSeparator()));
-                    String text = list.get(generateId(list.size()));
-                    writer.write(String.format("Program: %s%s", text, System.lineSeparator()));
-                    System.out.println(text);
+                    String result = list.get(generateId(list.size()));
+                    writer.write(String.format("Program: %s%s", result, System.lineSeparator()));
+                    System.out.println(result);
                 }
             }
         } catch (IOException e) {
@@ -103,6 +104,6 @@ public class Chat {
      * Main menu in this program.
      */
     public static void main(String[] args) {
-        new Chat().workChat();
+        new Chat().workChat(TEXT, LOG);
     }
 }

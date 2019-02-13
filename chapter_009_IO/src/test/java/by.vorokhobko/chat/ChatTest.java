@@ -21,13 +21,17 @@ public class ChatTest {
      */
     private static final File LOG =  new File("d:/Programming/Java/Projects/log.txt");
     /**
+     * The class field.
+     */
+    private static final File TEXT = new File("d:/Programming/Java/Projects/text.txt");
+    /**
      * Test.
      */
     @Test
     public void whenEnterStopThenProgramWriteOnlyUserPhrase() {
         String input = "стоп\r\nhello\r\nbye";
         System.setIn(new ByteArrayInputStream(input.getBytes()));
-        new Chat().workChat();
+        new Chat().workChat(TEXT, LOG);
         ArrayList<String> result = new ArrayList<>();
         ArrayList<String> example = new ArrayList<>(Arrays.asList("User: стоп", "User: hello", "User: bye"));
         try (BufferedReader reader = new BufferedReader(
