@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<script>
+    $(document).ready(function () {
+        loadUser();
+        getOrdersUsers();
+    });
+</script>
+<body>
+<div class="container">
+    <p id="login"></p>
+    <div class="row">
+        <h3 style="text-align: center; padding-bottom: 20px">Orders</h3>
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <thead style="background: blue">
+                <tr style="color: whitesmoke">
+                    <th>Car brand</th>
+                    <th>Car model</th>
+                    <th>Color</th>
+                    <th>Year</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Create date</th>
+                    <th>User</th>
+                    <th>Sold</th>
+                </tr>
+                </thead>
+                <tbody id="orders"></tbody>
+            </table>
+        </div>
+    </div>
+    <input type="button" class="btn btn-success" value="Add new order" onclick="return checkUser()"/><br>
+    <input type="number" id="priceToSet" placeholder="Enter max price"/>
+    <input type="button" class="btn btn-info" value="Set maximum price" onclick="return setPriceFilter()"/>
+    <input type="button" class="btn btn-info" value="Reset filter" onclick="return resetPriceFilter()"/>
+</div>
+</body>
+</html>

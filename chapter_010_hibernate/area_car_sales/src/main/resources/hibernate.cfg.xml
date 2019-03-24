@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/carStore</property>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">1</property>
+        <property name="dialect">org.hibernate.dialect.PostgreSQL94Dialect</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <mapping class="by.vorokhobko.models.Body"/>
+        <mapping class="by.vorokhobko.models.Brand"/>
+        <mapping class="by.vorokhobko.models.Car"/>
+        <mapping class="by.vorokhobko.models.Drive"/>
+        <mapping class="by.vorokhobko.models.Engine"/>
+        <mapping class="by.vorokhobko.models.Fuel"/>
+        <mapping class="by.vorokhobko.models.Image"/>
+        <mapping class="by.vorokhobko.models.Location"/>
+        <mapping class="by.vorokhobko.models.Model"/>
+        <mapping class="by.vorokhobko.models.Order"/>
+        <mapping class="by.vorokhobko.models.Owner"/>
+        <mapping class="by.vorokhobko.models.Price"/>
+        <mapping class="by.vorokhobko.models.Transmission"/>
+        <mapping class="by.vorokhobko.models.Year"/>
+    </session-factory>
+</hibernate-configuration>

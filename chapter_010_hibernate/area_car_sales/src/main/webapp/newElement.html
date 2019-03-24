@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Car</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<script>
+    $(document).ready(function () {
+        workSelector();
+    });
+</script>
+<style>
+    .poster {
+        width: 100px;
+        margin-right: 10px;
+    }
+</style>
+<body>
+<div class="container">
+    <h3 style="padding-bottom: 30px">Create new order by car</h3>
+    <div class="row">
+        <div class="col-md-8">
+
+            <label>
+                Car brand: <br>
+                <select multiple class="poster" id="brand" onchange="return modelSelector()"></select>
+            </label>
+            <label>
+                Car model: <br>
+                <select multiple class="selector" id="model"></select>
+            </label>
+            <label>
+                Engine type: <br>
+                <select multiple class="selector" id="engine"></select>
+            </label>
+            <label>
+                Transmission: <br>
+                <select multiple class="selector" id="transmission"></select>
+            </label>
+            <label>
+                Body type: <br>
+                <select multiple class="selector" id="body"></select>
+            </label>
+            <label>
+                Fuel type: <br>
+                <select multiple class="selector" id="fuel"></select>
+            </label>
+            <label>
+                Drive type: <br>
+                <select multiple class="selector" id="drive"></select>
+            </label><br/>
+
+            Price: <input type="number" id="price" placeholder="Enter price"><br>
+            Color: <input type="text" id="color" placeholder="Enter color"><br>
+            Mileage: <input type="number" id="mileage" placeholder="Enter mileage"><br>
+            Engine Power: <input type="number" id="enginePower" placeholder="Enter engine power"><br>
+            Release year: <input type="number" id="year" placeholder="Enter year"><br>
+
+            <label>
+                Description: <br>
+                <textarea style="width: 300%; padding-bottom: 20px" id="description"></textarea>
+            </label>
+
+        </div>
+    </div><br>
+    <button type="submit" class="btn btn-success" onclick="return addNewOrder()">Add new Order</button>
+</div>
+</body>
+</html>
